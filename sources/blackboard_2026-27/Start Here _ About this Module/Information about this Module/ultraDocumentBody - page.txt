@@ -1,0 +1,19 @@
+ultraDocumentBody
+
+Information.JPG
+Module Descriptor
+[add a link to your module descriptor here] 
+
+Module Handbook
+[add your Module handbook here. If it is a file upload click on the paperclip icon or drag and drop the file into this editable content field ]
+
+Module Communications
+Communication methods such as Announcements, Messages, email etc. 
+
+Module Assessment
+Provide information on the assessment brief
+
+Navigation:
+Click the right arrow above to proceed to the Module communication.
+Click the left arrow above to return the previous page.
+Click the X to return to main navigation.

@@ -1,0 +1,153 @@
+SOURCE: Setting-up my Development Environemnt\TL-Engine11 Documentation\_TL-Engine Appendix 2.pdf
+
+--- page 1 ---
+ 
+TL-Engine – Key Codes (v1.09) 
+ 
+This is a list of the key codes to use with the TL-Engine methods ‘KeyHit’ and ‘KeyHeld’.  
+ 
+// Key and button codes for 3D engine window input 
+enum EKeyCode 
+{ 
+ Mouse_LButton, // Left mouse button 
+ Mouse_RButton, // Right mouse button 
+ Mouse_MButton, // Middle mouse button 
+ Mouse_XButton1, // Windows 2000/XP: X1 mouse button 
+ Mouse_XButton2, // Windows 2000/XP: X2 mouse button 
+ Key_Back,  // BACKSPACE key 
+ Key_Tab,  // TAB key 
+ Key_Clear,  // CLEAR key 
+ Key_Return,  // ENTER key 
+ Key_Shift,  // SHIFT key 
+ Key_Control, // CTRL key 
+ Key_Menu,  // ALT key 
+ Key_Pause,  // PAUSE key 
+ Key_Capital, // CAPS LOCK key 
+ Key_Escape,  // ESC key 
+ Key_Convert, // IME convert 
+ Key_Nonconvert, // IME nonconvert 
+ Key_Accept,  // IME accept 
+ Key_ModeChange, // IME mode change request 
+ Key_Space,  // Spacebar 
+ Key_Prior,  // PAGE UP key 
+ Key_Next,  // PAGE DOWN key 
+ Key_End,  // END key 
+ Key_Home,  // HOME key 
+ Key_Left,  // LEFT ARROW key 
+ Key_Up,  // UP ARROW key 
+ Key_Right,  // RIGHT ARROW key 
+ Key_Down,  // DOWN ARROW key 
+ Key_Select,  // SELECT key 
+ Key_Print,  // PRINT key 
+ Key_Execute, // EXECUTE key 
+ Key_Snapshot, // PRINT SCREEN key 
+ Key_Insert,  // INS key 
+ Key_Delete,  // DEL key 
+ Key_Help,  // HELP key 
+ Key_0,  // 0 key 
+ Key_1,  // 1 key 
+ Key_2,  // 2 key 
+ Key_3,  // 3 key 
+ Key_4,  // 4 key 
+ Key_5,  // 5 key 
+ Key_6,  // 6 key 
+ Key_7,  // 7 key 
+ Key_8,  // 8 key 
+ Key_9,  // 9 key 
+ Key_A,  // A key 
+ Key_B,  // B key 
+ Key_C,  // C key 
+ Key_D,  // D key 
+ Key_E,  // E key 
+ Key_F,  // F key 
+ Key_G,  // G key 
+ Key_H,  // H key 
+ Key_I,  // I key 
+ Key_J,  // J key 
+--- page 2 ---
+ 
+ Key_K,  // K key 
+ Key_L,  // L key 
+ Key_M,  // M key 
+ Key_N,  // N key 
+ Key_O,  // O key 
+ Key_P,  // P key 
+ Key_Q,  // Q key 
+ Key_R,  // R key 
+ Key_S,  // S key 
+ Key_T,  // T key 
+ Key_U,  // U key 
+ Key_V,  // V key 
+ Key_W,  // W key 
+ Key_X,  // X key 
+ Key_Y,  // Y key 
+ Key_Z,  // Z key 
+ Key_LWin,  // Left Windows key (Microsoft® Natural® keyboard) 
+ Key_RWin,  // Right Windows key (Natural keyboard) 
+ Key_Apps,  // Applications key (Natural keyboard) 
+ Key_Sleep,  // Computer Sleep key 
+ Key_Numpad0, // Numeric keypad 0 key 
+ Key_Numpad1, // Numeric keypad 1 key 
+ Key_Numpad2, // Numeric keypad 2 key 
+ Key_Numpad3, // Numeric keypad 3 key 
+ Key_Numpad4, // Numeric keypad 4 key 
+ Key_Numpad5, // Numeric keypad 5 key 
+ Key_Numpad6, // Numeric keypad 6 key 
+ Key_Numpad7, // Numeric keypad 7 key 
+ Key_Numpad8, // Numeric keypad 8 key 
+ Key_Numpad9, // Numeric keypad 9 key 
+ Key_Multiply, // Multiply key 
+ Key_Add,  // Add key 
+ Key_Separator, // Separator key 
+ Key_Subtract, // Subtract key 
+ Key_DecimalPoint, // Decimal point key 
+ Key_Divide,  // Divide key 
+ Key_F1,  // F1 key 
+ Key_F2,  // F2 key 
+ Key_F3,  // F3 key 
+ Key_F4,  // F4 key 
+ Key_F5,  // F5 key 
+ Key_F6,  // F6 key 
+ Key_F7,  // F7 key 
+ Key_F8,  // F8 key 
+ Key_F9,  // F9 key 
+ Key_F10,  // F10 key 
+ Key_F11,  // F11 key 
+ Key_F12,  // F12 key 
+ Key_F13,  // F13 key 
+ Key_F14,  // F14 key 
+ Key_F15,  // F15 key 
+ Key_F16,  // F16 key 
+ Key_F17,  // F17 key 
+ Key_F18,  // F18 key 
+ Key_F19,  // F19 key 
+ Key_F20,  // F20 key 
+ Key_F21,  // F21 key 
+ Key_F22,  // F22 key 
+ Key_F23,  // F23 key 
+ Key_F24,  // F24 key 
+ Key_Numlock, // NUM LOCK key 
+ Key_Scroll,  // SCROLL LOCK key 
+ Key_LShift,  // Left SHIFT key 
+ Key_RShift,  // Right SHIFT key 
+--- page 3 ---
+ 
+ Key_LControl, // Left CONTROL key 
+ Key_RControl, // Right CONTROL key 
+ Key_LMenu,  // Left MENU key 
+ Key_RMenu,  // Right MENU key    
+ Key_Comma,  // Comma Key (,)   
+ Key_Plus,  // Plus Key (+)   
+ Key_Minus,  // Minus Key (-)   
+ Key_Period,  // Period Key (.)   
+ Key_Attn,  // Attn key 
+ Key_CrSel,  // CrSel key 
+ Key_ExSel,  // ExSel key 
+ Key_ErEof,  // Erase EOF key 
+ Key_Play,  // Play key 
+ Key_Zoom,  // Zoom key 
+ Key_PA1,  // PA1 key 
+ Key_OemClear, // Clear key 
+ 
+ kMaxKeyCodes // Maximum number of key codes 
+}; 

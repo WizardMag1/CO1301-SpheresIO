@@ -1,0 +1,111 @@
+SOURCE: Week 3 - Finite State Machines and Math Vectors\Math Exercises\_CO1035 - Maths Practice - Vectors.pdf
+
+--- page 1 ---
+CO1035: Game Concepts 
+Math Exercises – Vectors 
+ 
+Exercises 
+ 
+1. If P1 = (50, 50, 50), P2 = (-11, 22, -33), A = (3, 4, 5), B =(5, 7, 9), C = ( 10, 20), D = (34, 50), calculate 
+the following:  
+a. P1P2, i.e., the vector between P1 and P2.  
+b. P2P1, i.e., the vector between P2 and P1.  
+c. AB, i.e., the vector between A and B. 
+d. DC, i.e., the vector between D and C. 
+e. BC, i.e., the vector between B and C.  
+ 
+ 
+2. If a = (1,2,3), b = (5,6,7), c = (5,10), d = (0,13,8) and e = (4,9), calculate the following:  
+a. a + b  
+b. b – a  
+c. 12b  
+d. 4d  
+e. 5a – b  
+f. e + 2c  
+g. ‖𝑐‖  
+h. ‖𝑏‖  
+i. 𝑎̂  
+j. 𝑒̂  
+ 
+ 
+  
+--- page 2 ---
+Solutions: 
+ 
+1a) P1P2, i.e. the vector between P1 and P2  
+P1 = ( 50, 50, 50)  
+P2 = (-11, 22, -33)  
+P1P2 = P2 - P1 = (P2x – P1x, P2y – P1y, P2z – P1z)  
+P1P2 = (-11 – 50, 22 – 50, -33 -50)  
+P1P2 = (-61, -28, -83)  
+1b) P2P1, i.e. the vector between P2 and P1  
+P1 = ( 50, 50, 50)  
+P2 = (-11, 22, -33)  
+P2P1 = P1 – P2 = (P1x – P2x, P1y – P2y, P1z – P2z)  
+P1P2 = (50 – (-11), 50 - 22, 50 – (-33))  
+P1P2 = (61, 28, 83)  
+1c) AB, i.e. the vector between A and B  
+A = (3, 4, 5)  
+B = (5, 7, 9)  
+AB = B – A = (Bx – Ax, By – Ay, Bz – Az)  
+AB = (5 – 3, 7 – 4, 9 – 5)  
+AB = (2, 3, 4)  
+1d) DC, i.e. the vector between D and C  
+C = (10, 20)  
+D = (34, 50)  
+DC = C – D = (Cx – Dx, Cy -Dy, Cz – Dz)  
+DC = (10 – 34, 20 -50, 0 - 0)  
+DC = (-24, -30) or (-24, -30, 0)  
+1e) BC, i.e. the vector between B and C  
+B =(5, 7, 9)  
+C = (10, 20)  
+BC = C – B = (Cx – Bx, Cy – By, Cz – By)  
+BC = (10 – 5, 20 – 7, 0 – 9)  
+BC = (5, 13, -9)  
+  
+--- page 3 ---
+2a) a + b  
+a = (1,2,3)  
+b = (5,6,7) 
+  
+a + b = (ax + bx, ay + by, az + bz)  
+a + b = (1 + 5, 2 +6, 3 +7)  
+a + b = (6, 8, 10)  
+2b) b – a  
+a = (1,2,3)  
+b = (5,6,7)  
+ 
+b – a = (bx – ax, by – ay, bz – az) b – a = (5 – 1, 6 – 2, 7 – 3)  
+b – a = (4, 4, 4)  
+2c)   
+ 
+2d) 4d  
+d = (0, 13, 8) 
+  
+4d = 4(0, 13, 8)  
+4d = (4×0, 4×13, 4×8)  
+4d = (4, 52, 32)  
+2e) 5a – b  
+a = (1,2,3)  
+b = (5,6,7)  
+ 
+5a – b = 5(1,2,3) – (5,6,7)  
+5a – b = (5, 10, 15) – ( 5, 6, 7)  
+5a – b = (5 – 5, 10 – 6, 15 – 7)  
+5a – b = (0, 4, 8)  
+2f) e + 2c  
+c = (5,10)  
+e = (4,9)  
+ 
+e + 2c = (4, 9) + 2(5, 10)  
+e + 2c = (4, 9) + (10, 20)  
+e+ 2c = (4+10, 9+20)  
+e + 2c = (14, 29)  
+
+--- page 4 ---
+2g)  
+ 
+2h)  
+ 
+2j)  
+ 

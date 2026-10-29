@@ -1,0 +1,168 @@
+SOURCE: Week 2 - Game Design Documentation, Censorship in Games and Rating Systems\Lectures\_CO1035 - Lecture 2B - Censorship and Ratings System.pptx
+
+--- slide 1 ---
+LECTURE 2B:CENSORSHIP AND RATINGS
+Co1035: 
+Game 
+CONCEPTS
+--- slide 2 ---
+Objectives
+Understand the concept of censorship and rating systems in video games
+Explore how different countries apply regulations
+Identify the main global rating systems
+Examine real-world examples of censorship and classification
+Evaluate the impact of these systems on players, developers, and society
+--- slide 3 ---
+Introduction
+Video games are a global form of Entertainment and an Art Medium.
+Hence, they need a form of Regulation.
+Regulation occurs via:
+Censorship: modifying or restricting content.
+Rating Systems: providing age-appropriate classification.
+Both are meant to balance freedom of expression with the protection of the audience.
+--- slide 4 ---
+What is Censorship in Games?
+ Limitation or modification of content by:
+ Governments (through laws and bans)
+ Publishers/Platforms (self-censorship)
+ Culture of Political Institutions
+ Commonly censored elements:
+ Extreme violence 
+ Sexual or nudity content
+ Political/ideological references
+ Religious symbolism
+ Drugs or gambling themes
+--- slide 5 ---
+Some Examples of Censorship Worldwide
+Germany (EU)
+Strict restrictions on Nazi symbols until 2018
+(e.g.) Wolfenstein edited to remove swastikas
+United Kingdom
+Some games refused classification 
+(e.g.) Manhunt 2 was initially banned in 2007 for violence
+China
+Bans politically sensitive or supernatural content 
+(e.g.) PUBG – rebranded as a Game of Peace
+Australia
+Games like Fallout 3 were censored due to drug use themes
+--- slide 6 ---
+But why does censorship happen? (Purpose)
+ Protect vulnerable groups (esp. minors) from harmful content
+ Help parents/guardians make informed decisions.
+ Comply with national laws (maintain legal compliance)
+ Maintain cultural and moral standards
+ Control political narratives
+ Ensure games can be legally sold in different markets
+ Balance: Creative freedom and social responsibility
+--- slide 7 ---
+So, what are rating systems?
+Age-based classification tools for parents, players, and retailers
+Provide guidance (but not always legal restrictions)
+Use age categories and content descriptors
+Vary by region but share the same goal
+To help the customers make informed choices
+--- slide 8 ---
+Major Rating Systems (Global)
+PEGI (EU and UK)
+Ratings: 3, 7, 12, 16, 18
+ESRB (North America)
+Ratings: eC (early childhood), E (everyone), E+10 (everyone 10+), T (teen [13+]), M (mature [17+]), AO (adults only [18+])
+CERO (JAPAN)
+Ratings: A (all), B (12+), C (15+), D (17+), Z (18+)
+Other Systems
+USK (Germany)
+ACB (Australia)
+IARC (Digital global systems)
+--- slide 9 ---
+PEGI Ratings System
+Pan European Game Information (PEGI)
+The system was established in 2003
+Adopted by most EU countries + UK
+Age categories: 3, 7, 12, 16, 18
+Includes content descriptors 
+The UK is a participant in the PEGI system. 
+Cyprus officially supports PEGI, but there is no specific legislative basis
+No age or content rating system in place and no related legislation.
+--- slide 10 ---
+Examples of PEGI Ratings
+--- slide 11 ---
+BBFC (UK)
+British Board of Film Classification (BBFC)
+The system was established in 1912, 
+Originally for films, but historically responsible for classifying video games in the UK before 2012
+Focused on: violence, sex, language, horror, drugs
+The system was abandoned in 2012 for games and replaced with PEGI
+--- slide 12 ---
+ESRB Rating System
+Entertainment Software Rating Board (ESRB)
+Founded in 1994 by the Entertainment Software Association (ESA)
+Mainly used in the USA, Canada, and Mexico
+Different kinds of censorship in the UK and the rest of Europe.
+--- slide 13 ---
+ESRB Content Descriptors
+Alcohol Reference
+Animated Blood
+Blood
+Blood and Gore
+Cartoon Violence
+Comic Mischief
+Crude Humor
+Drug Reference
+Fantasy Violence
+Intense Violence
+Language
+Alcohol Reference
+Lyrics
+Mature Humor
+Nudity
+Partial Nudity
+Real Gambling
+Sexual Content
+Sexual Themes
+Sexual Violence
+Simulated Gambling
+Strong Language
+Strong Lyrics
+Strong Sexual Content
+Suggestive Themes
+Tobacco Reference
+Use of Drugs
+Use of Alcohol
+Use of Tobacco
+Violence
+Violent Reference
+--- slide 14 ---
+How Ratings Work
+Publishers submit game footage and a questionnaire
+Review panels analyze:
+Violence intensity and realism
+Language used (mild to strong)
+Sexual content and nudity
+Drugs, alcohol, and gambling
+Frightening or horror elements
+Outcome: age label and descriptors
+--- slide 15 ---
+Inconsistencies and Other Issues
+Sims 4 was Rated as “T” by ESRB, 12 by PEGI, 6+ by USK, and 18+ by RARS.
+Mass Effect was rated 12 by BBFC and 18 by PEGI due to a controversial side mission, including a sex scene.
+Sexy Poker was rated 15 by the BBFC and 12 by PEGI, even though it uses nudity as an incentive/reward.
+Manhunt 2 refused a rating by the BBFC, but ESRB rated the game as AO (Adults Only). 
+--- slide 16 ---
+Criticism and Challenges
+Censorship issues:
+Limits artistic expression
+Inconsistent across countries
+Rating Issues:
+Not always enforced (especially in digital platforms)
+Different standards in different regions
+Online games usually bypass age checks
+Examples: same games may be PEGI 18 in the EU, but M(17+) is US
+--- slide 17 ---
+Conclusion
+Censorship and ratings deeply affect game development and distribution
+EU &amp; UK use PEGI while other regions use other systems.
+Censorship varies - what’s banned in one country may be fine in another.
+Core tension: player protection vs freedom of expression
+Future: Unknown due to global harmonization (including online gambling and AI-generated content)
+--- slide 18 ---
+Questions?!

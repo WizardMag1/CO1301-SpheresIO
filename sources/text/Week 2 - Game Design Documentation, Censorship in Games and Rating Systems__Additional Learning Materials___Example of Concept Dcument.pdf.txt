@@ -1,0 +1,94 @@
+SOURCE: Week 2 - Game Design Documentation, Censorship in Games and Rating Systems\Additional Learning Materials\_Example of Concept Dcument.pdf
+
+--- page 1 ---
+“Echoes of Tomorrow” 
+Genre: Story-driven Action Adventure 
+Platform: PC, PlayStation, Xbox 
+Target Audience: Ages 16+, players who enjoy narrative-rich, cinematic experiences (e.g., The 
+Last of Us, Control). 
+Estimated Playtime: 10–12 hours 
+ 
+1. Game Overview 
+Summary: 
+Echoes of Tomorrow is a third-person action-adventure game set in a near-future world where 
+memories can be recorded and replayed. 
+Players take the role of Lyra Voss, a memory diver who uncovers hidden truths by entering 
+people’s memories. 
+The gameplay blends exploration, puzzle-solving, and combat with a strong narrative 
+backbone. 
+Core Vision: 
+To create an emotionally immersive story about identity, loss, and choice — using 
+memory manipulation as both a gameplay mechanic and a storytelling tool. 
+ 
+2. Core Gameplay Loop 
+1. Investigate environments to find memory fragments. 
+2. Dive into memories to uncover hidden information. 
+3. Alter memories to change outcomes or unlock new paths. 
+4. Confront enemies and ethical dilemmas that test the player’s choices. 
+Gameplay Focus: 
+• Exploration and discovery 
+• Environmental storytelling 
+• Light combat (non-lethal and lethal options) 
+• Puzzle-solving using time and memory manipulation 
+3. Player Goals and Progression 
+Player Goals: 
+• Progress through multiple districts of a futuristic city. 
+• Collect and piece together fragmented memories. 
+• Solve personal and global mysteries linked to the misuse of memory tech. 
+• Make narrative choices that alter relationships and endings. 
+Progression System:  
+Experience and unlock upgrades for Lyra’s tools — such as deeper memory dives, time-slowing 
+abilities, and enhanced scanning. 
+ 
+--- page 2 ---
+4. Setting and Tone 
+World: Neo-Valis — a decaying futuristic metropolis illuminated by holographic ads and filled 
+with remnants of lost technology. 
+Tone: Mysterious, emotional, and atmospheric — balancing sci-fi intrigue with personal drama. 
+Art Direction: Realistic but stylized; dark cityscapes contrasted with bright, surreal memory 
+worlds. 
+ 
+5. Characters 
+• Lyra Voss: Protagonist, skilled memory diver haunted by her own erased past. 
+• Dr. Ren Imani: Mentor figure developing forbidden memory restoration tech. 
+• Vex: Antagonist and ex-diver who manipulates memories for power. 
+ 
+6. Art and Audio Direction 
+• Visual Style: Blends realism with glitch-based distortion during memory dives. 
+• Color Palette: Cold neon blues and purples contrasted with warm gold memories. 
+• Audio: Ambient electronic soundtrack; emotional piano for key moments. 
+ 
+7. Unique Selling Points (USP) 
+• Memory diving as a core mechanic: change the past to reshape the present. 
+• Emotion-driven narrative choices affecting gameplay outcomes. 
+• A hybrid of puzzle, exploration, and story-driven gameplay. 
+• Visually distinct “memory realms” that contrast with the physical world. 
+ 
+8. Target Market and Competition 
+Primary Audience: 
+Players who enjoy emotionally driven, cinematic games with light action and choice-based 
+storytelling. 
+Comparable Titles: 
+• Life is Strange (emotional branching narrative) 
+• Control (mystery and worldbuilding) 
+• Remember Me (memory manipulation concept) 
+ 
+9. Monetization and Release Model 
+• Monetization: Single-purchase premium title ($39.99). 
+• DLC Potential: Optional story expansions (prequel missions, side characters). 
+• Release Platforms: Steam, PlayStation Store, Xbox Store. 
+ 
+--- page 3 ---
+10. Development Notes 
+Estimated Development Time: 18–24 months 
+Team Composition: 
+• 1 Game Director 
+• 2 Designers 
+• 3 Programmers 
+• 2 Artists (Environment & Character) 
+• 1 Writer 
+• 1 Audio Designer 
+11. Concept Summary 
+“Echoes of Tomorrow” is a story-driven sci-fi adventure where changing memories means changing 
+reality — and uncovering the truth might cost you your own past. 
+ 

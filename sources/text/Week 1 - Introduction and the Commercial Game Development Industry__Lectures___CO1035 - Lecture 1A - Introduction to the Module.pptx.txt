@@ -1,0 +1,91 @@
+SOURCE: Week 1 - Introduction and the Commercial Game Development Industry\Lectures\_CO1035 - Lecture 1A - Introduction to the Module.pptx
+
+--- slide 1 ---
+CO1035: Game ConceptsLecture 1AIntroduction to the Module
+--- slide 2 ---
+Introduction
+The module material was originally developed 
+Gareth Bellaby, Laurent Noel, Nick Mitchell, and Misbahu Zubair.
+Lectures and Labs will be run by Aimilios Hadjiliasi.
+Contact:
+Via Email: ahadjiliasi1@uclan.ac.uk
+--- slide 3 ---
+Module Content
+The module is separated into four thematic areas:
+The computer game industry: Commercial game design and development, sales, rating, censorship, etc.
+Game Mechanics: Gameplay, Game Balance, etc.
+Game Development Concepts: Game loop, User Input, Collision Detection, etc.
+Mathematics for Game Development: Trigonometry, Vectors, Matrices, etc.
+--- slide 4 ---
+Learning Objectives
+On successful completion of this module, you will be able to:
+Describe key game concepts.
+Critique a game design with reference to published games.
+Use a game engine to create a simple computer game prototype.
+Apply mathematical techniques for analysis and reasoning about problems
+--- slide 5 ---
+Why study Games Dev?
+Proven track record of graduate entry into the games industry.
+We are one of the few degrees with a computer game dev specialisation that supports immersive learning using Virtual and Augmented Reality.
+Our students participate in local, national, and international competitions with great success!
+Accredited by BCS and ETEK to the highest level possible
+Mirrors industry needs and composition. Training of programmers for the games ind6stry.
+Learning important game concepts, Maths, AI, 3D graphics, etc
+Content is designed and delivered by experienced staff across the UK and Cyprus campuses. 
+Follows guidelines established by the International Games Developers Association (IGDA).
+We now have our own Games Studio!
+--- slide 6 ---
+Rays and Vectors Game Studio
+The 1st and only student-led Game Studio in Cyprus
+Led and managed by students
+Located at the InSPIRE lab
+Simulating workplace conditions
+ Job-specific requirements
+Reporting to the Studio Manager and Director
+Students rotate through roles
+Covering important aspects, starting from Concept Development, NDA… Gold Master release
+Semester-long and long-term projects
+Indie and Team Projects
+If you are interested in game development, join our Rays and Vectors Game Studio Discord channel: https://discord.gg/RYHc5x4Sv
+--- slide 7 ---
+Rays and Vectors Organizational Structure
+--- slide 8 ---
+Module Delivery
+Lectures: 2h lectures that will cover the theoretical aspects of games
+Labs: 3h lab sessions that focus on programming and implementing game development.
+Additional Materials: periodically, additional materials in the form of YouTube videos, LinkedIn Learning courses, Tutorial Videos, Websites, Magazines, etc.
+--- slide 9 ---
+Labs
+You will be using C++ to write code for a game engine specifically built at  UCLan to teach game programming, the TL-Engine.
+You will find the TL-Engine installed on the lab computers you will be working on.
+Each lab has mandatory exercises for you to complete.
+Most labs also have additional exercises for you to complete either in the lab or in your own time (optional).
+Completing these exercises will put you in a very good position to excel in this module and in all your programming endeavors.
+--- slide 10 ---
+Working at Home
+You will need to install the TL-Engine and Visual Studio on your PC to be able to participate in remote labs.
+You need to have a Windows PC to be able to install it.
+If you are a MAC user, you will need a Virtual Machine to run Windows.
+Instructions to help you through installing the TL-Engine are available on Blackboard.
+--- slide 11 ---
+Blackboard Space
+All materials for this module will be made available through the module’s
+Blackboard space.
+Announcements for the module will be made through Blackboard.
+Additional materials may be added during the week, e.g., lecture recordings.
+You should be checking Blackboard regularly for updates.
+--- slide 12 ---
+BUT: Currently, BB space is not available..!!
+--- slide 13 ---
+Module Assessment
+2 Programming Assignments
+Assignment 1 weights for 40%
+Assignment 2 weights for 60%
+--- slide 14 ---
+Best Practices
+Attend all lectures and labs.
+Complete all lab exercises.
+Practice programming in your own time.
+ASK FOR HELP YOU STRUGEELING. WE ARE HERE TO HELP!
+--- slide 15 ---
+Questions?!

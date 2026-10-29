@@ -1,0 +1,22 @@
+Source: https://www.uclancyprus.ac.cy/module/co1301/
+Retrieved: 2026-10-15
+
+MODULE CODE CO1301 CREDIT VALUE 10 ECTS (20 UK CREDITS) DELIVERY Semesters 1&2 Games Concepts 
+
+## Module Aims
+ Aim 1 To encourage an enthusiastic interest in games and their analysis. Aim 2 To explore and evaluate game mechanics. Aim 3 To foster creative thinking in the development of computer games. Aim 4 To develop an understanding of commercial practices in game development. Aim 5 To introduce methods and technologies for game development. Aim 6 To provide the necessary mathematical foundation for computer games development. Games Concepts 
+
+## Module Content
+ This module presents a broad range of basic games development concepts and provides foundation for further study in the field. The material is presented in four related threads: game mechanics, commercial processes, basic game development and mathematics. The first thread explores the mechanics of games. It emphasises the development of creativity and critical thinking in the design of games. Game mechanics are explored by means of tutorials and making small games. Students will also be introduced to the commercial roles and processes involved in games design and development. There will be project work to allow students to develop their own designs using commercial methods. This also begins to address employability issues that will be further developed in later modules. The third thread introduces specific knowledge and skills in the development of simple game prototypes. Students will work with a commercial style game engine and develop their own applications that illustrate important development concepts. The final thread introduces the mathematics of computer games. The mathematical foundation necessary for the development of 3D computer games will be provided using a practical approach. Game Mechanics •Game-Play •Game Balance The Computer Games Industry Commercial Games Design •Pitch and Proposal Documents •Full Game Design Documents Commercial Games Development •Development Process and Timeline •Development Roles •Programming •Artwork Game Development Concepts Using a Game Engine •Basic Concepts – The Game Loop, Loading and Manipulating Models •User Input – Controlling Models and Cameras •Simple Character Work – Movement and Animation •Basic Collision Detection •Creating a Simple Prototype Mathematics Trigonometry •Introduction to trigonometry •Cos, sin, tan •Angles & distances •Normals Cartesian Geometry •Vectors (addition, normalisation, dot product, cross product) •Matrices (addition, multiplication) Euclidean Geometry •Distance measures (manhattan, euclidean) •Graphs (linear and non-linear equations, quadratic equations) •Lines and curves (line smoothing algorithms, bezier curves, splines) Discrete Maths •Graphs, digraphs, trees •Spatial partitioning 
+
+## PROGRAMME SPECIFICATIONS
+ 
+
+## Learning Outcomes
+ On successful completion of this module, a student will be able to: Describe key games concepts, e.g. genres, terminology. Critique a game design with reference to published games, genres, and game play mechanisms. Use a game engine to create simple computer game prototypes. Apply mathematical techniques for analysis and reasoning about problems. Games Concepts 
+
+## Teaching Methods
+ Lectures introduce concepts and are accompanied by directed reading from one or more of the course texts. As students gain practical experience of game development in the lab, subsequent lectures will be used to reinforce and systematise this experience. A simple commercial style game engine will be provided to allow students to develop meaningful game applications. The students will initially be guided through exercises illustrating development concepts using this engine but will be expected to work with more independence as their experience develops. Mathematical concepts will be introduced and explored in a practical fashion, e.g. the students will initially explore Cartesian geometry through the use of a 3D engine, models, movement and interaction within 3D. Assessment will take the form of a portfolio of games in a selection of genres. The production of these games will be staged throughout the module, each of increasing technical complexity. The requirements build on those techniques practiced in the supervised classes, providing the opportunity to integrate theory and practice. Games Concepts 
+
+## Assessment Methods
+ This module is assessed through a portfolio and an in-class maths test.

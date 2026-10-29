@@ -1,0 +1,74 @@
+SOURCE: Week 2 - Game Design Documentation, Censorship in Games and Rating Systems\Additional Learning Materials\_Example of Pitch Document.pdf
+
+--- page 1 ---
+“SkyForge: Chronicles of the Aether” 
+ 
+1. Game Overview 
+ 
+Title: SkyForge: Chronicles of the Aether 
+Genre: Open-World Action RPG 
+Platform: PC, PlayStation, Xbox 
+Target Audience: Ages 15+, fans of fantasy adventure games (The Legend of Zelda, Genshin 
+Impact). 
+Elevator Pitch: 
+Embark on an epic journey across floating islands in a shattered sky world. Players explore, battle sky 
+beasts, and rebuild ancient airships to restore balance to the heavens. 
+2. Core Concept 
+Tagline: 
+“Forge your destiny in the skies.” 
+Core Gameplay: 
+• Explore vast floating islands filled with secrets and ruins. 
+• Engage in fast-paced aerial combat using customizable airships. 
+• Gather materials to rebuild ancient forges and unlock new abilities. 
+• Discover hidden lore and uncover the truth behind the shattered world. 
+Unique Selling Point (USP): 
+A fully explorable open sky world with real-time aerial traversal and combat, blending 
+exploration and storytelling seamlessly. 
+ 
+3. Visual Identity 
+(In a real pitch, this section would include concept art or mood boards.) 
+Art Style: Stylized realism — bright, painterly visuals inspired by Studio Ghibli and Sky: Children 
+of the Light. 
+Tone: Hopeful, adventurous, and emotionally uplifting. 
+Music: Orchestral score with ethereal vocals and wind instruments. 
+ 
+4. Market Position 
+Target Market: 
+• Fantasy RPG players seeking open-world exploration and light crafting systems. 
+• Gamers who enjoy emotional stories and rich, colorful environments. 
+Competitive Titles: 
+• The Legend of Zelda: Tears of the Kingdom — exploration and creativity. 
+• Genshin Impact — stylized art and fantasy combat. 
+--- page 2 ---
+• No Man’s Sky — sense of scale and discovery. 
+Market Opportunity: 
+Players are drawn to freedom, creativity, and emotional storytelling, and SkyForge blends all 
+three into a cohesive experience. 
+ 
+5. Business & Production Overview 
+Monetization Model: 
+Premium single-purchase game ($49.99) with optional DLC expansions. 
+Projected Development Time: 
+24–30 months 
+Estimated Team: 
+• 1 Creative Director 
+• 3 Designers 
+• 4 Programmers 
+• 3 Artists 
+• 1 Writer 
+• 1 Composer 
+Development Tools: 
+Unreal Engine 5, Blender, FMOD 
+Funding Goal: 
+USD $800,000 (prototype + first playable vertical slice) 
+ 
+6. Why It Will Succeed 
+• A fresh take on open-world exploration — the “sky” as a true navigable frontier. 
+• Striking, emotional visuals with broad player appeal. 
+• A clear and achievable scope for an indie-AA project. 
+• Strong potential for community engagement and DLC expansion. 
+ 
+7. Summary Statement 
+“SkyForge: Chronicles of the Aether” offers players freedom, beauty, and emotional depth — a soaring 
+adventure that blends exploration, combat, and creativity in a breathtaking sky world. 
+ 

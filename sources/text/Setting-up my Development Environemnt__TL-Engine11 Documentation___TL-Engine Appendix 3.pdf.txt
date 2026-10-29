@@ -1,0 +1,55 @@
+SOURCE: Setting-up my Development Environemnt\TL-Engine11 Documentation\_TL-Engine Appendix 3.pdf
+
+--- page 1 ---
+ 
+TL-Engine – Text Output (v1.09) 
+ 
+Simple text output is supported by the TL-Engine. The methods used are summarised in 
+the code fragments below.  
+ 
+ 
+First you need to load a font in the game set-up area of your code:  
+ 
+// Use the type IFont, you load new fonts in a similar way to meshes with 
+// a line like this: 
+IFont* myFont = myEngine->LoadFont( "Font1.bmp" ); 
+ 
+Fonts are stored in bitmap files (.bmp). There are two supplied fonts, ‘Font1.bmp’ and 
+‘Font2.bmp’. 
+ 
+ 
+Then you can draw text with this font, the text will only be drawn for one frame, so to keep 
+the text permanent you must put the code in the game loop. Here is an example: 
+ 
+// This will draw text at the coordinates (200, 100) on the screen 
+myFont->Draw( "Hello World", 200, 100 ); 
+ 
+There are optional parameters to the ‘Draw’ method - here is a more complex example: 
+ 
+// This will draw red text, centre aligned at the coordinates (100, 300) 
+myFont->Draw( "Hello Again", 100, 300, kRed, kCentre ); 
+ 
+// Other colours are kWhite, kBlack, kRed, kGreen, kBlue, kCyan, kMagenta, 
+// kYellow, kLightGrey & kDarkGrey, or you can use RGB hexadecimal integers. 
+ 
+ 
+ 
+To output more complex text (including variables or functions/methods) use the 
+‘stringstream’ type, which can be used like ‘cout’ to create a string:  
+ 
+// Need to include the sstream library for stringstream support. Add these lines 
+at the top of the program 
+#include <sstream> 
+using namespace std; 
+ 
+// ... 
+// ... 
+ 
+// This code will output the X & Z coordinates of a white ball to the screen 
+stringstream outText; 
+outText << "White Position: “ << whiteBall->GetX() << " " << whiteBall->GetZ(); 
+myFont ->Draw( outText.str(), 20, 20 ); 
+ 
+Note: Outputting newlines (endl or ‘\n’) has no effect in the TL-Engine - use more than one 
+‘Draw’ call instead. 
+ 

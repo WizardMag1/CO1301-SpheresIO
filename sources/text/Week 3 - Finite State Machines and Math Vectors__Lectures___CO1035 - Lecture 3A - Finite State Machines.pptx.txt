@@ -1,0 +1,232 @@
+SOURCE: Week 3 - Finite State Machines and Math Vectors\Lectures\_CO1035 - Lecture 3A - Finite State Machines.pptx
+
+--- slide 1 ---
+CO1035: Game ConceptsLecture 3A: Finite State Machines
+--- slide 2 ---
+Learning Objectives
+ Understand the theoretical concept of Finite State Machines (FSMs)
+ Understand how FSMs are used in games
+ Be able to identify FSMs in games
+ Model FSMs using State Transition Diagrams (STDs)
+ Write code that implements FSMs in C++
+--- slide 3 ---
+CONTENT
+--- slide 4 ---
+What is a State?
+ A state represents a specific condition or a mode of behavior in a system . 
+ You can think of almost any entity as 1) having a state or 2) being in a state.
+--- slide 5 ---
+States in Computing
+ States are very popular in computing and have been used in many sub-fields (e.g., OOP, web applications, functional programming) since the development of the field.
+ In the context of Game Development, states were used to control the game and its flow.
+ Characters inside games have their own states (e.g., dead or alive)
+ Variables for storing data have their own states (e.g., True or False)
+ Animations of characters have their own states (e.g., idle, defense, attack)
+ The game itself has its own states (e.g., Paused or Un-paused)
+--- slide 6 ---
+What are Finite State Machines (FSM)?
+ An abstract computation model consisting of a finite set of 1) states and 2) transitions from one state to another, DEPENDING on events (triggers).
+ Note: Finite in this case means that there is a finite number (i.e., not infinite)
+ FSMs provide a complete model of the life-cycle of an entity.
+ In the context of FSMs, a state is a unique set of properties.
+ In a state, a particular behavior is performed in response to a particular event.
+ This particular behavior can either be an action or a transition to another state.
+--- slide 7 ---
+Example: Rolling Sphere
+ Recall the rolling sphere lab.
+ The sphere in that case had 4 states: 
+movingUp – move the sphere upwards on the z-axis
+movingDown – move the sphere downward on the z-axis
+movingLeft – move the sphere to the left on the x-axis
+movingRight – move the sphere to the right on the x-axis
+ Triggering events that transition the sphere from one point to another:
+1) Sphere reach x &gt;= 40.0f
+2) sphere reach z &gt;= 40.0f
+3) sphere reach x =&lt;= -40.0f
+4) sphere reach z &lt;= - 40.0f
+--- slide 8 ---
+State transition diagrams
+ FSMs are visualized in UML as State Transition Diagrams (STDs).
+--- slide 9 ---
+STDs - Key Components
+STATE NAME
+Start Node – Indicates the beginning of a state machine
+function()
+End Node – Indicates the end of a state machine
+State Node – Represents a state (its name and functionality)
+Event/Action – Demonstrates the event/action (condition) to transition from one state to another
+event
+--- slide 10 ---
+Example: Bouncing ball STD
+--- slide 11 ---
+FSMs in Games
+ States help us to express and simplify complex behavior or activities.
+ FSMs are used to represent the rules of games (e.g., Play, Pause)
+ But the most important application of FSMs in game development is in AI
+ Examples: 1) To implement the behaviour of NPCs. 2) To implement dialogue systems between the player and NPCs, etc.
+ Their ability to efficiently define behaviours and transitions between behaviours makes them ideal for defining character AI.
+ States are used to define behaviours of entities (e.g., idle, attacking,  defending).
+--- slide 12 ---
+Example: NPC in PacMan
+Available States: Hunter, Prey, Dead 
+ Start State → Hunter
+ Event/Trigger: 
+ 1) On Hunter state: Player swallows a pill → Ghosts enter “Prey” state.
+ 2) On Ghost state: Timer goes off → Ghosts enter “Hunter” state.
+ 3) On Ghost state: Player collides with a Ghost → Ghost enters “Dead” state.
+ 4) On Hunter state: Player collides with a Ghost → Player loses the game.
+--- slide 13 ---
+Example: PacMan STD
+ 	Hunted	
+Hide from Ghosts
+Hunter
+Chase Ghosts
+Eaten
+Disappear
+Power Pill
+Collision
+Timer
+Power Pill
+Resurrected
+--- slide 14 ---
+Multiple FSMs
+ A game may have multiple state machines.
+ (e.g.,) Player Character, NPCs, and the game itself, etc.
+ Each of these can be considered as an entity.
+ This approach allows us to easily describe (and therefore implement) the life-cycle and behavior of each entity.
+Examples of Multiple FSMs in games:
+ Game states: Playing, Pause
+ NPCs: Minecraft Villagers → Sleeping, Working, Socializing, Panicking, Wandering, etc. 
+ Player: Idle, Walking, Sleeping, Fishing, Fighting, etc.
+--- slide 15 ---
+Composite States and Sub-States
+ It is also very common to have composite states/sub-states on a state.
+ A composite state is a state that contains one or more sub-states.
+ Example: FSM of Thug in Batman Arkham Asylum
+Active
+Inactive
+Beaten by Batman
+--- slide 16 ---
+Interacting finite state machines
+ When multiple FSMs exist, it is very common for one state machine to interact with the state machines of other entities.
+ This means that an action performed by one entity may be a triggering event for another entity. 
+  Neutral	
+Talk about family
+Offensive
+Attack Batman
+  Victory	
+Brag
+Batman dies
+Batman hides
+Batman seen
+  Alive	
+Beat Up Thugs
+  Dead	
+Play Dead Animation
+Gets shot
+Thug
+Batman
+--- slide 17 ---
+Types of FSMs
+ Depending on the game need different types of FSMs have been developed:
+ Deterministic: one input leads to exactly one state
+ Used when we want to implement simple behavior of entities in our game
+ (e.g.) when the player steps in the trap → play the trap’s opening animation
+ Non-Deterministic: one input leading to multiple possible next states
+ Used in simple AI systems and NPCs development
+--- slide 18 ---
+Types of FSMs (cont.)
+ Probabilistic: Transitions are not fixed and are weighted by probabilities
+ Used in AI decision making, procedural generation, and complex/realistic NPC behavior development.
+ (e.g.) an enemy has multiple attacks and uses probabilities to choose which attack to use
+ Hierarchical: FSMs consider multiple variables, conditions, and actions that happened in the game, and the transitions to the next states depend on them and NOT the user input
+ Used in the development of realistic NPC behavior
+ (e.g.) A guard decides to shoot arrows instead of combat as its health is &gt;50 and the player has experience in combat fighting
+ among many others…
+--- slide 19 ---
+Advantages of FSMs
+ FSMs can simplify complicated logic
+ Simple to program
+ Makes debugging easy
+ Enables clearer code structure
+ Useful in both design and implementation phases of the software development life cycle
+ Can be applied to any type of problem
+--- slide 20 ---
+Benefits of FSMs for Game Developers
+ They get the job done with minimal tasks.
+ FSMs are easy to implement. 
+ FSMs describe the game extremely well.
+ FSMs are flexible and extremely powerful.
+ FSMs make debugging easy.
+ FSMs enable the development of NPCs and game AIs.
+ FSMs make persistence of the game easy to implement, as game states can be stored in Boolean variables.
+--- slide 21 ---
+Benefits of FSMs for Players
+ The player experiences smooth gameplay.
+ A game developed with FSMs can provide strong signals to the player during gameplay
+ What has happened
+ What comes next
+ etc. 
+--- slide 22 ---
+Implementing FSMs in C++
+ States are implemented using simple coding techniques: 
+ if statements
+ switch statements
+ A state consists of two parts: 
+1) actions: what is happening in the state
+2) transitions: the events that trigger the transition from one state to another
+--- slide 23 ---
+Implementing FSMs in C++ (Enums)
+ A convenient way of defining states can be the use of enums
+ Enums: used to define a new type, along with the possible values that can be assigned to variables of that type
+ Using enums to represent states, it is very easy to see what state the game/entity is in, something that makes debugging and development easy.
+ (e.g.) Recall the rotating sphere example
+Enum Initialization and Declaration in C++:
+		enum ESphereDirection {Up, Down, Right, Left};
+		ESphereDirection sphereState = Right;
+--- slide 24 ---
+Implementing FSMs in C++
+enum ESphereDirection {Up, Down, Right, Left};
+ESphereDirection sphereState = Right;
+If statement:
+If (sphereState == Right)
+{
+	//Action:	
+	sphere-&gt;MoveX(sphereSpeed * dt);
+	//Transition:
+	if (sphere-&gt;GetX() &gt;40.0f) 
+		sphereState == Up;
+}
+Switch statement:
+switch (sphereState)
+{
+case Right:
+	//Action:	
+	sphere-&gt;MoveX(sphereSpeed * dt);
+	//Transition:
+	if (sphere-&gt;GetX() &gt;40.0f) 
+		sphereState == Up;
+	break;
+}
+--- slide 25 ---
+WARNING!!
+ Avoid building FSM randomly with no structure.
+ Note that FSMs can grow uncontrollably during the process of the game development life cycle.
+ Poor structure and uncontrollable growth can make FSM implementations difficult to maintain.
+--- slide 26 ---
+Summary
+ FSMs are useful in both the design and implementation phases of software development
+ FSMs and STDs help us express complex game behaviors and activities.
+ Their ability to efficiently define behaviors and transitions between behaviors makes them ideal for defining character AI.
+ A game may have multiple state machines
+ A state can also have sub-states
+There are different types of FSMs: Deterministic, Non-deterministic, Probabilistic, Hierarchical, etc.
+ It is common to have one state of an entity interacting with the states of other entities.
+ FSMs can be implemented using if and switch statements
+enum is a convenient way of representing states
+--- slide 27 ---
+References and Further Reading
+Introduction to Game Development Second Edition – Steve Rabin
+Chapter 5.3 – A discussion of Finite State Machines in the context of AI
+--- slide 28 ---
+Questions?!

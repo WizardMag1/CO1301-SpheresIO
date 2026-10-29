@@ -1,0 +1,262 @@
+SOURCE: Week 4 - Gameplay and Collisions in Games\Lectures\CO1035 - Lecture 4B - Collisions.pptx
+
+--- slide 1 ---
+CO1035: Game conceptsLecture 4b - collisions
+--- slide 2 ---
+Lecture’s objectives
+Describe collision detection
+Explain the benefits and drawbacks of using bounding volumes
+Implement the following collision detection approaches:
+point-to-point
+point-to-sphere
+sphere-to-sphere
+point-to-box
+sphere to box
+Outline a simple collision detection and resolution algorithm
+--- slide 3 ---
+context
+--- slide 4 ---
+ Part 1: Math Recall
+--- slide 5 ---
+Recall:right-angle triangles
+ Right-angle triangles are the triangles in which one of their angles is equal to 90 degrees.
+ One of the properties of right-angle triangles is Pythagoras’ Theorem
+ Pythagoras’ Theorem states that the length of a right-angled triangle is equal to the square root of the sum of the squares of the other two sides.
+ The longest side of the right-angle triangle is called the hypotenuse.
+--- slide 6 ---
+RECALL:VECTORS BETWEEN TWO POINTS
+The vector V going from point P1 to P2 can be calculated by subtracting P1  from P2 (i.e. P2 – P1):
+subtract the x values to produce one new x;
+subtract the y values to produce one new y;
+subtract the z values to produce one new z.
+Example: The vector V from
+P1 (x1, y1, z1) to P2 (x2, y2, z2) is:
+V (x2 – x1, y2 – y1, z2 – z1)
+Example: The vector V from
+P1 (10, 20, 5) to P2 (30, 30, 30) is:
+= V (x2 – x1, y2 – y1, z2 – z1)
+= V (30 – 10, 30 – 20, 30 - 5)
+= V (20, 10, 25) 
+--- slide 7 ---
+RECALL:LENGTH OF A VECTOR
+If we have a vector V(x, y, z), then we can use Pythagoras’ Theorem to calculate the length of V or ||𝑉||
+--- slide 8 ---
+Recall:normalized vector
+--- slide 9 ---
+ Part 2: Collisions in video games
+--- slide 10 ---
+What does it mean for two objects to "collide" in a game world?
+ A collision occurs when two objects' boundaries overlap or touch.
+ These boundaries are simplified shapes (e.g., points, boxes, spheres, capsules)
+ The game checks whether these shapes intersect in space.
+ Collisions include physical contact (e.g., hitting a wall) and non-physical triggers (e.g., entering a pickup zone)
+ As a result, any interaction based on overlapping spaces is considered a collision
+--- slide 11 ---
+How does the game know that two objects have collided?
+ The game knows if two (or more) objects are colliding through a continuous process called “collision detection”
+ In collision detection, the engine checks if two (or more) bounding shapes overlap at each frame or time step.
+ To do that, the engine uses mathematical tests on simple shapes 
+--- slide 12 ---
+So, what is collision detection?
+ Collision detection is the computational process of determining when two or more objects in a game world intersect, touch, or come close enough to be considered interacting. 
+ It is a fundamental component of game physics and gameplay logic.
+ In simple terms, collision detection determines whether two objects are hitting each other.
+ This enables nearly every dynamic behavior in games, including: 1) bullets hitting enemies, 2) players collecting coins, 3) players bumping into walls, 4) vehicles crashing, and 5) objects stacking realistically, among many others.
+--- slide 13 ---
+What happens after a collision is detected?
+The engine triggers a collision response/resolution to decide the outcome.
+Examples of collision response/resolution:
+ Stop the movement (e.g., preventing walking through walls, etc.)
+ Apply physics effects (e.g., bounce, apply a force, apply friction, etc.)
+ Trigger gameplay events (e.g., take damage, collect items, open doors, etc.)
+ Among many others…
+--- slide 14 ---
+ Part 3: types of collision detection
+--- slide 15 ---
+TYPE 1:POINT TO POINT
+ The collision between two points is called a “point-to-point” collision
+ This is the simplest form of collision detection, and it is used to check whether a single point in space collides or occupies the same position as another point in space.
+ In that case, we are checking whether a single coordinate is the same for two objects.
+ To do that: remember that game objects move frame-by-frame and therefore, the distance between 2 objects is calculated each frame (i.e., the vector between 2 points).
+--- slide 16 ---
+TYPE 1:POINT TO POINT (CONT.)
+function pointToPointCollision (pointA, pointB, threshold):
+    // Calculate distance between the two points
+    dx = pointA.x - pointB.x
+    dy = pointA.y - pointB.y
+    dz = pointA.z - pointB.z
+    distanceSquared = dx*dx + dy*dy + dz*dz
+    // Compare distance to threshold (to avoid precision problems)
+    if distanceSquared &lt;= threshold * threshold:
+        return true     // Collision detected
+    else:
+        return false    // No collision
+--- slide 17 ---
+TYPE 1:POINT TO POINT (cont.)
+ However, it is very unlikely that this type is utilized in games. 
+ This is because:
+ Perfect coordinate matching almost never happens in real-time games due to movement, floating-point precision, and continuous motion, making point-to-point collisions impractical for reliable gameplay detection.
+ Most game objects have size and volume, so representing them as single points is unrealistic and cannot capture their shape or physical boundaries.
+--- slide 18 ---
+Bounding volumes
+ Calculating collisions using the full detailed shape of a model is too slow and complex, so bounding volumes provide a simpler way to detect collisions efficiently.
+ Bounding volumes are simple geometric shapes (like boxes, spheres, or capsules) used to approximate the shape of complex 2D/3D objects.
+ They allow the game engine to perform fast, efficient collision checks without relying on high-polygon meshes.
+ As a result, they act as a collision envelope, defining the area within which collisions are tested.
+ They help optimize performance by reducing the computational cost of physics and interaction checks.
+--- slide 19 ---
+BOUNDING VOLUMES (CONT.)
+Complex objects
+Bounding volumes
+--- slide 20 ---
+BOUNDING VOLUMES (CONT.)
+Bounding volumes should fit as close as possible.
+Spheres and boxes are two commonly used shapes.
+The technique sacrifices precision for efficiency (speed) – an issue which crops up frequently in game programming.
+--- slide 21 ---
+TYPE 2:POINT TO SPHERE
+ The second type of collisions is “point to sphere”.
+ Point to sphere collision, checks whether a point “touches” or is inside a sphere.
+ In this type of collision, the collision occurs when the distance from the point to the center is smaller than the radius of the sphere.
+ Common uses:
+ Detecting projectile hits
+ Proximity checks in 3D space
+--- slide 22 ---
+Type 2:point to sphere (CONT.)
+function pointToSphereCollision (point, sphereCenter, radius):
+    // Calculate distance between the point and the sphere center
+    dx = point.x - sphereCenter.x
+    dy = point.y - sphereCenter.y
+    dz = point.z - sphereCenter.z
+    distanceSquared = dx*dx + dy*dy + dz*dz
+    // Check if the point is inside or on the sphere
+    if distanceSquared &lt;= radius * radius:
+        return true     // Collision detected
+    else:
+        return false    // No collision
+--- slide 23 ---
+Type 3:sphere to sphere
+The third type of collision is “Sphere to Sphere”.
+Sphere to Sphere collision checks if two spheres are “touching”
+To use Sphere to Sphere:
+ Surround both objects with close-fitting spheres.
+ Calculate the distance from the center of the first sphere to the center of the second sphere.
+ If the distance is smaller than the sum of the sphere radii, then a collision has occurred.
+--- slide 24 ---
+Type 3:sphere to sphere (CONT.)
+function sphereToSphereCollision (centerA, radiusA, centerB, radiusB):
+    // Calculate distance between the two sphere centers
+    dx = centerA.x - centerB.x
+    dy = centerA.y - centerB.y
+    dz = centerA.z - centerB.z
+    distanceSquared = dx*dx + dy*dy + dz*dz
+    radiusSum = radiusA + radiusB
+    // Check if spheres intersect
+    if distanceSquared &lt;= radiusSum * radiusSum:
+        return true     // Collision detected
+    else:
+        return false    // No collision
+--- slide 25 ---
+MORE ON BOUNDING VOLUMES
+ Spheres are useful because the math is comparatively simple - it's just an extension of vector calculations.
+ Spheres suit for some objects (e.g.) people 
+ But spheres do not suit all objects (e.g.) a crate or a house.
+ In these cases, a box (cuboid) would be a more appropriate approximation.
+ This approach is known as a Bounding Box.
+--- slide 26 ---
+Bounding boxes
+ A bounding box is a simple geometric box (usually rectangular or cuboid) that encloses an object to approximate its shape for collision detection
+ Types:
+ Axis-Aligned Bounding Box (AABB): Always aligned with the world axes; does not rotate with the object.
+ Oriented Bounding Box (OBB): Rotates with the object; better fits the object’s orientation but is more computationally expensive
+X
+Y
+--- slide 27 ---
+Bounding boxes (cont.)
+The simplest form of bounding boxes is the “AABB”
+ This is because a box that is not axis-aligned will be more difficult to use, as problems will arise if an object can rotate.
+ Boxes better suit objects that cannot rotate.
+ However, it is also possible to do the calculations for a non-axis-aligned bounding box.
+--- slide 28 ---
+TYPE 4: POINT TO BOX
+ The fourth type of collision is “point to box”
+ A box, usually an AABB, is defined by its minimum and maximum coordinates along each axis
+ To check for a collision, we need to:
+ Compare the point’s x, y, and z coordinates to the box’s min and max coordinates.
+ If the point lies within all ranges, it is colliding with the box.
+--- slide 29 ---
+TYPE 4: POINT TO BOX (cont.)
+function pointToBoxCollision (point, boxMin, boxMax):
+    if point.x &gt;= boxMin.x and point.x &lt;= boxMax.x and
+       point.y &gt;= boxMin.y and point.y &lt;= boxMax.y and
+       point.z &gt;= boxMin.z and point.z &lt;= boxMax.z:
+        return true   // Collision detected
+    else:
+        return false  // No collision
+--- slide 30 ---
+Type 5:sphere to box
+ The fifth type of collision is “Sphere to Box”
+ This type of collision checks if a sphere “touches” a box and vice versa
+ The sphere is defined by its center position and radius
+ The box is defined by its min and max coordinates
+ To check for collision:
+ Find the closest point on the box to the sphere’s center
+ Calculate the distance between the closest point and the sphere’s center
+ If the distance is smaller than the sphere radius, then a collision is detected.
+--- slide 31 ---
+Type 5:sphere to box (CONT.)
+ In other words, this is the same method as the point to box, but…
+ we add the radius to the maximum x, y, and z values of the box, and then subtract it from the minimum x, y, and z values.
+ However, keep in mind that this method can be inaccurate in the corners of the box.
+--- slide 32 ---
+Type 5:sphere to box (CONT.)
+function sphereToBoxCollision(sphereCenter, radius, boxMin, boxMax):
+// Find the closest point on the box to the sphere center
+closestX = clamp(sphereCenter.x, boxMin.x, boxMax.x)
+closestY = clamp(sphereCenter.y, boxMin.y, boxMax.y)
+closestZ = clamp(sphereCenter.z, boxMin.z, boxMax.z)
+// Calculate distance squared between sphere center and closest point
+    dx = sphereCenter.x - closestX
+    dy = sphereCenter.y - closestY
+    dz = sphereCenter.z - closestZ
+    distanceSquared = dx*dx + dy*dy + dz*dz
+    if distanceSquared &lt;= radius * radius:
+        return true   // Collision detected
+    else:
+        return false  // No collision
+--- slide 33 ---
+More types of collision detection
+ These are some of the fundamental types of collisions
+ These represent the building blocks for most collision detection in games
+ They are important as 1) they are easy to compute, 2) serve as approximations for complex shapes, and 3) provide the foundation for collision algorithms in physics engines.
+ However, there are more complicated types of collisions which for now, you don’t need to know them, but it is good to be aware of them:
+ Box to Box (AABB or OBB VS OBB)
+ Mesh to Mesh (Triangle-level collisions)
+ Capsule to Capsule (common in character-to-character collision detection)
+--- slide 34 ---
+ Part 4: collision RESOLUTION
+--- slide 35 ---
+Collision Resolution
+ However, just identifying that a collision happens in our games does not have any effect on our games.
+ This is because collisions are only telling us that two objects are “touching”
+ To make this information useful, we need to implement a collision resolution.
+ Collision Resolution is the process of deciding how objects respond after a collision
+ It should ensure objects behave realistically and according to game rules.
+ This effectively transforms a collision detection (“yes/no”) into a meaningful game reaction
+--- slide 36 ---
+Examples of Collision resolution
+ Stop movement: Prevents objects from passing through each other.
+ Bounce/reflect: Objects rebound after impact.
+ Trigger events: Collect items, open doors, deal damage.
+ Apply forces: Push objects apart in physics simulations.
+ Among many other examples….
+--- slide 37 ---
+SUMMARY
+ Collision detection is a common operation in games to determine whether two objects in a game have come into contact.
+ There are multiple types of collisions:
+ Point to Point, Point to Sphere, Sphere to Sphere, Point to Box, Sphere to Box, among others.
+ It is time-consuming and mathematically complex to test whether two complex objects intersect; therefore, bounding volumes and boxes are used.
+ This approach sacrifices precision for speed.
+ After a collision is detected, it should be resolved.
+--- slide 38 ---
+QUESTIONS?!

@@ -1,0 +1,78 @@
+SOURCE: Setting-up my Development Environemnt\_Setup Programming Environment.pdf
+
+--- page 1 ---
+Set up Programming Environment 
+For this module, we will work with TL -Engine. This is an engine developed specifically for 
+developing games at the University of Lancashire, and it aims to enable you to learn 
+programming and different concepts of game development.  
+TL-Engine was developed and works only with Visual Studio. Hence, the first thing you need 
+is Visual Studio on your computer. To download Visual Studio, visit the following link: 
+https://visualstudio.microsoft.com/downloads/ 
+ 
+ 
+This link will open the window you see above, or something similar. Once you're there, select 
+Visual Studio Community and download it. Once the installer is downloaded, run it. This will 
+make a window similar to the one below open on your computer. Then, in the installer, select 
+the Desktop development with C++ and the Game Development with C++ options, and click 
+Install. 
+ 
+
+--- page 2 ---
+ 
+Pressing Install will make the window look like the picture below. Then wait until Visual is 
+installed. Once it is installed, then press Finish and restart your computer. 
+ 
+ 
+
+--- page 3 ---
+After installing Visual Studio, we need the actual engine. On Blackboard, find the installer 
+and download it. Once the installer is downloaded, then open it and go through the 
+installation process. This is a straightforward process. 
+Once TL -Engine is installed on your device, restart your computer so changes can be 
+applied. 
+To test if TL-Engine is installed on your device, on the navigation bar of your computer, search 
+for “Create new TL11 Project” and click on it. This will open a small window that looks like 
+the figure below. 
+If on your computer there is no option “Create new TL11 Project”, search for TL-Engine11 or 
+something similar. Open that folder  and double-click on “TemplateWizard.exe”. This will 
+open the small window like the one below.  
+ 
+ 
+ 
+Give a name on your project and then on the location, place it anywhere on your computer 
+(where is most convenient for you, so you can open the project easily). On top, select Visual 
+Studio 2022. Although we just downloaded VS2026, it should still work wit hout any 
+problems. Then press okay. This will open a new VS project. Once the project is open, the 
+editor will inform you of some missing dependencies. To resolve that, press Install all in the 
+top right (as can be seen in the figure below), and then press Apply. 
+If you receive an error message and the editor is not opening, then delete the folder you 
+just created and repeat the same process. 
+ 
+
+--- page 4 ---
+ 
+ 
+Once you press apply, the editor will ask you to install the missing dependencies. Press 
+install and wait until the installation is completed. Once this is completed, restart your 
+computer. 
+ 
+
+--- page 5 ---
+Once your computer is open, in the navigation bar search again for Create new TL11 project 
+and create a new project. If you completed all the previous steps, then VS should open and 
+look like the figure below. 
+ 
+In the above figure, you can see the Solution Explorer. If this is missing, then on the top 
+navigation bar, press on View and select the “Solution Explorer” . 
+Subsequently, click on the arrow next to the project in the Solution Explorer. This will expand 
+the project. At the bottom, you can find a .cpp file. This is the file that holds the code for your 
+project. Click on that file. This will open the cpp file in front of you. The code you see is the 
+code that a TL project needs to create and run a game project. 
+ 
+
+--- page 6 ---
+Lastly, to test if everything is installed properly, press the “Local Windows Debugger” on top 
+of the file. This will run your code and subsequently open a console window and an empty 
+window, which is the window that your game will run in.  
+Once you reach this point, you are ready to start with the lab activities. 
+Happy Learning! 

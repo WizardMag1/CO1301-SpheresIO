@@ -1,0 +1,175 @@
+SOURCE: Week 4 - Gameplay and Collisions in Games\Lectures\CO1035 - Lecture 4A - Gameplay.pptx
+
+--- slide 1 ---
+Co1035: Game conceptsLecture 4a: Gameplay
+--- slide 2 ---
+Lecture’s Objectives
+ Understand what gameplay is.
+ Understand challenges in the context of gameplay.
+ Understand actions in the context of gameplay.
+ Understand choices in the context of gameplay.
+ Understand what game rules are and how they can help us in implementing the gameplay.
+ Understand the dominant strategy problem in gameplay.
+ Identify ways to avoid the dominant strategy problem.
+--- slide 3 ---
+Gameplay
+ Gameplay in video games is independent of: 1) the game story, 2) Audio, 3) Graphics, and 4) the game interface.
+ Consider the following scenarios:
+ In games like Fortnite, League of Legends, and Apex Legends, there are lots of different skins. This is interesting and has value in its own way, but it has nothing to do with the gameplay of these games.
+--- slide 4 ---
+Gameplay (cont.)
+--- slide 5 ---
+So, what is gameplay?(DEFINING GAMEPLAY)
+ Multiple attempts have been made to define gameplay: 
+ Sid Maier – “gameplay is a series of interesting choices”.
+ Dino Dini – “interaction that entertains”.
+ Ernest Adams – “The challenges and actions that a game offers: challengesfor the player to overcome and actions that let him/her overcome them”
+ among others..
+ As a result, we can conclude that gameplay is:
+The interactive experience that arises from players making meaningful choices and taking actions to overcome challenges within a game.
+--- slide 6 ---
+Gameplay definition
+The interactive experience that arises from players making meaningful choices and taking actions to overcome challenges within a game.
+--- slide 7 ---
+Challenges
+ Challenges are the tasks that require physical/mental effort that the player must complete.
+ Challenges are the obstacles, problems, or goals that the player must overcome or achieve within the game. They are what stands between the player and their goal.
+ Challenges are implemented in a game to create tension, purpose, and engagement  
+ During the game, the player faces several challenges over time, organized in a hierarchy.
+--- slide 8 ---
+CHALLENGES (CONT.)
+ To understand what challenges are, consider:
+ The player’s main challenge is to complete the game.
+ To complete the game, the player must complete the current mission.
+ To complete the current mission, the player has to complete all the sub-missions in the current mission.
+ At the lowest level, the player deals with the immediate challenges (e.g.) killing enemies
+--- slide 9 ---
+Categories of Challenges
+ Physical Coordination Challenges (e.g., speed, reaction time, accuracy, etc.)
+ Logical and Mathematical Challenges
+ Races and Time Pressure
+ Memory Challenges
+ Pattern Recognition
+ Exploration (e.g., locked doors, traps, mazes, teleporters, etc.)
+ Economic Challenges
+--- slide 10 ---
+Gameplay definition
+The interactive experience that arises from players making meaningful choices and taking actions to overcome challenges within a game.
+--- slide 11 ---
+ACTIONS
+ Actions are the things the player can do to interact with the game world and respond to challenges
+ Actions are separated into three types:
+ Core Actions: The primary mechanics of the game (e.g., move, jump, shoot, etc.)
+ Strategic Actions: Decisions on how to use Core actions (e.g., choose to attack or hide)
+ Meta Actions: Broader, outside-the-moment decisions (e.g., mapping inventory, leveling up, customizing characters, etc.)
+--- slide 12 ---
+ACTIONS (CONT.)
+ Compared to challenges, games have way fewer actions (no one-to-one mapping). 
+ This makes the game interesting as the players have to reuse recall and recuse actions to progress the game.
+ Last, a game can have actions that are meant purely for entertaining the players and do NOT AFFECT the gameplay (e.g., including easter eggs in a game).
+--- slide 13 ---
+Core actions:mechanics
+ The core mechanic is the center of a game or the only thing that is the nucleus of the whole life of a game.
+ The core mechanic is a statement of the purpose of a game. 
+ The core mechanic is an activity that players perform again and again in a game. 
+ However, in many games, the core mechanic is a compound activity composed of a suite of actions. 
+ The core mechanic in a game will usually be the purposeful interaction that occurs the most frequently.
+--- slide 14 ---
+CORE ACTIONS:Game mechanics (cont.)
+ These are the “distinctive and fundamental” actions or “sequence of actions” that the player performs repeatedly in the game to succeed. 
+ It has been defined as “the possible or preferred or encouraged means with which the player can interact with game elements as she is trying to influence the game state at hand towards the attainment of a goal.”
+ Examples of core mechanics:
+Jumping and moving are core mechanics in platformers
+--- slide 15 ---
+QUESTIONS:
+ What are the core mechanics in First Person Shooter games?
+ What distinguishes FPSs if they do have identical gameplay?
+ Can you name 2 FPS games that have different gameplay? 
+--- slide 16 ---
+What are the core mechanics of FPS games?
+ Using range weapons to damage or eliminate targets (often involves: guns, bows, energy, rifles, etc.).
+ Movement: FPS games heavily rely on player mobility and map navigation
+Common movement systems include: Walking, Sprinting, Crouching, Jumping, Sliding, Climbing, Dashing, etc.
+ Health System: Damage, Death, Regen, etc.
+ Weapons mechanics: shooting, reloading, etc.
+ Enemy AI: behavior of enemies, such as movement, attack, etc.
+ among many others..
+--- slide 17 ---
+What distinguishes FPS games if they do have identical gameplay?
+ Even though most FPS games share core mechanics, they differ in the way those mechanics are expressed, balanced, and supported by design layers like pacing, aesthetics, player roles, and feedback systems.
+ Things that distinguish games:
+ Game Feel: How it feels to shoot, move, and hit targets
+ Pacing and Time-to-Kill (TTK) – the tempo of combat defines the mood and skill expression
+ Low TTK: e.g., Counter Strike: faster kills, higher tension, tactical positioning matters more 
+ High TTK: e.g. Halo: prolong duels, more focus on movement and aim tracking.
+--- slide 18 ---
+What distinguishes FPS games if they do have identical gameplay?
+ Level Design and Spatial Philosophy – even with similar shooting the map layout can change everything in the game
+ Game Mode and Objectives – the goal of each game mode changes how players engage with the game
+ Progression - games differ through progression loops and player motivation systems
+ Aesthetic and Narrative - Tone, setting, and art style define the emotional layer of the experience
+ AI systems -In single-player or co-op FPS games, the enemy design and system interactions make gameplay unique
+--- slide 19 ---
+Gameplay definition
+The interactive experience that arises from players making meaningful choices and taking actions to overcome challenges within a game.
+--- slide 20 ---
+CHOICES DURING GAMEPLAY
+ Player choices are the decisions made during active play that directly affect outcomes, strategies, or experiences.
+ They shape how the game unfolds by influencing success, risk, and consequences 
+ Good gameplay choices are usually meaningful — they involve trade-offs, uncertainty, or personal expression rather than being obviously optimal
+ Choices should be non-trivial, have good/bad consequences, be informal, and provide feedback to the player.
+--- slide 21 ---
+EXAMPLE OF CHOICES DURING GAMEPLAY
+ In Call of Duty, choosing between aggressive rushing and holding angles.
+ In The Legend of Zelda: deciding which dungeon or tool to tackle first.
+ In Mass Effect: choosing a Paragon or Renegade dialogue path.
+ In Dark Souls, deciding whether to risk exploring further with souls or return to safety.
+--- slide 22 ---
+RULES
+ Rules are the foundational constraints and systems that define how a game works — what players can and cannot do, and how actions lead to outcomes
+ Rules create structure and fairness, turning an open activity into a game with specific challenges, goals, and limits.
+ They guide player behavior, encourage certain strategies, and give meaning to CHOICES and goals.
+ In digital games, rules are usually enforced automatically by the game’s code — unlike board games, where players enforce them themselves
+--- slide 23 ---
+EXAMPLES OF RULES
+ In Counter-Strike, players must plant or defuse a bomb within a time limit
+ In Mario Kart, only the top 3 finishers get trophies — and power-ups follow rubber-banding rules
+ In Chess, the king cannot move into check — a rule that defines strategy
+ In Minecraft, gravity only affects certain blocks (like sand) — shaping how players build.
+--- slide 24 ---
+balance
+ To keep core actions, mechanics, choices, and challenges under an engaging framework in the context of video games, the game should be BALANCED.
+ Balance means keeping the game’s challenges, player actions, and choices in harmony, so that no strategy, weapon, or path is unfairly dominant, and every decision feels meaningful
+ It ensures that player skill, not luck or broken mechanics, determines success, creating a sense of fair challenge
+ Good balance connects the difficulty of challenges to the power of player actions:
+ If challenges are too easy → actions feel meaningless.
+ If challenges are too hard → choices feel punishing or irrelevant.
+--- slide 25 ---
+DOMINANT STATEGY PROBLEM
+ Players usually take on a strategy (i.e., a plan they believe will lead to success). 
+ Some may favor an attacking strategy while some a defending one, but each of their strategy has a better chance of leading to victory.
+ A dominant strategy is a strategy that produces the best outcome, regardless of the strategy taken by an opponent.
+ The dominant strategy problem is a gameplay problem: one particular strategy is so strong that it becomes the obvious choice.
+ The dominant strategy problem breaks gameplay because it undermines choice.
+--- slide 26 ---
+TRANSITIVE RELATIONSHIP
+ If A &gt; B and B &gt; C, then A &gt; C
+ A transitive relationship in a game gives rise to a dominant strategy.
+ Why build a unit of types ‘B’ or ‘C’ if a unit of type ‘A’ is obviously better?
+ Why adopt strategy ‘B' or ‘C' if strategy ‘A' is obviously better?
+--- slide 27 ---
+NON-TRANSITIVE RELATIONSHIP
+ A non-transitive relationship makes for a far more interesting series of choices and hence for better gameplay.
+ For example, Pokémon starters:
+ Water beats Fire
+ Fire beats Leaf
+ Leaf beat Water
+--- slide 28 ---
+Summary
+ Gameplay is the interactive experience that arises from players making meaningful choices and taking actions to overcome challenges within a game.
+ Challenges are the obstacles, problems, or goals that the player must overcome or achieve within the game. They are what stands between the player and their goal.
+ Player choices are the decisions made during active play that directly affect outcomes, strategies, or experiences — not just setup (like picking a loadout), but moment-to-moment actions
+ Rules are the foundational constraints and systems that define how a game works — what players can and cannot do, and how actions lead to outcomes
+ To keep core actions, mechanics, choices, and challenges under an engaging framework in the context of video games, the game should be BALANCED.
+--- slide 29 ---
+Questions?!

@@ -1,0 +1,960 @@
+SOURCE: Week 2 - Game Design Documentation, Censorship in Games and Rating Systems\Additional Learning Materials\_GDD - Project Vanshing.pdf
+
+--- page 1 ---
+1 
+ 
+ 
+Games Design Document 
+Project Vanishing   
+The Vanishing a fantasy-RPG. 
+  
+
+--- page 2 ---
+2 
+ 
+1 CONTENTS 
+1 GAME OBJECTIVES / BREIF ......................................................................................................................... 4 
+1.1 Game Brief: ................................................................................................................................ 4 
+1.2 Narrative Brief: .......................................................................................................................... 4 
+1.3 Game Objectives: ................................................................................................................... 4 
+2 Gameplay .............................................................................................................................................. 5 
+2.1 Overview: ...................................................................................................................................... 5 
+2.2 Layout: .......................................................................................................................................... 5 
+3 Game World .......................................................................................................................................... 6 
+3.1 High Reach Brief: ...................................................................................................................... 6 
+3.1.1 Locations on High Reach Island ............................................................................................. 6 
+4 Graphics/ Art Style ................................................................................................................................ 7 
+4.1 Storyboard and GUI development ................................................................................................ 8 
+4.1.1 GUI Development .................................................................................................................. 8 
+4.1.2 Storyboard ............................................................................................................................ 9 
+4.2 Example Narrative Development ................................................................................................ 11 
+4.2.1 Chapter 1: The Great Storm ................................................................................................ 11 
+4.3 Sounds of High Reach ................................................................................................................. 13 
+5 Mechanics ........................................................................................................................................... 13 
+5.1 Quest and Dialogue System ........................................................................................................ 13 
+5.1.1 Dialogue System .................................................................................................................. 13 
+5.1.2 Quest System ...................................................................................................................... 14 
+5.1.3 Relationship System ............................................................................................................ 14 
+5.2 Skill trees and leveling up ........................................................................................................... 16 
+5.2.1 Enemy Progression .............................................................................................................. 17 
+5.3 AI and pathing ............................................................................................................................. 17 
+5.3.1 People of the town .............................................................................................................. 17 
+5.3.2 Guard Patrol Routes ............................................................................................................ 17 
+5.3.3 Creatures of The Wild ......................................................................................................... 17 
+5.3.4 Bandits ................................................................................................................................ 18 
+5.4 In-Game Economics .................................................................................................................... 18 
+6 Characters ........................................................................................................................................... 19 
+--- page 3 ---
+3 
+ 
+6.1 Character Mechanics .................................................................................................................. 19 
+6.2 Character Combat Mechanics ..................................................................................................... 19 
+6.2.1 Character Combat Animations ............................................................................................ 19 
+6.3 Character Development .............................................................................................................. 20 
+6.3.1 Character Narrative Development ...................................................................................... 20 
+6.4 Character Animation ................................................................................................................... 20 
+7 Project Plan ......................................................................................................................................... 22 
+7.1 Gantt Chart.................................................................................................................................. 23 
+7.2 Scrum Reports ............................................................................................................................. 24 
+8 References .......................................................................................................................................... 27 
+9 Bibliography ........................................................................................................................................ 27 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+--- page 4 ---
+4 
+ 
+ 
+1 GAME OBJECTIVES / BREIF  
+ 
+1.1 GAME BRIEF: 
+The Vanishing will be a First-Person 3D RPG with a linier narrative that will focus on creating a lifelike 
+world taking the player on a small experience through this RPG world. Graphics will be done in a 
+Cartoony Cell-shaded style like games such as borderlands or Okami. Systems will be created to immerse 
+the player within High Reach such as npc patrol paths and economy systems, taking inspiration from top 
+RPG games such as the Elder Scrolls series (Bethesda Softworks, 2011) and Witcher series (RED, 2007).  
+The player will embark on a short journey that will take them around the island to discover long lost 
+secrets of High-Reach. The player will also have to help towns folk and in return grow in strength via a 
+level up system. As the player grows in experience they can venture into dangerous parts of the island 
+never ventured before and fight the strongest beasts to ensure the islands safety.  
+1.2 NARRATIVE BRIEF: 
+ 
+The vanishing takes place on an island called High-Reach, the player finds himself stranded here after his 
+voyage ends abruptly. The locals took him in and healed his wounds, confused he asks around town for 
+direction to the island he was traversing to unfortunately luck is not on his side the towns folk haven’t 
+heard of this island but might know someone who does. They agree to help him though, in return he 
+would discover what is happening to the people that are mysteriously vanishing in town. 
+1.3 GAME OBJECTIVES: 
+ 
+ Weapons and armor for the player to collect. 
+ Potions to use. 
+ A 1 hour narrative experience  
+ Variety of side quests. 
+ A detailed landscape to explore. 
+ NPC’s to interact with. 
+ Good and Bad system.  
+ Trades to learn such as; blacksmith, Alchemist. 
+ 
+ 
+ 
+--- page 5 ---
+5 
+ 
+2 GAMEPLAY 
+ 
+2.1 OVERVIEW: 
+ 
+Gameplay will be created using Keyboard and Mouse as the game will be built for pc use, controls will 
+function similarly to other RPG games such as; Skyrim. The idea is to create a familiar control scheme 
+like other popular RPG’s making it easy for the player to understand if they are used to pc control 
+schemes. Most of the movement controls will be handled using animations but some variables will need 
+to be created to judge how fast the character should move had how high they should jump. 
+ 
+ 
+2.2 LAYOUT: 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+W, A, S, D: Controls for moving. W for 
+forward, D for backward, A for left and S 
+for right. 
+Shift: making the player run. 
+E: Interacts with game objects in the 
+world. 
+Space: Makes the player jump. 
+CTRL: Makes the player crouch. 
+J: Control for in-game Journal. J will open 
+the journal panel in game.  
+Esc Control for Pause Menu. Esc will 
+open pause menu for this the player can 
+access extra functions. 
+Tab, I: These two keys will 
+open the inventory panel 
+and class panel in-game. 
+--- page 6 ---
+6 
+ 
+3 GAME WORLD 
+ 
+High Reach Map Concept Art. 
+3.1 HIGH REACH BRIEF: 
+ 
+High Reach Island is a small island, disconnected from the rest of the world and is having a major issue of 
+people on the island disappearing, it is the player’s objective to solve the mystery of the island and find 
+his/her way back to the island they were journeying to. 
+ 
+3.1.1 Locations on High Reach Island  
+ 
+- Cold pass / Description: A small town on the edge of High Reach, built upon the edge of a cliff  
+- Cold harbor: A harbor located near the town of cold pass, this dock is used for fishing in the vast 
+sea’s surrounding the island. The harbor serves as an export hub and is majority source of food 
+for the settlement. 
+--- page 7 ---
+7 
+ 
+- Pikemans Pub: A Quaint little pub just outside the town of cold pass, many warriors across High 
+Reach come to rest and replenish stock here. Though of late it’s been quite due to the 
+disappearing’s. 
+- Beach Shack: A small shack to the south of the island, owned by an aged man by the name of 
+Pete.  
+- Moonshire Lake: This calm lake is said to be the Lake of dreams and at night one might be able 
+to spot the fairy’s that clean the lake at night. 
+- Moonshire: A quite village next to Moonshire Lake, the villagers like to keep to themselves 
+meaning outsiders are not most welcome here. 
+- Lunar Lighthouse: Commonly known as the lighthouse of the moon. This lonely lighthouse is 
+tended by old man Pete from his beach shack. The lighthouse is said to house mystical powers 
+and can show anyone their true destiny. 
+- Deadman’s Drop: A dark place, island folk believe that you should jump from the cliff if you 
+believe your path has ended. The reason behind this is it is said to, have a direct link to Valhalla 
+and that the sea will guide you to the gate of the Vikings. 
+ 
+4 GRAPHICS/ ART STYLE/SOUND DESIGN 
+ 
+One of the most important aspect of The Vanishing is its stylized graphics, taking inspiration from games 
+like Over watch (Blizzard Entertainment, 2016), Borderlands and then blending these games cartoony 
+style with other games such as dishonored and using their watercolor approach. The result is to create a 
+high fantasy cartoony world with realistic shading and textures. Shading is a large focus on the graphics 
+style, being that the game will be set at noon when the sun is dropping below the horizon shadows will 
+be numerable, stretched and dark. Lighting is the next major focus, lighting will play a prominent part in 
+the game as it will serve as a light source for the player as night creeps around the corner. The light will 
+contrast through the shadows and will make forests and other unlit places darker, adding fear and 
+mystery as the player explores the game. Focusing on these two elements in the graphics is purposely 
+done to add the mystery to the island, constantly making the player wonder what’s out in the world to 
+find and explore.  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Here is a piece of concept art drawn up for the 
+game, this drawing focuses on the mountains 
+skyline from seen above the game. The drawing 
+was made to show how the lighting would affect 
+the mountains, clouds, and depth. As the picture 
+shows clouds get darker and thicker as the sky 
+above start to dull and the sun sets behind the 
+horizon. The closer to the sun the brighter the 
+mountains get, the further the mountains are the 
+darker they become. 
+--- page 8 ---
+8 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+4.1 STORYBOARD AND GUI DEVELOPMENT  
+ 
+4.1.1 GUI Development  
+ 
+When creating concepts for the UI there was 
+a list of requirements it needed to meet. 
+Firstly, it shouldn’t be obtrusive to the player, 
+so it needed to be as clean as possible. The 
+concepts also include some cursor designs 
+which could be used in the game rather than 
+the default. 
+Next it needed to fit in theme of the type of 
+game being made and the style it uses. A 
+medieval approach similarly to Diablo’s 
+(North, 1996) UI seemed to be a great fit 
+with the style of the game.  
+Another piece of concept done for one of the 
+towns in-game called Cold Harbor. This concept 
+was created to design the structures of the 
+building and see how the shading would affect 
+them. The structures have been design like 
+medieval structures using wood and plaster for the 
+walls and slate tiles for the roof. The lamppost was 
+created to add ambient light to the town. 
+
+--- page 9 ---
+9 
+ 
+Lastly it needed to be informative, meaning that every action the play made the UI would respond to the 
+actions made. This mean it would need to react in real-time from the EXP bar rising to the gold amount 
+fluctuating. 
+This was one of the concepts for the 
+final in game UI menu, a large EXP 
+bar across the top of the screen will 
+show what level the player is at and 
+how far they are from the next level 
+up. The UI will also include a portrait 
+for the class they are playing, next to 
+that is the health and stamina bar 
+and underneath that is the current 
+gold the player has on them. 
+Enemies will show a health bar 
+above them and above that will be 
+the name of the NPC and the current 
+level they are. 
+ 
+ 
+ 
+ 
+4.1.2 Storyboard 
+ 
+Panel 1: 
+The title screen to the game will consist 
+of four buttons; start, load, options and 
+quit. The scene behind the menu will 
+be a camera chosen at random of one 
+of the key places in the game such as in 
+this scene shows Pikemans pub but if 
+the game is re-opened it will show and 
+different location at random. 
+ 
+ 
+ 
+
+--- page 10 ---
+10 
+ 
+ 
+Panel 2: 
+This will be the first scene of the game, 
+this is the roof of the house the player 
+is waking up in. A dialogue box will 
+appear and text from the character will 
+show up on screen. 
+ 
+ 
+ 
+Panel 3: 
+The character will turn around on the 
+bed they have been sleeping on to be 
+greeted by two characters. Harold 
+Greenfield and his wife Anna have been 
+looking after you after being washed up 
+on shore. This panel shows the scene 
+that plays out, the character is confused 
+and asks them questions about what’s 
+happened.  
+ 
+ 
+Panel 4: 
+The character then decides to talk to 
+the town’s mayor from here they 
+discover that people have been 
+vanishing and that the mayor will only 
+help the player get home after they can 
+find out about the mysterious vanishing 
+problem. 
+The mayor also tells the character to 
+get armor from the blacksmith before 
+journeying out to the island. 
+ 
+
+--- page 11 ---
+11 
+ 
+ 
+Panel 5: 
+The character then goes to the 
+blacksmith and gets a free suit of armor 
+from the blacksmith. 
+After this panel, it is up to the player 
+where they go and what quest to 
+complete. 
+ 
+ 
+ 
+ 
+4.2 EXAMPLE NARRATIVE DEVELOPMENT  
+ 
+This is a piece from the narrative of the game, to construct the narrative a book is 
+being written to piece the story together and create the dialogue options in-
+game. 
+ 
+Dialogue with the > arrow mean’s multiple choice and refer to the script. 
+ 
+Harold Greenfield 
+Bio: Husband to Anna Greenfield, simple man that works in town as the town’s 
+guard due to his lawful and dutiful attitude. 
+Anna Greenfield 
+Bio: Wife to Harold Greenfield, quite woman that works at home as a homemaker 
+looking after her two children and keeping the house tidy. 
+ 
+4.2.1 Chapter 1: The Great Storm 
+ 
+
+--- page 12 ---
+12 
+ 
+You are on a boat, destination is Dallion town rich in trading and commerce. One day on your voyage the 
+sea and wind start to gain in strength the boat rocks something fierce, knocking some cargo of the boat 
+into the high seas swallowing it with its gnashing teeth. The wind howls around, you can feel the rush of 
+the wind hitting your face, could this be it for you only time will tell. As quick as a bolt your cargo gets 
+carried off by the wind and hits you on the head, the darkness consumes your mind as you drift into a 
+hazy sleep. 
+ 
+You awake, mind fussy, body stiff but alive and in one piece. The storm that has been is now nothing 
+more than memory, relief falls over you. Studying your surrounding you find yourself within a building of 
+some sort, possibly a house. The bed you’re in is simple straw and hay, with furs for warmth. Questions 
+storm your mind, where are you? What is happening? But these questions will for now remain un-
+answered. A woman walks through the front door and realises you are waking, she immediately hollers 
+for someone to come Harold is what you can make out. A man enters the house and rushes over to 
+where you lay “Quite the knock you’ve had, don’t worry the ol’ doc fixed ya up right quick”. 
+Words fall from your mouth like a dam leaking > “Whe… Where am I?”. 
+“Why you’re at Coldpass lad nought here but a small town”. 
+ “Who are you!? What happened?”. 
+“Woah slow down now lad, me name is Harold this ere be me wif Anna who’s been watching over your 
+sorry soul the last couple of weeks”. 
+ “Weeks!! I’m sorry for being a bother but I must take a boat and get to Dallion at once”. 
+Harold: “Dallion, son I think that knock on you he’d az left ya a little dazed, never heard of this town, 
+what about you Anna?”. 
+Anna: “Nope aint ever herd of a place lik that.” 
+Harold: “Well I tell ye wot we may know nothin’ but others in town might, so since ya up why don’t you 
+introduce yourself to everyone and maybe you’ll learn somin’ the fresh air will do ya some good too, 
+what ya say?”. 
+ You: “Yes your right, let me also thank you both kindly for what you have both done for me, 
+doubt I’ll be speaking right now if it weren’t for you both, for that im both in your debt”. 
+You strain to get out bed and stretch before collecting your things and leaving the greenfield residence. 
+You close the door behind you, the setting sun light aluminates your face as you study the quaint town 
+before you.  
+ 
+ 
+--- page 13 ---
+13 
+ 
+4.3 SOUNDS OF HIGH REACH 
+ 
+The music in the vanishing will follow suit to games such as The Witcher (RED, 2007) or The Elder Scrolls 
+Skyrim (Bethesda Softworks, 2011) which use very instrumental backdrop and loud Nordic drums or 
+shouts. The idea is to use this same concept in The Vanishing to provide an epic fiery backdrop to major 
+battles in the game. 
+This would mainly be used for battles but for the background sounds it is best to use something mellow 
+and mysterious following the style of the game. The closest game to do this was Dues EX: Human 
+Revelation (Montreal, 2011) in Dues EX they use a very gradual effect starting with just an electronic 
+harmony and then progresses into louder vocal strings, this would fit perfectly into The Vanishing but 
+instead of using electronic harmony’s switch it out for a more medieval instrumental sound.  
+ 
+5 MECHANICS  
+  
+5.1 QUEST AND DIALOGUE SYSTEM 
+5.1.1 Dialogue System 
+The dialogue system being created is like older RPG systems 
+such as Baldur’s Gate (BioWare, 1998), presenting the player 
+with different response options to choose from. Depending 
+on what options the player choses will affect how the NPC 
+interacts with you, for example if you chose options that 
+might offend that npc they will start to dislike you or even 
+call the guards to kill the player.  The dialogue will branch 
+out like a tree one option will lead to one answer and 
+possibly another question and another option will lead to its own answer, this gives npcs more 
+personality. 
+The dialogue system will work hand in hand with the narrative and unique options will be presented 
+during in the story of the game, some options could lead to losing a main npc in the game, encouraging 
+the player to study the character’s in-game and the narrative of the story.  
+ 
+
+--- page 14 ---
+14 
+ 
+ 
+ 
+5.1.2 Quest System 
+ 
+Quests will be given out similarly to borderlands, question marks will appear 
+above npcs that have quest available for the player once the player interacts with 
+the npc they will be given a quest to complete within the world. Once the player 
+has finished this mission they will report back to the npc they received the quest 
+from and gain friendly points to that town plus a reward for the quest.  
+ 
+5.1.3 Relationship System 
+ 
+Alongside the multi-option dialogue system, will be the relationship system. The 
+idea is to have a point system and when this hits a certain threshold the state of 
+the town will change relationship to either friendly or Aggressive. Changing state 
+can be achieved in many ways, making friends around town and helping people 
+with problems, is one way to increase your relationship points with that town. 
+Choosing options within the dialogue system that might offend that npc will also 
+increase the points towards being an aggressive state.  
+ 
+
+--- page 15 ---
+15 
+ 
+ 
+ 
+Each state has its own rewards, a town with that has been angered allows you to kill town folk and 
+guards to loot them for gold or other resources. In return you cannot return to this town for some time 
+before the game allows you back in, this can be achieved faster by paying off guards. Certain NPC won’t 
+be able to be killed however this is to ensure main story quests don’t break. 
+A friendly state will change how the town acts towards you in dialogue and stance. Some npcs may give 
+the player gift and some shops will give the player discounts within their store. In addition, if the player 
+turns a friendly state into an aggressive one they can pay off guards for cheaper prices than before. 
+Scripting a system like this would mean each NPC would have to hold a variable that would hold the 
+value of the state the NPC is in. Depending on what button is pressed will increase or decrease this 
+value. If the value has been meet by a case statement it will run a function to do with the state, the NPC 
+has entered. 
+5.2 WEAPONS  
+ 
+There will be 3 types of weapons in the game Swords, Two handed weapons and daggers. Each will have 
+their own mastery; two handed weapons will deal massive damage however they are very slow and can 
+leave the wielder very exposed. Dagger on the other hand are quick and nimble stringing up large 
+combos to create large damage unfortunately compared to the two-handed weapons it takes far longer 
+to deal the amount of damage that a two-handed sword would. One handed blades are the balance 
+between speed and damage whilst having protection via shield and providing quick and heavy attacks 
+for various damage. 
+5.2.1 Weapon Rarity 
+ 
+Each weapon found in the game will have its own rarity from; common, rare, and ultra-rare. Depending 
+on rarity will determine the damage of the weapon and how much it is worth.  
+ 
+ 
+ 
+ 
+
+--- page 16 ---
+16 
+ 
+5.3 SKILL TREES AND LEVELING UP 
+ 
+Each time the player gains a level up they will be awarded with a skill point, skill points can then be 
+spent into the skill tree to unlock new special moves or stat increases. Each class will have the same tree 
+to spend into, to work alongside the combat that grants the player to use any weapon with any 
+character. Below is an example of what the skill tree could look like and what it would allow the player 
+to buy. 
+ 
+A skill with a lock in the top right corner means it cannot be purchased until the skill before it has been 
+purchased first, this is to stop the best skills being taken at lower levels. There will be no level cap in the 
+game and after the skill tree has been fully purchased the tree will reset keeping the original skills and 
+then the new tree will add on top of the old one. 
+This system would involve having 2 variables one to hold the amount of XP the player currently has and 
+another to hold the amount of skill points they have. The XP variable will rise when an NPC has been 
+killed and if the XP hits the threshold of that level they will go up a level and earn a skill point.  
+
+--- page 17 ---
+17 
+ 
+ 
+ 
+5.3.1 Enemy Progression 
+ 
+All NPC characters will grow with the character, this mean If the player is level 10 all NPC’S with enemy 
+upscaling on them will grow with the player. If the NPC does not have Upscaling applied to him then 
+they will be assigned a specific level so the player must grow their character in order to fight the NPC. 
+5.4 AI AND PATHING  
+ 
+5.4.1 People of the town 
+ 
+NPC’s within Cold Pass will have a routine AI, the AI will cycle through various daily tasks such as 
+sweeping, farming and looking after children if that NPC has children. This will then cycle every day 
+simulating a working, living and breathing town. Some NPC’s will have different routines such as the 
+town blacksmith who will be doing various tasks such as tending the shop or creating weapons.  
+Daily routines would need a script much like the guard patrol script. A waypoint system that tells the 
+NPC were to go but instead of having a set path the way points would be scripted to be random and the 
+NPC will randomly complete tasks. 
+5.4.2 Guard Patrol Routes 
+ 
+Guards will patrol around the border of towns to make sure bandits and other hostile enemies stay clear 
+of the town, guards will attack on site if they see enemies, they will also help the player if he or she is in 
+combat with a hostile NPC. 
+This would involve having a Nav mesh covering the areas that the NPC will need to walk, waypoints can 
+then be created to create a designated route for the npc. 
+5.4.3 Creatures of The Wild 
+ 
+Wildlife AI will work similarly to real life, some creatures such as wolves will have cubs and adults. Adults 
+will only attack in packs, for example if the wolf is alone it will not attack the player but if there are two 
+other wolves in the area of each other they will attack the player. Cubs will also not attack the player but 
+if there is a mother wolf around they will attack the player on site. Simple tricks to simulate a real eco 
+system within the game. 
+--- page 18 ---
+18 
+ 
+5.4.4 Bandits     
+Bandits will normally stay together in 
+packs but even if they are alone they 
+will attack the player. Bandits will also 
+normally stay near their camps to 
+avoid encounters with wildlife. If both 
+towns people and bandits encounter 
+wildlife they will team up to fight the 
+wildlife, then get back to killing each 
+other. 
+5.5 IN-GAME ECONOMICS 
+ 
+Economy will be simulated as the 
+player plays the game, some techniques 
+will be used to imitate a real economy. 
+Each merchant will have a limit of how 
+much gold they carry on them at that 
+given time, if the player sells to the 
+merchant they will be replenished by 200 
+gold when the player leaves the town or 
+area of the merchant. Once the 2000 gold 
+limit is met the merchant will not gain 
+anymore gold until the player sells to the 
+merchant. Any gold made during a 
+purchase made from the player will be 
+deleted next time the player leaves the 
+town. 
+ 
+ 
+ 
+ 
+Each merchant has his or her own special benefits to trading with them and as such a table has been 
+made below to explain what each trader will give. 
+This would require a large economy script that would handle the amount of money the NPC has on them 
+plus each item in the game that can be bought or sold will require a value to judge how much It is worth. 
+ 
+ 
+
+--- page 19 ---
+19 
+ 
+6 CHARACTERS 
+ 
+6.1 CHARACTER MECHANICS 
+The player in-game will control a 3D modelled character that can switch between First Person 
+Perspective and to Third Person. First person was decided that it would immerse the player into the 
+game, simulating real life rather than third person and so this was developed as the main 
+camera. Third person was also then incorporated to allow the player to see his/her 
+character adding a layer of freedom in how the character can be controlled. 
+6.2 CHARACTER COMBAT MECHANICS 
+ 
+Combat will take inspiration from The Elder Scrolls Series (Bethesda Softworks, 2011) in that the 
+player will grow skills overtime such as sword and shield. The more the character uses a 
+certain weapon the more they will grow with that weapon. Skill levels will range from 0 to 
+100, when players hit certain marks on the skill graph they will be awarded with stat increases 
+such as 10% block or 20% attack. A very rough graph to the right shows how the system will 
+work, the player will increase the blue bar the more they use that weapon. 
+The reasoning behind this system is to allow the player to play how they like they can equip any 
+weapon without having to be that specific class. If the player wants to use daggers as a knight, 
+they can do this. However, it is beneficial that the character plays with the right class for 
+the weapon as they will gain exp for that weapon faster plus gain bonuses for using the 
+correct weapon.  
+6.2.1 Character Combat Animations  
+ 
+ 
+ 
+ 
+ 
+
+--- page 20 ---
+20 
+ 
+The combat will use animations to simulate the character swiping with their weapon or blocking with a 
+shield. Using animation allows for extra creativity in how the combat works. For example, the player will 
+be able to pull of special moves such as a large swipe and for it seemed animations would be the best fit 
+to create this. 
+ 
+6.3 CHARACTER DEVELOPMENT  
+Character Model from Maximo (Adobe, 2008) 
+ 
+This will be the main character of the game after 
+the player has gained their armor from the 
+blacksmith.  
+No changes can be made to this character in the 
+game and the armor set will stay the same. 
+ 
+6.3.1 Character Narrative Development  
+ 
+Height: 6”0 
+Eye Colour: Blue 
+Hair Colour: Black 
+BIO: The character will endorse the name you 
+choose as the player in the game. Your character 
+was a trader who would travel between islands to 
+sell his merchandise. However, on his latest 
+expedition a dreadful storm hits, ripping his boat to pieces, luckily towns folk find him washed up on a 
+beach near there town. 
+6.4 CHARACTER ANIMATION 
+ 
+There will be two types of animations the character will contain, the first being the character movement 
+animations and the second being the combat animations which will be addressed in the combat 
+mechanics section.  Below is a graph showing what needs to happen in each character state. 
+
+--- page 21 ---
+21 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+--- page 22 ---
+22 
+ 
+7 PROJECT PLAN 
+ 
+This will be an example project plan of the demo created for the game and how it has been planned. To 
+create the project efficiently and effectively it will be created using SCRUM methodology meaning each 
+week a sprint report will be created to address what needs to be done the following week and what has 
+been done this week. To support this a Gantt chart will show what needs to happen on each week. Each 
+week will include testing the working product and the quick changes, bug fixes will be introduced into 
+the last 4 weeks of development.  Below are these documents.  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+--- page 23 ---
+23 
+ 
+7.1 GANTT CHART 
+ 
+ 
+ 
+ 
+ Week 
+1 
+Week 
+2 
+Week 
+3 
+Week 
+4 
+Week 
+5 
+Week 
+6 
+Week 
+7 
+Week 
+8 
+Week 
+9 
+Week 
+10 
+Pre-
+Production 
+          
+Idea            
+Research           
+Storyboar
+d  
+          
+UI Concept           
+Game 
+Design 
+          
+Sound 
+Design 
+          
+Production           
+Asset 
+Creation 
+          
+Ui Design           
+Set 
+Dressing 
+          
+Lighting           
+Animating           
+Bug Fixes           
+Post 
+Production 
+          
+Alpha           
+--- page 24 ---
+24 
+ 
+7.2 SCRUM REPORTS 
+ 
+ 
+ 
+ 
+ 
+Name: Ben Swindells Student number: 000880168-1 
+Week: 1 Date:  
+Tasks set from last week (Sprint Backlog): 
+Brainstorming / Planning 
+ 
+Report on what has been done and how:  
+Concept Idea brainstormed  
+Tasks set for next week (New Sprint Backlog):  
+  
+Start creation of Game Design Document 
+Name: Ben Swindells Student number: 000880168-1 
+Week: 2 Date:  
+Tasks set from last week (Sprint Backlog): 
+ 
+Start creation of Game Design Document 
+Report on what has been done and how:  
+Game Design Document created, brief, idea added. 
+Tasks set for next week (New Sprint Backlog):  
+  
+Continue work on GDD concept art for UI and assets. 
+Name: Ben Swindells Student number: 000880168-1 
+Week: 3 Date:  
+Tasks set from last week (Sprint Backlog): 
+ 
+Start creation of Game Design Document 
+Report on what has been done and how:  
+Game Design Document created, brief, idea added. 
+Tasks set for next week (New Sprint Backlog):  
+  
+Continue work on GDD concept art for UI and assets. 
+Name: Ben Swindells Student number: 000880168-1 
+Week: 4 Date:  
+Tasks set from last week (Sprint Backlog): 
+  
+Continue work on GDD concept art for UI and assets. 
+Report on what has been done and how:  
+ 
+Concept art created and UI concept art created and added to GDD  
+Tasks set for next week (New Sprint Backlog):  
+ 
+Create Unity project with basic UI navigation following the UI concept art  
+--- page 25 ---
+25 
+ 
+ 
+ 
+Name: Ben Swindells Student number: 000880168-1 
+Week: 5 Date:  
+Tasks set from last week (Sprint Backlog): 
+  
+Continue work on GDD concept art for UI and assets. 
+Report on what has been done and how:  
+ 
+Concept art created and UI concept art created and added to GDD  
+Tasks set for next week (New Sprint Backlog):  
+ 
+Create Unity project with basic UI navigation following the UI concept art  
+Name: Ben Swindells Student number: 000880168-1 
+Week: 6 Date:  
+Tasks set from last week (Sprint Backlog): 
+  
+Create Unity project with basic UI navigation following the UI concept art  
+Report on what has been done and how:  
+ 
+Navigation system set up for testing and unity project create d.  
+Tasks set for next week (New Sprint Backlog):  
+ 
+Import character and create movement using animations 
+Name: Ben Swindells Student number: 000880168-1 
+Week: 7 Date:  
+Tasks set from last week (Sprint Backlog): 
+  
+Import character and create movement using animations 
+Report on what has been done and how:  
+ 
+Character Imported 
+Movement Controls implemented 
+Animations added 
+Tasks set for next week (New Sprint Backlog):  
+ 
+Attack system with animations, prototype dialogue system following UI concept , bug fixing  
+Name: Ben Swindells Student number: 000880168-1 
+Week: 8 Date:  
+Tasks set from last week (Sprint Backlog): 
+  
+Attack system with animations, prototype dialogue system following UI concept, bug fixing  
+Report on what has been done and how:  
+ 
+Left Click attack added 
+Attack Animations added 
+Bug fixes on the UI  
+Bug fixe and character animations 
+Tasks set for next week (New Sprint Backlog):  
+ 
+Bug fixing, add quest tracking system, add ragdoll to NPC character  
+--- page 26 ---
+26 
+ 
+ 
+ 
+ 
+Name: Ben Swindells Student number: 000880168-1 
+Week: 9 Date:  
+Tasks set from last week (Sprint Backlog): 
+  
+Bug fixing, add quest tracking system, add ragdoll to NPC character  
+Report on what has been done and how:  
+ 
+Bug fixes to dialogue system 
+Added Quest Tracking UI 
+New quest added 
+Attached ragdoll to NPC character 
+Tasks set for next week (New Sprint Backlog):  
+ 
+Add cube quest into demo, add cubes for pick up. 
+Name: Ben Swindells Student number: 000880168-1 
+Week: 10 Date:  
+Tasks set from last week (Sprint Backlog): 
+  
+Add cube quest into demo, add cubes for pick up. 
+Report on what has been done and how:  
+ 
+Cube quest added to tracker 
+Cube quest UI created 
+Interaction UI added 
+Cubes added for quest 
+ 
+Tasks set for next week (New Sprint Backlog):  
+ 
+Build as alpha, play test, bug fixes 
+Name: Ben Swindells Student number: 000880168-1 
+Week: 11 Date:  
+Tasks set from last week (Sprint Backlog): 
+  
+Build as alpha, play test, bug fixes 
+Report on what has been done and how:  
+ 
+Alpha program built 
+Play test finished 
+Bug fixed UI elements 
+Bug fixes made on cube quest 
+Bug fixes to cube pick up 
+Big fixes made to tracking system 
+Tasks set for next week (New Sprint Backlog):  
+ 
+ 
+--- page 27 ---
+27 
+ 
+Above was an example of SCRUM used for the demo created for the game. This demo stores some of 
+the core mechanics to the game such as the attacking and questing system. It also houses the 
+animations for the character and the camera controls.  
+As the project stands it already requires a lot of time to create the individual systems however systems 
+were taken out of the game due to complexity. Meaning that if the game exceeds deadlines these extra 
+features could be added in, one of these being the job system talked about in the GDD. If all main 
+mechanics are created on time or before deadlines are meet it is possible to work on these as a stretch 
+goal. 
+ 
+8 REFERENCES 
+ 
+BALDURS GATE IMAGE: http://www.imore.com/baldur-s-gate-enhanced-edition-ipad-review-its-thac0-
+time  
+Adobe Mixamo: https://www.mixamo.com  
+9 BIBLIOGRAPHY 
+Adobe. (2008). Mixamo. Retrieved from Mixamo: https://www.mixamo.com/ 
+Bethesda Softworks. (2011, November). The Elder Scrolls: Skyrim. The Elder Scrolls: Skyrim, 5. Bethesda: 
+Bethesda Softworks. 
+BioWare. (1998, December 21). Baldur's Gate. Baldur's Gate. Alberta, Canada: Interplay Entertainment. 
+Blizzard Entertainment. (2016, May 24). Overwatch. Overwatch. California, United States of America: 
+Billzard Entertainment . 
+Montreal, E. (2011). Dues EX. Quebec, Canada. 
+North, B. (1996, December 31). Diablo. California , United States of America. 
+RED, C. P. (2007, October 26). The Witcher. The Witcher. Warsaw, Poland: Atari. 
+ 

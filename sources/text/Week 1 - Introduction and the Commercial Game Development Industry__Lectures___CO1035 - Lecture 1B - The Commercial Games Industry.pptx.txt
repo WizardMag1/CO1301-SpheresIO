@@ -1,0 +1,296 @@
+SOURCE: Week 1 - Introduction and the Commercial Game Development Industry\Lectures\_CO1035 - Lecture 1B - The Commercial Games Industry.pptx
+
+--- slide 1 ---
+CO1035: Game Concepts
+Lecture 1B
+The Commercial Games Development  Industry 
+--- slide 2 ---
+Objectives
+Identify key players in the industry and their roles
+Identify and Describe the different phases of commercial games development
+Identify and Describe the roles in game development teams
+This Lecture is separated into three parts:
+Part A: Introduction to Commercial Games Development
+Part B: Phases of Commercial Games Development
+Part C: Game Development Teams and Roles
+--- slide 3 ---
+Part A: 
+Introduction to Commercial
+Games Development
+--- slide 4 ---
+Introduction
+The commercial video games industry has been around since the 1970s
+Nowadays, it is a global, multi-billion-dollar industry
+Combines several aspects of other industries such as creativity, technology and business strategy
+This industry includes key players such as developers/studios, publishers, console manufacturers and retailers.
+All these involved parties share a common goal: 
+The production of games that sell in huge quantities, for players on serval platforms, such as mobile, home consoles, handheld  consoles, PCs, Web, VR Headsets etc.
+--- slide 5 ---
+Players Involved: Game Manufacturers 
+What are they?
+Companies that design, produce and maintain gaming hardware planforms
+Provide the ecosystems where games are played
+What is their role?
+Define technical standards and performance capabilities for games
+Offer development kits (SDKs) and publishing support to studios
+Operate digital marketplaces (e.g. PlayStation Store XBOX Store, etc)
+--- slide 6 ---
+Players Involved: Game Developers/Studios 
+The games industry isn’t one-size-fits-all and it includes many types of studios that differ in terms of scale, funding and creativity control.
+AAA Studios:  Large-scale studios with major funding and big teams. They focus on high production values and global releases (e.g., Riot Games – League of Legends).
+AA Studios: Medium-scale studios with moderate budget (e.g. Krafton’s PUBG Studios – PUBG: Battlegrounds)
+Indie Studios:  Small, independent teams or solo developers. Minimal funding – typically self-funded (e.g. Extremely OK Games – Tower Fall)
+Outsourcing &amp; Support Studios: Provide art, animation or other important services to other studios (e.g. Room 8 studio)
+--- slide 7 ---
+Players Involved: Publishers
+What are they?
+Companies that fund, market and distribute game projects
+Act as the bridge between developers and the marketplace
+Can sometimes own game studios (e.g. Ubisoft, EA, Epic Games, Riot, Nintendo, Activision Blizzard, etc)
+What is their role?
+Financing a game (provide money for production and marketing)
+Project Management (Oversee milestones and quality standards)
+Marketing (Promote the game to media)
+Sometimes handle Distribution (retail and logistics)
+--- slide 8 ---
+Players Involved - Retailers
+Sometimes publishers are not handing the retail of their games and retailers are becoming responsible for that
+What are they?
+Businesses that sell games directly to the consumers
+Can be physical stores (e.g. GameStop, Best Buy) or digital platforms (e.g. Stram, Nintendo eShop)
+Act as the final link in the commercial games supply chain
+What is their role?
+Provide sales, promotion and discoverability for games
+Handle transactions, pre-orders and pricing
+Gather sales data and player trends which are valuable for future projects.
+--- slide 9 ---
+Players Involved - Others
+Movie Studios
+Disney
+Marvel
+Universal Studios
+DreamWorks
+People
+Celebrities
+Personalities
+Sports players
+Products/Brands
+--- slide 10 ---
+Where do Game Ideas Come from?
+Game ideas can come from anywhere
+A memory, a mechanic, a book, a film, a dream, a myth, pure imagination…
+Many iconic games began with a simple question or an experiment:
+What if we let players build their own world? – Minecraft
+What if stealth was a mechanic? – Metal Gear Solid
+Typically, an original concept can be created by a developer
+However, it is also very common for a game concept to be inspired by business decisions:
+A publishing company deciding to make a sequel
+A publishing company making a deal with a movie studio (movie-based game)
+--- slide 11 ---
+The Game Development Process
+A developer with a game concept tries to get a publisher to fund the developmentORA publisher interested in developing a game and tries to get a developer
+In either case, a publisher funds a developer to create a game
+The publisher markets and distributes the finished game
+The game is sold by retailers
+Revenue is shared by all parties involved
+--- slide 12 ---
+The Game Development Process
+However….. This is not always the case!
+There are some cases where:
+A cash-rich development company can fund themselves
+A publisher can own a game studio and fund its own development team
+Console manufacturers sometimes act as publishers, and can own their own game  studio(s)
+--- slide 13 ---
+PART B: 
+Phases of Commercial Games Development
+--- slide 14 ---
+Phases of Commercial Games Development
+Most commercial game development projects are broken down into four phases:
+Concept Phase
+Pre-production Phase
+Production Phase
+Post-production Phase
+--- slide 15 ---
+Concept Phase
+The phase were the game idea is conceptualized
+The team agrees on the game’s mechanics, visual style, game play etc
+The team produces a concept document that communicates the vison of the  game. 
+Answers to the main questions that will asked be asked by potential publishers.
+If a publisher agrees to fund the development of the game, the project is green-lighted.
+To fund the game an important step is for the team to agree on “milestones” with the publisher
+Typically, in each milestone the developers submit the product to the publisher
+…and typically, the team is paid by the “milestones” reached.
+If funding is secured, then the team proceeds to the Pre-Production phase
+--- slide 16 ---
+Pre-Production Phase
+In this phase the Visual elements (e.g. look and feel), technical details (e.g. game engine), and story are specified.
+A playable demo of the game is created to demonstrate the eventual game experience.
+A game design document is produced to prepare for full scale production (more about
+GDD in next week’s lecture)
+Then, all the management of the development process, including hiring staff and assignment of roles and responsibilities, is specified.
+--- slide 17 ---
+Production Phase
+In this phase the game design document is followed by the team, and the game is developed, in 2 phases (alpha and beta). 
+This phase usually takes about 50% of the entire project life-cycle.
+Alpha Stage: The game reaches this stage when all its features and assets are in place, although some assets may not be in their final versions.
+In this stage, bugs are identified, and all  final assets are added.
+Beta Stage: The games goes to beta once all assets, objects, environments etc are completed and all bugs are fixed.
+Following Beta, the game is opened up to players for testing, finding and fixing bugs, and game-play evaluation.
+Finally, the Gold Master disc is created, sent for reproduction, and copies distributed to
+retailers.
+--- slide 18 ---
+Post-Production Phase
+Once a game is released, the post production phase begins.
+This phase includes maintenance in the form of patches.
+DLCs can also be introduced in the game in this phase.
+--- slide 19 ---
+Each Project Is Unique
+PROJECT1
+Game Concept
+Concept Document
+Secure Funding
+Agree on Milestones
+Playable Demo
+Game Design Document
+Hire Team
+Start Development
+First Playable (Alpha)
+Beta
+Testing
+Marketing
+Hype
+Release
+Patches
+Updates
+DLCs
+PROJECT 2
+Game Concept
+Concept Document
+Playable Demo
+Secure Funding
+Agree on Milestones
+Game Design Document
+Hire Team
+Start Development
+First Playable (Alpha)
+Beta
+Testing
+Marketing
+Hype
+Release
+Patches
+PROJECT 3
+Game Concept
+Concept Document
+Secure Funding
+Agree on Milestones
+Playable Demo
+Game Design Document
+Hire Team
+Start Development
+First Playable (Alpha)
+Beta
+Testing
+Marketing
+Hype
+Release
+Patches
+Updates
+DLCs
+--- slide 20 ---
+PART C: 
+Game Development Teams 
+and Roles
+--- slide 21 ---
+The Development Team and Roles
+Typically, the development team is separated into four sub-groups:
+Management Group – responsible for managing the game progress
+Programmers – responsible for coding the game
+Artists – responsible for the art of the game
+Designers – responsible for gameplay
+The size of a each development team can  vary depending of the project size and the stage of  development
+Teams can have anywhere from 2 to 100 members.
+Management
+Programmers
+Artists
+Designers
+code
+art
+game play
+GAME
+--- slide 22 ---
+Game Programmers
+Game programmers are the people responsible for implementing the mechanics and logic to the game.
+To implement games, they use game specific tools and API’s (Application Programmer Interfaces), e.g. DirectX, Unity or Unreal Engine.
+TL-Engine is an example of a games API.
+…and to code the game they usually use C++, C# and other scripting languages (Lua and python) using a standard development environment like Microsoft Visual Studio.
+With that said...
+Don’t consider games development as a different process from the development of other programs and software. 
+Although it is more creative, at its core it is an ordinary software engineering discipline.
+--- slide 23 ---
+Game Artists
+Game Artists are the people responsible for implementing the models and the art of the game.
+Game artists 
+Realize the concept illustrations using 3D modelling tools (e.g. Blender, or Maya).
+Create animations for the characters  and objects in the game.
+And create 2D graphics if necessary.
+However,
+3D modelling tools can also leverage programming, using “scripts".
+Scripts are used to help "export" models into game engines, and also create complex animations.
+--- slide 24 ---
+Artists and Programmers
+The interaction between artists and programmers  is COMPLEX
+…and each side must understand the  other’s work to a degree.
+This aspect of games development can be a source  of inspiration or cause great friction.
+For example, artists develop super realistic models something that makes the game very resource intensive.
+Those who understand the processes are very valuable assets on development teams.
+However, there are VERY, VERY FEW people who are  commercially skilled in both disciplines.
+--- slide 25 ---
+Game Designers
+Game Designers are professionals who create the rules, systems, and experiences that define how a game is played.
+They are responsible for: 
+Developing the game objectives and challenges
+Write and maintaining the Game Design Document
+Collaborate with artists and programmers to align their visions
+There are several types of Game Designers:
+Gameplay Designers: Focus on the design of core game mechanics and interactions
+Level Designers: Focus on creating the environment design, pacing and game flow
+Narrative Designers: Focus on developing storylines, dialogues and emotional tone
+System Designers: Focus on balancing game progress, economy and reward systems
+…among other types
+--- slide 26 ---
+Management - Game Producer
+The game management team (producers) are responsible for managing and assessing the progress made on the game, and ensure that all milestones set at the concept phase are met.
+In the industry their position can be found with several names such as:
+Project managers
+Project leaders
+Creative directors
+Etc..
+--- slide 27 ---
+Other Roles
+On top of these roles, depending on the needs of the game, other roles can also exist…
+Games, especially AAA games they often require several other components in order to be developed.
+Some examples include:
+Sound effects and speech
+Motion capture
+Front-end menu programming and artwork
+Network and other hardware support
+Security
+Story text and localisation
+Instruction manual
+As a result, people from other specializations might also be members of a game development team
+--- slide 28 ---
+Summary:
+PART A: Introduction to Commercial Games Development
+Key players: Manufacturers, Programmers, Publishers, Retailers, Others.
+Ideas for games can come from anything
+Process: Concept Idea → Funding (Publisher) → Development → Distribution
+PART B: Phases of Commercial Games Development
+Concept phase → Pre-production → Production → Post-Production
+PART C: Game Development Teams and Roles
+Management
+Programmers
+Artists
+Designers
+--- slide 29 ---
+Questions?!

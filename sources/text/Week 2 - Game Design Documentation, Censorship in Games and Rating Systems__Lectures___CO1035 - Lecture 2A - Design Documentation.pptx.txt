@@ -1,0 +1,426 @@
+SOURCE: Week 2 - Game Design Documentation, Censorship in Games and Rating Systems\Lectures\_CO1035 - Lecture 2A - Design Documentation.pptx
+
+--- slide 1 ---
+CO1035: Game ConceptsLecture 2A:Game Design Documentation
+--- slide 2 ---
+Objectives
+List the different types of documentation in Games Development
+Understand their content and their uses.
+Structure and create a game design document.
+--- slide 3 ---
+Introduction
+During the course of a game development life-cycle, several documents are developed.
+These documents serve different purposes:
+Pitch and secure funding or publisher approval
+Define and describe the game for internal development
+Support project planning and team coordination
+Communicate technical requirements and production goals
+Ensure artistic and narrative consistency
+Provide reference material for quality assurance and updates
+Promote the game to consumers and media
+--- slide 4 ---
+Types of Documents
+High Concept
+Concept Document
+Pitch Document
+Game Design Document (GDD)
+--- slide 5 ---
+High Concept Document
+A high-concept document is a short, concise summary that presents the core idea of the game, and it is created during the concept phase.
+It captures the game’s essence in a way that is clear, engaging and easy to understand.
+Purpose:
+To pitch the game’s vision to publishers, investors, or a development team.
+To spark interest and communicate what makes the game unique.
+To serve as the first written step toward developing the full game design.
+Typical Contents:
+Game Title and Genre
+One-sentence “elevator pitch”
+Core gameplay idea or hook of the game
+Target Audience and platform
+Key unique features
+--- slide 6 ---
+Concept Document
+A concept document expands on the initial high concept document by outlining how the game will play, look and feel. 
+It transforms a raw idea into a structured proposal, ready for discussion and early planning.
+Its size differs based on the nature of the game:
+Indie game: 2-4 pages 
+Medium project: 5-10 pages 
+Large project: 10-15 pages
+Typically, it is developed during the late concept phase or early pre-production phases.
+--- slide 7 ---
+Concept Document (cont.)
+Purpose:
+To develop the core gameplay mechanics and player experience
+To evaluate feasibility before major production begins
+To align creativity and technical teams around a shared vision
+Typical Contents:
+Game overview and settings
+Core gameplay loop and progression
+Key features and mechanics
+Target audience and competitors
+Art direction and tone
+Business or monetization model
+--- slide 8 ---
+Pitch Document
+A Pitch Document is a short presentation designed to sell the game idea to potential investors, publishers or studio executives.
+It highlights the most exciting and marketable aspects of the game.
+Typically, it is developed in parallel with the Concept document (late concept or early pre-production phases)
+Purpose:
+Secure funding, approval or publishing deals
+To quickly communicate the game’s appeal and business potential
+To showcase visual materials that bring the concept to life.
+Typical Content:
+Game Title, genre, target audience, platforms and elevator pitch
+Key gameplay features, innovations and Fundamental Art of the game
+Market potential and selling points
+Development timeline and budget summary
+--- slide 9 ---
+Game Design Document
+GDD is the central blueprint of a video game, created during the pre-production phase.
+This document is indented for the game development team ONLY.
+Serves as the document from which the game is to be build.
+Key points:
+It is the most current representation of everything there is to know about the game throughout development.
+A GDD can be thought of as the “game on paper”.
+Every element of the game is described in detail: narrative, characters, goals, mechanics, etc.
+Its structure can vary between organizations, but all GDDs share the same objective: telling developers what to develop
+--- slide 10 ---
+Game Design Document
+Role in Game Development:
+Provides clarity and guidance to all departments: designers, programmers, artists, and writers
+Acts as a central communication tool, ensuring the entire team shares the same vision
+Serves as a living document that is constantly updated, though additions should eventually stop to maintain development focus
+Scope and Size:
+Can be a single document or multiple documents, each covering specific elements or levels
+Can contain hundreds or even over 1000 pages of detailed information
+Breaks down every aspect of the game, including implementation plans, to guide production
+--- slide 11 ---
+Game Design Document Structure
+Title Page
+Game Overview
+Background
+Game play description
+The Game World
+Levels / Key Locations
+Progression / Travel
+Characters
+Player character(s)
+Non-player characters (NPCs)
+Character attributes
+Character abilities &amp; development
+Objects
+Interactive world elements (e.g. doors)
+Key Items (e.g. weapons)
+Pick-ups / Inventory Items
+User Interface (UI)
+On screen display (OSD)
+Controller usage
+Camera / Point of View
+Play Modes
+Appendices (Detailed lists, tables etc.)
+--- slide 12 ---
+Game Design Document Structure
+Title Page
+Game Overview
+Background
+Game play description
+The Game World
+Levels / Key Locations
+Progression / Travel
+Characters
+Player character(s)
+Non-player characters (NPCs)
+Character attributes
+Character abilities &amp; development
+Objects
+Interactive world elements (e.g. doors)
+Key Items (e.g. weapons)
+Pick-ups / Inventory Items
+User Interface (UI)
+On screen display (OSD)
+Controller usage
+Camera / Point of View
+Play Modes
+Appendices (Detailed lists, tables etc.)
+--- slide 13 ---
+Game Overview
+The game overview gives the background story and describes the basic  game play.
+You should make a clear distinction in the Game Overview between the  Background (story, setting, character) and Gameplay (i.e. a description of  the game mechanics).
+It should not contain too much detail; refer to other sections in the  document where appropriate
+For example, when introducing a character in the overview, refer to the character
+section for a full description
+Don’t include complex rules or tables etc. Such detail belongs later in the document.
+--- slide 14 ---
+Game Overview FAQs
+What is the game?
+Where and when does the game take place?
+Who or what do I control as a character?
+How many characters do I control?
+What is my character’s objective?
+How will my character achieve the objective?
+What threats does my character face?
+What competition does my character face?
+What help can my character find?
+What game is the nearest comparison?
+How is it different?
+--- slide 15 ---
+Game Design Document Structure
+Title Page
+Game Overview
+Background
+Game play description
+The Game World
+Levels / Key Locations
+Progression / Travel
+Characters
+Player character(s)
+Non-player characters (NPCs)
+Character attributes
+Character abilities &amp; development
+Objects
+Interactive world elements (e.g. doors)
+Key Items (e.g. weapons)
+Pick-ups / Inventory Items
+User Interface (UI)
+On screen display (OSD)
+Controller usage
+Camera / Point of View
+Play Modes
+Appendices (Detailed lists, tables etc.)
+--- slide 16 ---
+The Game World
+This can be one of the larger sections of the design document.
+Demonstrates every detail about the Game World and its design.
+It should begin with an introduction
+For example: 
+In a post-apocalyptic world ruled by robotic creatures…
+In a medieval castle ruled by King Solomon and his army…
+In a futuristic world somewhere in 2150…
+--- slide 17 ---
+Levels, Key Locations, Progression and Travel
+Next, each level or key location should be  described in detail.
+Some games have very large environments  with many areas rather than single levels
+Describe the different areas in each environment, including their scale (e.g. 1km square, etc.)
+In some games location is not relevant such as card and board games, but their description is still very important
+Then, the different ways of traveling and progressing the game should be demonstrated:
+By reaching a target position
+By defeating all the enemies
+By achieving other conditions (describe them)
+--- slide 18 ---
+Example:Locations, Progression and Travel: Fortnite
+An island
+Has varying topography
+Has In-land water ways
+Has several settlements
+Can be explored freely on foot or using  vehicles
+A safe zone is selected randomly during a  game session, and a storm consumes  areas outside the safe zone
+The safe zone reduces in size and the  storm increases in size as the game  progresses
+--- slide 19 ---
+Game Design Document Structure
+Title Page
+Game Overview
+Background
+Game play description
+The Game World
+Levels / Key Locations
+Progression / Travel
+Characters
+Player character(s)
+Non-player characters (NPCs)
+Character attributes
+Character abilities &amp; development
+Objects
+Interactive world elements (e.g. doors)
+Key Items (e.g. weapons)
+Pick-ups / Inventory Items
+User Interface (UI)
+On screen display (OSD)
+Controller usage
+Camera / Point of View
+Play Modes
+Appendices (Detailed lists, tables etc.)
+--- slide 20 ---
+Characters
+This chapter provides a detailed demonstration of the different game characters.
+At first, the Player Character/s and their profile should be described in-depth.
+Next, describe any other key characters that can  NOT be controlled by the player (NPCs or AIs).
+Some games do not have specific characters, but  types of character instead (e.g. archers,  battleships).
+Describe the player / non-player character types.
+--- slide 21 ---
+Character Attributes, Abilities and Development
+Following the demonstration of each character profile, their attributes, abilities and development should be identified and demonstrated.
+Character Attributes: are the basic stats that define a character’s capabilities (e.g., strength, health, speed, intelligence)
+Character Abilities: are the Special skills or powers a character can use in gameplay (e.g., spells, attacks, stealth moves)
+Character Development: is the progression and growth of a character over time, including levelling up, unlocking new abilities, or evolving story arcs
+--- slide 22 ---
+Game Design Document Structure
+Title Page
+Game Overview
+Background
+Game play description
+The Game World
+Levels / Key Locations
+Progression / Travel
+Characters
+Player character(s)
+Non-player characters (NPCs)
+Character attributes
+Character abilities &amp; development
+Objects
+Interactive world elements (e.g. doors)
+Key Items (e.g. weapons)
+Pick-ups / Inventory Items
+User Interface (UI)
+On screen display (OSD)
+Controller usage
+Camera / Point of View
+Play Modes
+Appendices (Detailed lists, tables etc.)
+--- slide 23 ---
+Objects and Object Attributes
+Objects may range from keys to buildings - anything with a distinct game play function.
+Categorise your objects into different types:
+Key Items: (e.g.) the weapons, main building types. 
+Inventory Items / pick-ups: (e.g.) keys, food, power-ups, armour etc. 
+Interactive environment elements: (e.g.) moving spikes, platforms, ramps etc.
+Objects usually have attributes just as characters do. These need to be  detailed along with the object description.
+Some examples are:
+Strength, power requirement etc. for a building in an RTS.
+Range, Ammo type, clip size for weapons in an FPS
+Health gained for food / med-kit / potion
+Damage dealt by spikes / toxic waste
+--- slide 24 ---
+Game Design Document Structure
+Title Page
+Game Overview
+Background
+Game play description
+The Game World
+Levels / Key Locations
+Progression / Travel
+Characters
+Player character(s)
+Non-player characters (NPCs)
+Character attributes
+Character abilities &amp; development
+Objects
+Interactive world elements (e.g. doors)
+Key Items (e.g. weapons)
+Pick-ups / Inventory Items
+User Interface (UI)
+On screen display (OSD)
+Camera / Point of View
+Controller usage
+Play Modes
+Appendices (Detailed lists, tables etc.)
+--- slide 25 ---
+UI Interface
+The UI of a game has three components:
+The On Screen Display (OSD)
+The camera / viewpoint.
+The controller interface
+In the GDD the selection of the most appropriate OSD, camera and viewpoints as well as the controller interface should be clearly justified.
+--- slide 26 ---
+On Screen Display (OSD) in GDD
+Refers to all the information and visual elements shown on the player’s screen during gameplay. 
+It helps players understand their status, objectives, and controls in real time
+Purpose in GDD
+To define what the player sees during gameplay
+To ensure consistency and clarity in UI/UX design
+To guide programmers and artists in creating the interface
+Typical Elements included:
+Health, Stamina, Energy (in the form of bars)
+Score, XP, currency
+Mini-maps, Inventory
+Objectives, missions and quests
+Ability cooldowns
+--- slide 27 ---
+Controller Interface
+Following OSD, the controller interface, depending on the target platform should be demonstrated.
+The Controller Interface defines how the player interacts with the game through input devices such as controllers, keyboards, or touchscreens.
+Purpose in GDD:
+To clearly communicate input schemes.
+Ensure consistency across different platforms
+--- slide 28 ---
+Game Design Document Structure
+Title Page
+Game Overview
+Background
+Game play description
+The Game World
+Levels / Key Locations
+Progression / Travel
+Characters
+Player character(s)
+Non-player characters (NPCs)
+Character attributes
+Character abilities &amp; development
+Objects
+Interactive world elements (e.g. doors)
+Key Items (e.g. weapons)
+Pick-ups / Inventory Items
+User Interface (UI)
+On screen display (OSD)
+Controller usage
+Camera / Point of View
+Play Modes
+Appendices (Detailed lists, tables etc.)
+--- slide 29 ---
+Play Modes
+This section details the various single and multiplayer game modes.
+Also the variations for each mode, e.g.
+Single Player: Story mode, Timed Levels, Puzzle Mode, etc.
+Multiplayer: Deathmatch, Capture the flag etc.
+Differences between each variation should be clearly demonstrated.
+Also this section should list:
+Initial settings that affect the game-play rules.
+Hours of game play for single player modes.
+State if there will be a way to save the game in progress.
+Also note if there will be any restrictions on game saving
+--- slide 30 ---
+Game Design Document Structure
+Title Page
+Game Overview
+Background
+Game play description
+The Game World
+Levels / Key Locations
+Progression / Travel
+Characters
+Player character(s)
+Non-player characters (NPCs)
+Character attributes
+Character abilities &amp; development
+Objects
+Interactive world elements (e.g. doors)
+Key Items (e.g. weapons)
+Pick-ups / Inventory Items
+User Interface (UI)
+On screen display (OSD)
+Controller usage
+Camera / Point of View
+Play Modes
+Appendices (Detailed lists, tables etc.)
+--- slide 31 ---
+Appendices
+Use the appendices to remove detail from the main document. Here are  some examples:
+A list of 30 spells – RPG games
+A list of 25 cars with engine – racing games
+A list of character moves and combinations (e.g.  high punch, low block) – Fighting game
+Other documents:
+Graphics / Animation lists
+Sound Effect / Vocal lists
+Music requirements and style
+Future directions (ideas for the sequel)
+Historical Notes (e.g. for a war game)
+References (if you use any external content)
+--- slide 32 ---
+Summary
+There are four main types of documents used and developed in different phases of the Games Development life cycle:
+High Concept Document: A brief summary that presents the core idea and hook of a game
+Concept Document: An expanded outline detailing how the game works and what makes it unique
+Pitch Document: A presentation designed to sell the game idea to investors or publishers
+Game Design Document: The comprehensive blueprint that guides developers on how to build the game
+Game Design Document chapters: 1) Game Overview, 2) Game World, 3) Characters, 4) Objects, 5) User Interfaces, 6) Play Modes, and 7) Appendices
+--- slide 33 ---
+Questions?!

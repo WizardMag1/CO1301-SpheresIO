@@ -1,0 +1,343 @@
+SOURCE: Week 3 - Finite State Machines and Math Vectors\Lectures\_CO1035 - Lecture 3B - Math Vectors.pptx
+
+--- slide 1 ---
+CO1035: Lecture 3bMath vectors
+--- slide 2 ---
+Lecture’s objectives
+Understand what vectors and scalars are
+Differentiate between scalars and vectors.
+Differentiate between global and local coordinates.
+Find the vector between two points
+Add and subtract vectors
+Calculate the length of a vector.
+Normalize a vector.
+Perform scalar multiplication of vectors.
+--- slide 3 ---
+ORDER OF PRECEDENCE (ORDER OF OPERATIONS)
+Mathematical operations have an order of precedence.
+Easier to remember as BODMAS or PEMDAS
+Notes:
+Multiplication and Division have the same weight.
+Addition and Subtraction have the same weight.
+--- slide 4 ---
+RIGHT-ANGLE TRIANGLES
+A right-angle triangle is a triangle that has one angle equal to 90°
+Hypotenuse
+Hypotenuse
+Adjacent
+Adjacent
+Opposite
+Opposite
+--- slide 5 ---
+Right-angle triangles
+One of the properties of right-angle triangles is Pythagoras’ Theorem.
+Pythagoras' Theorem: the length of the longest side of a right-angled triangle is equal to the square root of the sum of the squares of the other two sides.
+The longest side of a right-angled triangle is called the ‘hypotenuse’.
+--- slide 6 ---
+SCALARS AND VECTORS
+ Scalar: a physical quantity that is completely described by its magnitude
+ (e.g.) Distance, Volume, Time, Temperature, Mass, etc.
+ Vectors: a physical quantity that is fully described by its magnitude and its direction
+ (e.g.) Displacement, Force, Velocity, etc.
+--- slide 7 ---
+coordinates
+A coordinate represents a point in space.
+A point in 2D space is represented using two coordinates (x, y) e.g. (1,4)
+In 3D a point is represented using three coordinates (x,  y, z) e.g. (5,3,9)
+In 3D - This is called Cartesian Geometry.
+--- slide 8 ---
+Coordinates (CONT.)
+You can use your hand to indicate the geometry.
+In the TL-Engine, we are using left-handed axes.
+x = thumb 
+y = index finger
+z = middle finger
+The origin of the grid is at ( 0, 0, 0 )
+--- slide 9 ---
+LOCAL VS GLOBALCOORDINATES
+The world (or screen) has its x, y, z axes and its own origin (Global Coordinates)
+Every object in the world also has its own origin and x, y and z axes (Local Coordinates)
+--- slide 10 ---
+VECTORS
+ Vectors are entities with magnitude and direction.
+ We visualize vectors by drawing a line with an arrowhead at one end.
+ The length of the line represents the magnitude of the vector.
+ And the arrowhead indicates the vector’s direction
+--- slide 11 ---
+Vectors (cont.)
+ Vectors are useful in games, e.g., for representing movement or direction.
+ In 3D, a vector can be drawn if the x, y, and z coordinates of its initial and final points are known.
+ Vectors are more easily shown in 2D where we only need (x, y) values.
+ Example: This vector can be described as going upwards to the right.
+--- slide 12 ---
+VECTOR BETWEEN TWO POINTS
+ The vector between two points can be calculated by subtracting one point from the other:
+ Subtract the initial x value from the final x value to produce one new x; 
+ Subtract the initial y value from the final y value to produce one new y;
+ Subtract the initial z value from the final z value to produce one new z;
+--- slide 13 ---
+Vector direction
+ Notice how the values in the vector are found by subtracting the source point coordinates from the destination point coordinates. 
+ This means that the direction of the vector is important.
+ And that the vector in the reverse direction from P2 to P1 is not the same as the vector from P1 to P2.
+--- slide 14 ---
+VECTOR DIRECTION (CONT.)
+ Which point is subtracted from which is important. 
+ The order gives us the direction of movement.
+Vector b from P2 (1, 2)
+to P1 (0, 1)
+x
+1
+2
+0
+3
+4
+5
+1
+2
+3
+4
+5
+y
+1
+P (0, 1)
+P2(1, 2)
+Vector a from P1 (0, 1)
+to P2 (1, 2)
+x
+1
+2
+0
+3
+4
+5
+1
+2
+3
+4
+5
+y
+1
+P (0, 1)
+P2(1, 2)
+--- slide 15 ---
+Vectors in 3d
+ 3D vectors are just an extension of 2D vectors.
+ In the case of 3D vectors, we also include the z-axis in the equation.
+--- slide 16 ---
+x
+1
+2
+0
+3
+4
+1
+2
+3
+4
+5
+y
+5
+Vectors (CONT.)
+Vectors are location independent
+The vector is the same no matter what its coordinates are.
+Two vectors with the same magnitude  and direction are equal regardless of  their location
+--- slide 17 ---
+Vector Addition
+Two vectors v and w are added by placing the beginning of w at the end of v.
+--- slide 18 ---
+VECTOR ADDITION (CONT.)
+However, since vectors are independent of the coordinates, the addition of 2 vectors will lead to the same result (e.g.)
+v(0, 1) + w(2, 3) = (0+2, 1+3) = (2, 4)
+w(2, 3) + v(0, 1) = (2+0, 3+1) = (2, 4)
+v + w = w + v
+--- slide 19 ---
+Vector Subtraction
+Subtraction works in a similar way to addition. 
+The direction in which the subtracted vector points is effectively reversed.
+v(3, 3) - w(1, 2) = (3 -1, 3 -2) = (2, 1)
+Note: v(3, 3) - w(1, 2) = (2, 1) is not equals w(2, 1) - v(3, 3) = (-1, -2)
+--- slide 20 ---
+P
+1
+P2
+𝑥
+𝑦
+x
+y
+𝑣
+Length of a Vector
+A vector makes a right-angled triangle.
+The shortest sides of the triangle are the x and y values.
+3D is the same - but with the addition of the z axis.
+In 3D - If we have a vector v (x, y, z), then we can use Pythagoras’ Theorem to calculate the length of v or ||𝑣 | |
+--- slide 21 ---
+Length of a Vector: 3D Example
+What is the length of the vector (5, 6, 7)?
+𝑣	=	𝒙𝟐 + 𝒚𝟐 + 𝒛𝟐
+𝑣	=	5𝟐 + 6𝟐 + 7𝟐
+𝑣	=	110 = 10.49
+--- slide 22 ---
+Length of a Vector: 2D Example
+𝑣	=	𝟑𝟐 + 𝟒𝟐
+𝑣	= 5
+What is the length of the vector (3, 4)?
+--- slide 23 ---
+Length of a Vector: 2D Example (cont.)
+What is the length of the vector (-3, -4)?
+--- slide 24 ---
+Why is the Length of a Vector Useful?
+You may want to find out the distance between two game objects.
+You may want to find out if two game objects are colliding.
+--- slide 25 ---
+Unit or Normalised Vector
+A vector that has a magnitude equal to 1 is called a unit or a normalized vector.
+Represented with a ^ symbol: e.g. 
+To convert a vector into a normalized vector, we need to divide its components by the length of vector
+--- slide 26 ---
+x
+1
+2
+0
+3
+4
+5
+1
+2
+3
+4
+5
+y
+Direction of Movement
+Remember: vectors have both magnitude and direction.
+A vector can be normalised so that it  represents direction; this is called a  direction vector
+(e.g.) both vectors are pointing in the same direction, but the black vector is half the size of the red vector.
+Normalising these vectors will turn them into unit vectors so that they have the same magnitude and direction.
+--- slide 27 ---
+Direction of Movement (cont.)
+Direction should be independent of scale.
+As you know, the units we use within 3D  graphics are arbitrary. 
+(e.g.) Sometimes in the TL-Engine, a distance of 0.1 is large, but sometimes it is small. 
+This depends on the scale of the models.
+x
+2
+1
+0
+3
+4
+1
+2
+3
+4
+5
+y
+5
+--- slide 28 ---
+Direction Vector
+The direction vector is a vector that is independent of scale; it has a length of 1.
+It is used to represent the direction of a  vector
+x
+0
+3
+2
+1
+4
+5
+1
+2
+3
+4
+5
+y
+--- slide 29 ---
+𝑣	=	𝒙𝟐 + 𝒚𝟐 + 𝒛𝟐
+𝑣	=	𝟏𝟐 + 𝟑𝟐 + 𝟔𝟐
+𝑣	= 6.78
+The direction vector
+The direction vector is found by:
+Calculating the length of the vector
+Dividing each component of the vector by its length
+For example, given a vector v ( 1, 3, 6 )
+Direction vector:
+=
+𝟏	𝟑
+,	,
+𝟔
+𝟔.𝟕𝟖	𝟔.𝟕𝟖	𝟔.𝟕𝟖
+= (0.15, 0.44, 0.88)
+--- slide 30 ---
+𝑣	=	𝒙𝟐 + 𝒚𝟐
+𝑣	=	𝟒𝟐 + 𝟑𝟐
+𝑣	= 5
+The direction vector 2d example
+Direction vector:
+=
+𝟒 , 𝟑
+𝟓	𝟓
+= (0.8, 0.6)
+x
+1
+0
+3
+2
+4
+5
+1
+2
+3
+4
+5
+Here is a 2D example of the process:
+y
+v	(0.8
+, 0.6)
+Dir
+P1(1,1)
+P2(5,4)
+--- slide 31 ---
+The direction vector 3d example
+Vector pointing straight forward: ( 0, 0, 3.1 )
+--- slide 32 ---
+Pointing/looking at
+ Vectors can be used to represent a direction (in the sense of North or North-West).
+ To do this, we create a vector that ‘points’ in the direction we want, and has a length of 1 unit.
+ In games, we often need to find the direction vector that ‘points’ from one position to another. 
+ The process we use is:
+Get the vector between the two positions v(x, y, z)
+Find the length of this vector 𝑣 (using Pythagoras)
+The direction vector in this case is:
+--- slide 33 ---
+Scalar Multiplication
+Direction vectors are always of length 1 (the unit length).
+ To describe an actual movement, you combine the direction vector with a scalar.
+The scalar is the distance to be moved.
+Imagine that you want to move something by a given distance in a particular direction. We multiply the direction vector by the distance we want to move.
+For example, to move an object 4 units using  the normalised vector ( 0, 1, 0 ), the movement  vector becomes ( 0, 4, 0 )
+x
+1
+2
+0
+3
+4
+5
+1
+2
+3
+4
+5
+y
+--- slide 34 ---
+Summary
+ A scalar has magnitude; a vector has magnitude and direction.
+The vector between two points can be calculated by subtracting one point from the other.
+The length of a vector can be calculated using Pythagoras’ theorem.
+Vectors can be added and subtracted.
+Unit vector is a vector of length one (a normalized vector).
+A direction vector is a unit vector used to represent the direction of a  vector.
+A vector can be scaled through scaler multiplication.
+--- slide 35 ---
+References and essential reading
+Van Verthe, Essential Mathematics for Games:
+Chapter 2: "Vectors and Points"
+--- slide 36 ---
+Questions?!

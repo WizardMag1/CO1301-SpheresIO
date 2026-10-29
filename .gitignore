@@ -1,0 +1,30 @@
+# Visual Studio intermediate & build outputs
+x64/
+Debug/
+Release/
+*.exe
+*.pdb
+*.ilk
+*.obj
+*.log
+*.tlog
+*.idb
+*.lastbuildstate
+TL11-Template/
+_archive_ai_generated_DO_NOT_SUBMIT/
+
+# Visual Studio temporary files & caches
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Python virtual environments & caches
+.venv/
+__pycache__/
+*.pyc
+
+# Local system temp files
+*.tmp
+*.part

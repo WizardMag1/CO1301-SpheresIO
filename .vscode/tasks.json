@@ -1,0 +1,22 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build with MSBuild (Debug x64)",
+            "type": "shell",
+            "command": "& \"C:\\Program Files\\Microsoft Visual Studio\\18\\Insiders\\MSBuild\\Current\\Bin\\amd64\\MSBuild.exe\" \"${workspaceFolder}\\TL11-Template.vcxproj\" /p:Configuration=Debug /p:Platform=x64",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "Build with MSBuild (Release x64)",
+            "type": "shell",
+            "command": "& \"C:\\Program Files\\Microsoft Visual Studio\\18\\Insiders\\MSBuild\\Current\\Bin\\amd64\\MSBuild.exe\" \"${workspaceFolder}\\TL11-Template.vcxproj\" /p:Configuration=Release /p:Platform=x64",
+            "group": "build",
+            "problemMatcher": "$msCompile"
+        }
+    ]
+}
