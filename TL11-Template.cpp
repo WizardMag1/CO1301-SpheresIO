@@ -237,14 +237,15 @@ int main()
 	ESphereState sphereState = Regular;
 	float hyperTimer = 0.0f;
 
-	// Start frame timer (Lab 4A Section 5)
-	myEngine->Timer();
-
 	// Main Game Loop
 	while (myEngine->IsRunning())
 	{
 		myEngine->DrawScene();
-		float frameTime = myEngine->Timer();
+		float frameTime = myEngine->FrameTime();
+		if (frameTime > 0.1f)
+		{
+			frameTime = 0.016f;
+		}
 
 		// 1. Escape quits the game in all states (Milestone 1f)
 		if (myEngine->KeyHit(Key_Escape))
@@ -345,8 +346,14 @@ int main()
 						float directionX = (itemX[closest] - enemyX[e]) / shortestDist;
 						float directionZ = (itemZ[closest] - enemyZ[e]) / shortestDist;
 
-						enemies[e]->MoveX(directionX * kEnemySpeed * frameTime);
-						enemies[e]->MoveZ(directionZ * kEnemySpeed * frameTime);
+						float step = kEnemySpeed * frameTime;
+						if (step > shortestDist)
+						{
+							step = shortestDist;
+						}
+
+						enemies[e]->MoveX(directionX * step);
+						enemies[e]->MoveZ(directionZ * step);
 
 						enemyX[e] = enemies[e]->GetX();
 						enemyZ[e] = enemies[e]->GetZ();
