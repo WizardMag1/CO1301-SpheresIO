@@ -12,17 +12,31 @@ const float kRotationSpeed = 70.0f;
 const float kCameraSpeed = 80.0f;
 const float kEnemySpeed = 35.0f;
 
-// World and array constants (3x bigger island: -300 to +300)
+// World and spawn range constants (No magic numbers - Brief Page 3)
 const float kIslandBorder = 300.0f;
+const int kSpawnRange = 500;
+const int kSpawnMin = -250;
+const float kMinItemSpacing = 10.0f;
+const float kMinEnemyStartDist = 120.0f;
 const float kCubeHalfWidth = 2.5f;
+
+// Gameplay constants (Points, Growth, Hyper Mode)
 const int kTotalItems = 36;
 const int kTotalEnemies = 5;
+const int kTotalSkins = 8;
+const int kPointsPerItem = 10;
+const int kPointsPerGrow = 80;
+const int kSwallowPointLead = 40;
+const int kWinPoints = 500;
+const float kGrowScale = 1.2f;
+const float kHyperRadius = 80.0f;
+const float kHyperSeconds = 8.0f;
 
 // Game states (Milestone 3d)
 enum EGameState { Playing, Paused, GameWon, GameOver };
 
 // Camera states (Milestone 2a)
-enum ECameraState { TopDown, Isometric, CloseView };
+enum ECameraState { TopDown, Isometric, ThirdView };
 
 // Sphere states (Milestone 4c)
 enum ESphereState { Regular, Hyper };
@@ -37,6 +51,7 @@ float GetDistance(float x1, float z1, float x2, float z2)
 }
 
 // Sphere-to-box collision detection (Milestone 3b & Lab 4B Section 10)
+// Returns true (YES, touching) or false (NO, not touching)
 bool SphereToBox(float sphereX, float sphereZ, float sphereRadius, float boxX, float boxZ)
 {
 	float border = kCubeHalfWidth + sphereRadius;
@@ -69,37 +84,39 @@ void SpawnItem(Model* items[], float itemX[], float itemZ[], string skins[], int
 
 	while (safePosition == false)
 	{
-		float randomX = (float)((rand() % 521) - 260);
-		float randomZ = (float)((rand() % 521) - 260);
+		// Pick random X and Z between -250 and +250 on the floor
+		float randomX = (float)((rand() % kSpawnRange) + kSpawnMin);
+		float randomZ = (float)((rand() % kSpawnRange) + kSpawnMin);
 		safePosition = true;
 
-		// Check distance from player sphere
+		// Rule 1: Must not spawn touching the player sphere (Milestone 4a)
 		float distToPlayer = GetDistance(randomX, randomZ, playerX, playerZ);
-		if (distToPlayer < (playerRadius + 10.0f))
+		if (distToPlayer < (playerRadius + kMinItemSpacing))
 		{
 			safePosition = false;
 		}
 
-		// Check 10-unit distance from other spawned items (Milestone 4a)
+		// Rule 2: Must be at least 10 units away from all other items (Milestone 4a)
 		for (int other = 0; other < totalSpawned; other++)
 		{
 			if (other != currentItem)
 			{
 				float distToItem = GetDistance(randomX, randomZ, itemX[other], itemZ[other]);
-				if (distToItem < 10.0f)
+				if (distToItem < kMinItemSpacing)
 				{
 					safePosition = false;
 				}
 			}
 		}
 
+		// If both rules passed, place the item on the floor
 		if (safePosition == true)
 		{
 			itemX[currentItem] = randomX;
 			itemZ[currentItem] = randomZ;
 			items[currentItem]->SetPosition(randomX, kCubeHalfWidth, randomZ);
 
-			int randomSkin = rand() % 8;
+			int randomSkin = rand() % kTotalSkins;
 			items[currentItem]->SetSkin(skins[randomSkin]);
 		}
 	}
@@ -153,7 +170,7 @@ int main()
 	int enemiesSwallowed = 0;
 
 	// Array of 8 random colour skins (Lab 3B Section 5)
-	string skins[8] = {
+	string skins[kTotalSkins] = {
 		"minicube.jpg", "tiles1.jpg", "RedBall.jpg", "YellowBall.jpg",
 		"Baize.jpg", "Earth.jpg", "Jupiter.jpg", "Mars.jpg"
 	};
@@ -188,7 +205,7 @@ int main()
 		SpawnItem(items, itemX, itemZ, skins, i, i, playerX, playerZ, playerRadius);
 	}
 
-	// Create special HyperCube at a safe random position (Milestone 4c.i)
+	// Create special HyperCube at a safe position (Milestone 4c.i)
 	Model* hyperCube = cubeMesh->CreateModel(60, kCubeHalfWidth, 60);
 	hyperCube->SetSkin("hypercube.jpg");
 	float hyperCubeX = 60.0f;
@@ -215,10 +232,10 @@ int main()
 		bool farEnough = false;
 		while (farEnough == false)
 		{
-			float randX = (float)((rand() % 501) - 250);
-			float randZ = (float)((rand() % 501) - 250);
+			float randX = (float)((rand() % kSpawnRange) + kSpawnMin);
+			float randZ = (float)((rand() % kSpawnRange) + kSpawnMin);
 
-			if (GetDistance(randX, randZ, playerX, playerZ) > 120.0f)
+			if (GetDistance(randX, randZ, playerX, playerZ) > kMinEnemyStartDist)
 			{
 				enemyX[e] = randX;
 				enemyZ[e] = randZ;
@@ -228,12 +245,12 @@ int main()
 		}
 	}
 
-	// Create camera starting in CloseView (Basic Layout & Milestone 2a)
+	// Create camera starting in ThirdView (Basic Layout & Milestone 2a)
 	Camera* camera = myEngine->CreateCamera(ManualCamera, 0, 65, -90);
 	camera->RotateLocalX(32);
 
 	EGameState gameState = Playing;
-	ECameraState cameraState = CloseView;
+	ECameraState cameraState = ThirdView;
 	ESphereState sphereState = Regular;
 	float hyperTimer = 0.0f;
 
@@ -282,20 +299,20 @@ int main()
 
 		if (playerPoints >= bestEnemyPoints)
 		{
-			firstLine << "1st Player Points: " << playerPoints << " / 500";
+			firstLine << "1st Player Points: " << playerPoints << " / " << kWinPoints;
 			secondLine << "2nd Enemy Points: " << bestEnemyPoints;
 		}
 		else
 		{
 			firstLine << "1st Enemy Points: " << bestEnemyPoints;
-			secondLine << "2nd Player Points: " << playerPoints << " / 500";
+			secondLine << "2nd Player Points: " << playerPoints << " / " << kWinPoints;
 		}
 
 		myFont->Draw(firstLine.str(), rightX, 0, Black, RightAlign);
 		myFont->Draw(secondLine.str(), rightX, 40, Black, RightAlign);
 
 		stringstream swallowText;
-		swallowText << "Opponents Swallowed: " << enemiesSwallowed << " / 5";
+		swallowText << "Opponents Swallowed: " << enemiesSwallowed << " / " << kTotalEnemies;
 		myFont->Draw(swallowText.str(), rightX, 80, Blue, RightAlign);
 
 		myFont->Draw("Keys: 1=Top  2=Iso  3=Close-Up", 10, 0, Black, LeftAlign);
@@ -365,19 +382,19 @@ int main()
 						if (SphereToBox(enemyX[e], enemyZ[e], enemyRadius[e], itemX[i], itemZ[i]) == true)
 						{
 							SpawnItem(items, itemX, itemZ, skins, i, kTotalItems, playerX, playerZ, playerRadius);
-							enemyPoints[e] = enemyPoints[e] + 10;
+							enemyPoints[e] = enemyPoints[e] + kPointsPerItem;
 
-							if (enemyPoints[e] % 80 == 0)
+							if (enemyPoints[e] % kPointsPerGrow == 0)
 							{
-								enemies[e]->Scale(1.2f);
-								enemyRadius[e] = enemyRadius[e] * 1.2f;
+								enemies[e]->Scale(kGrowScale);
+								enemyRadius[e] = enemyRadius[e] * kGrowScale;
 								enemies[e]->SetY(enemyRadius[e]);
 							}
 						}
 					}
 
 					// If enemy reaches 500 points first, GameOver (Milestone 5b)
-					if (enemyPoints[e] >= 500)
+					if (enemyPoints[e] >= kWinPoints)
 					{
 						gameState = GameOver;
 					}
@@ -406,7 +423,7 @@ int main()
 			}
 			if (myEngine->KeyHit(Key_3))
 			{
-				cameraState = CloseView;
+				cameraState = ThirdView;
 			}
 
 			// Move player with W/S and rotate with A/D or mouse buttons (Milestone 1b)
@@ -439,7 +456,7 @@ int main()
 			playerX = player->GetX();
 			playerZ = player->GetZ();
 
-			// Move camera with Arrow keys in TopDown, or follow player in CloseView (Milestone 1d & Lab 2C)
+			// Move camera with Arrow keys in TopDown, or follow player in ThirdView (Milestone 1d & Lab 2C)
 			if (cameraState == TopDown)
 			{
 				if (myEngine->KeyHeld(Key_Up))
@@ -459,7 +476,7 @@ int main()
 					camera->MoveX(-kCameraSpeed * frameTime);
 				}
 			}
-			if (cameraState == CloseView)
+			if (cameraState == ThirdView)
 			{
 				camera->SetPosition(playerX, 65, playerZ - 90);
 				camera->ResetOrientation();
@@ -492,7 +509,7 @@ int main()
 					hyperCubeActive = false;
 					hyperCube->SetY(-100.0f);
 					sphereState = Hyper;
-					hyperTimer = 8.0f;
+					hyperTimer = kHyperSeconds;
 					player->SetSkin("hypersphere.jpg");
 				}
 			}
@@ -505,7 +522,7 @@ int main()
 				for (int i = 0; i < kTotalItems; i++)
 				{
 					float dist = GetDistance(itemX[i], itemZ[i], playerX, playerZ);
-					if (dist <= 80.0f)
+					if (dist <= kHyperRadius)
 					{
 						if (dist > 0.1f)
 						{
@@ -536,26 +553,26 @@ int main()
 				if (SphereToBox(playerX, playerZ, playerRadius, itemX[i], itemZ[i]) == true)
 				{
 					SpawnItem(items, itemX, itemZ, skins, i, kTotalItems, playerX, playerZ, playerRadius);
-					playerPoints = playerPoints + 10;
+					playerPoints = playerPoints + kPointsPerItem;
 
 					// Every 80 points (8 pickups), grow sphere by 1.2x and raise Y (Milestone 2c)
-					if (playerPoints % 80 == 0)
+					if (playerPoints % kPointsPerGrow == 0)
 					{
-						player->Scale(1.2f);
-						playerRadius = playerRadius * 1.2f;
+						player->Scale(kGrowScale);
+						playerRadius = playerRadius * kGrowScale;
 						player->SetY(playerRadius);
 					}
 
 					// At 240 points (3 growth steps), activate magnetic Hyper Mode!
-					if (playerPoints == 240)
+					if (playerPoints == (kPointsPerGrow * 3))
 					{
 						sphereState = Hyper;
-						hyperTimer = 8.0f;
+						hyperTimer = kHyperSeconds;
 						player->SetSkin("hypersphere.jpg");
 					}
 
 					// Win Goal 1: Reach 500 points (Milestone 3c)
-					if (playerPoints >= 500)
+					if (playerPoints >= kWinPoints)
 					{
 						gameState = GameWon;
 					}
@@ -574,33 +591,33 @@ int main()
 						int pointDiff = playerPoints - enemyPoints[e];
 
 						// Player has > 40 more points -> Swallow enemy! (+40 points, grow 1.2x)
-						if (pointDiff > 40)
+						if (pointDiff > kSwallowPointLead)
 						{
 							enemyActive[e] = false;
 							enemies[e]->SetY(-200.0f);
-							playerPoints = playerPoints + 40;
+							playerPoints = playerPoints + kSwallowPointLead;
 							enemiesSwallowed = enemiesSwallowed + 1;
 
-							player->Scale(1.2f);
-							playerRadius = playerRadius * 1.2f;
+							player->Scale(kGrowScale);
+							playerRadius = playerRadius * kGrowScale;
 							player->SetY(playerRadius);
 
 							// Check both win goals: 500 points OR 5 swallowed opponents
-							if (playerPoints >= 500)
+							if (playerPoints >= kWinPoints)
 							{
 								gameState = GameWon;
 							}
-							if (enemiesSwallowed >= 5)
+							if (enemiesSwallowed >= kTotalEnemies)
 							{
 								gameState = GameWon;
 							}
 						}
 						// Enemy has > 40 more points -> Enemy swallows player! (Milestone 5b)
-						else if (pointDiff < -40)
+						else if (pointDiff < -kSwallowPointLead)
 						{
 							player->SetY(-200.0f);
-							enemyPoints[e] = enemyPoints[e] + 40;
-							enemies[e]->Scale(1.2f);
+							enemyPoints[e] = enemyPoints[e] + kSwallowPointLead;
+							enemies[e]->Scale(kGrowScale);
 							gameState = GameOver;
 						}
 						// Point difference is 40 or less -> Bounce apart! (Milestone 5a.v)
