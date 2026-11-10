@@ -1,124 +1,172 @@
 // TL11-Template.cpp: A program using the TL-Engine
 
-#include "TL-Engine11.h" // TL-Engine11 include file and namespace
-#include "math.h"
+#include "TL-Engine11.h"
+#include <iostream>
 using namespace tle;
+using namespace std;
 
-const float kWaterY = -5.0f;
-const float kIslandY = -5.0f;
-const float kSkyY = -960.0f;
-const float kInitialSphereRadius = 10.0f;
-const float kInitialSphereY = 10.0f; // Sits flush on island surface, flush means right on top of it (Y = 0)
-const float kCubeWidth = 5.0f;
-const float kCubeHalfWidth = 2.5f;
-const float kCubeY = 2.5f;          // Make sure that cubes are not going to fall
+// Speed constants (from Brief 1c: kSphereSpeed and kRotationSpeed)
+const float kSphereSpeed = 0.2f;
+const float kRotationSpeed = 0.2f;
+const float kCameraSpeed = 0.2f;
 
-const float kIslandHalfWidth = 100.0f;
-const float kIslandHalfDepth = 100.0f;
-const float kSphereSpeed = 60.0f;
-const float kRotationSpeed = 120.0f;
-const float kCameraSpeed = 80.0f;
-
-// Pickup threshold: sphere radius (10) + cube half-width (2.5) = 12.5 TL units. We will compare squared distances to avoid square root calculations. Also we will use a slightly larger threshold to make it easier to pick up cubes.
-const float kPickupDistSq = 12.5f * 12.5f;
-
+// Game states (from Brief 3d: Playing, Paused, GameOver)
 enum EGameState { Playing, Paused, GameOver };
 
-struct Cube {
-	IModel* model;
-	float x, y, z;
-	bool active;
-};
+// Move player with W, S, D, A keys (Brief 1b)
+void MovePlayer(TLEngine* myEngine, IModel* player)
+{
+	if (myEngine->KeyHeld(Key_W))
+	{
+		player->MoveLocalZ(kSphereSpeed);
+	}
+	if (myEngine->KeyHeld(Key_S))
+	{
+		player->MoveLocalZ(-kSphereSpeed);
+	}
+	if (myEngine->KeyHeld(Key_D))
+	{
+		player->RotateY(kRotationSpeed);
+	}
+	if (myEngine->KeyHeld(Key_A))
+	{
+		player->RotateY(-kRotationSpeed);
+	}
+}
 
-float DistanceSquared(float x1, float y1, float z1, float x2, float y2, float z2) {
-	float dx = x2 - x1, dy = y2 - y1, dz = z2 - z1;
-	return dx * dx + dy * dy + dz * dz;
+// Move camera with Arrow keys (Brief 1d)
+void MoveCamera(TLEngine* myEngine, ICamera* camera)
+{
+	if (myEngine->KeyHeld(Key_Up))
+	{
+		camera->MoveZ(kCameraSpeed);
+	}
+	if (myEngine->KeyHeld(Key_Down))
+	{
+		camera->MoveZ(-kCameraSpeed);
+	}
+	if (myEngine->KeyHeld(Key_Right))
+	{
+		camera->MoveX(kCameraSpeed);
+	}
+	if (myEngine->KeyHeld(Key_Left))
+	{
+		camera->MoveX(-kCameraSpeed);
+	}
+}
+
+// Check if player stepped on water outside the 200x200 island (-100 to 100) (Brief 1b.v)
+void CheckWater(IModel* player, EGameState& gameState)
+{
+	float playerX = player->GetX();
+	float playerZ = player->GetZ();
+
+	if (playerX > 100)
+	{
+		gameState = GameOver;
+	}
+	if (playerX < -100)
+	{
+		gameState = GameOver;
+	}
+	if (playerZ > 100)
+	{
+		gameState = GameOver;
+	}
+	if (playerZ < -100)
+	{
+		gameState = GameOver;
+	}
+}
+
+// Check distance between sphere and 1 cube, hide cube if distance <= 12.5 (Brief 1g & Lab 4A/4B)
+void CheckCubePickup(IModel* player, IModel* cube)
+{
+	float vectorX = cube->GetX() - player->GetX();
+	float vectorY = cube->GetY() - player->GetY();
+	float vectorZ = cube->GetZ() - player->GetZ();
+
+	float distance = sqrt(vectorX * vectorX + vectorY * vectorY + vectorZ * vectorZ);
+
+	if (distance <= 12.5f)
+	{
+		cube->SetY(-100);
+	}
 }
 
 int main()
 {
-	// Create a 3D engine (using TL11 engine here) and open a window for it
+	// Start engine and open window
 	TLEngine* myEngine = New3DEngine(TL11);
 	myEngine->StartWindowed();
 
-	// Add default folder for meshes and other media
+	// Media folders
 	myEngine->AddMediaFolder("C:\\Users\\Public\\Documents\\TL-Engine11\\Media");
 	myEngine->AddMediaFolder("media");
 
-	/**** Set up your scene here ****/
-
-
-
-	/**** Models  ****/
-
-	// 1. Load Meshes (Blueprints)
+	// Load meshes (Basic Layout)
 	IMesh* waterMesh  = myEngine->LoadMesh("water.x");
 	IMesh* islandMesh = myEngine->LoadMesh("island.x");
 	IMesh* skyMesh    = myEngine->LoadMesh("sky.x");
 	IMesh* sphereMesh = myEngine->LoadMesh("spheremesh.x");
 	IMesh* cubeMesh   = myEngine->LoadMesh("minicube.x");
 
+	// Create models at exact coordinates from Brief page 5
+	IModel* water  = waterMesh->CreateModel(0, -5, 0);
+	IModel* island = islandMesh->CreateModel(0, -5, 0);
+	IModel* sky    = skyMesh->CreateModel(0, -960, 0);
+	IModel* player = sphereMesh->CreateModel(0, 10, 0);
 
-	// 2. Create Models (Placed Instances)
-	IModel* water  = waterMesh->CreateModel(0.0f, kWaterY, 0.0f);
-	IModel* island = islandMesh->CreateModel(0.0f, kIslandY, 0.0f);
-	IModel* sky    = skyMesh->CreateModel(0.0f, kSkyY, 0.0f);
-	IModel* player = sphereMesh->CreateModel(0.0f, kInitialSphereY, 0.0f);
+	// Create 4 cubes (Brief Basic Layout e: cube1, cube2, cube3, cube4)
+	IModel* cube1 = cubeMesh->CreateModel(-80, 2.5f, 80);
+	IModel* cube2 = cubeMesh->CreateModel(80, 2.5f, 80);
+	IModel* cube3 = cubeMesh->CreateModel(80, 2.5f, -80);
+	IModel* cube4 = cubeMesh->CreateModel(-80, 2.5f, -80);
 
-
-	// 4 Cubes
-	Cube cubes[4] = {
-		{ cubeMesh->CreateModel(-80.0f, kCubeY,  80.0f), -80.0f, kCubeY,  80.0f, true },
-		{ cubeMesh->CreateModel(80.0f, kCubeY,  80.0f),  80.0f, kCubeY,  80.0f, true },
-		{ cubeMesh->CreateModel(80.0f, kCubeY, -80.0f),  80.0f, kCubeY, -80.0f, true },
-		{ cubeMesh->CreateModel(-80.0f, kCubeY, -80.0f), -80.0f, kCubeY, -80.0f, true }
-	};
-
-	ICamera* camera = myEngine->CreateCamera(kManual, 0.0f, 200.0f, 0.0f);
-	camera->RotateLocalX(90.0f);
+	// Create top-down camera (Brief Basic Layout g)
+	ICamera* camera = myEngine->CreateCamera(kManual, 0, 200, 0);
+	camera->RotateLocalX(90);
 
 	EGameState gameState = Playing;
 
+	// Game loop
 	while (myEngine->IsRunning())
 	{
 		myEngine->DrawScene();
-		float frameTime = myEngine->FrameTime();
 
-		if (myEngine->KeyHit(Key_Escape)) myEngine->Stop();
-
-		if (myEngine->KeyHit(Key_P)) {
-			gameState = (gameState == Playing) ? Paused : (gameState == Paused ? Playing : gameState);
+		// Escape quits the game (Brief 1f)
+		if (myEngine->KeyHit(Key_Escape))
+		{
+			myEngine->Stop();
 		}
 
+		// P pauses and unpauses the game (Brief 1e)
+		if (myEngine->KeyHit(Key_P))
+		{
+			if (gameState == Playing)
+			{
+				gameState = Paused;
+			}
+			else if (gameState == Paused)
+			{
+				gameState = Playing;
+			}
+		}
+
+		// Only move and check when Playing
 		if (gameState == Playing)
 		{
-			// Player controls
-			if (myEngine->KeyHeld(Key_W)) player->MoveLocalZ(kSphereSpeed * frameTime);
-			if (myEngine->KeyHeld(Key_S)) player->MoveLocalZ(-kSphereSpeed * frameTime);
-			if (myEngine->KeyHeld(Key_D)) player->RotateY(kRotationSpeed * frameTime);
-			if (myEngine->KeyHeld(Key_A)) player->RotateY(-kRotationSpeed * frameTime);
+			MovePlayer(myEngine, player);
+			MoveCamera(myEngine, camera);
+			CheckWater(player, gameState);
 
-			// Camera panning
-			if (myEngine->KeyHeld(Key_Up))    camera->MoveZ(kCameraSpeed * frameTime);
-			if (myEngine->KeyHeld(Key_Down))  camera->MoveZ(-kCameraSpeed * frameTime);
-			if (myEngine->KeyHeld(Key_Right)) camera->MoveX(kCameraSpeed * frameTime);
-			if (myEngine->KeyHeld(Key_Left))  camera->MoveX(-kCameraSpeed * frameTime);
-
-			// Water boundary check
-			float px = player->GetX(), pz = player->GetZ();
-			if (px > kIslandHalfWidth || px < -kIslandHalfWidth || pz > kIslandHalfDepth || pz < -kIslandHalfDepth) {
-				gameState = GameOver;
-			}
-
-			// Cube collision & pickup
-			for (int i = 0; i < 4; ++i) {
-				if (cubes[i].active && DistanceSquared(px, player->GetY(), pz, cubes[i].x, cubes[i].y, cubes[i].z) <= kPickupDistSq) {
-					cubes[i].active = false;
-					cubes[i].model->SetY(-100.0f); // Hide beneath ground
-				}
-			}
+			CheckCubePickup(player, cube1);
+			CheckCubePickup(player, cube2);
+			CheckCubePickup(player, cube3);
+			CheckCubePickup(player, cube4);
 		}
 	}
-	// Delete the 3D engine now we are finished with it
+
+	// Stop engine
 	myEngine->Delete();
 }
