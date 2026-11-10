@@ -17,6 +17,17 @@
             "command": "& \"C:\\Program Files\\Microsoft Visual Studio\\18\\Insiders\\MSBuild\\Current\\Bin\\amd64\\MSBuild.exe\" \"${workspaceFolder}\\TL11-Template.vcxproj\" /p:Configuration=Release /p:Platform=x64",
             "group": "build",
             "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "Build & Launch Game (Debug x64)",
+            "type": "shell",
+            "command": "Start-Process -FilePath \"${workspaceFolder}\\TL11-TemplateDebug.exe\" -WorkingDirectory \"${workspaceFolder}\"",
+            "dependsOn": "Build with MSBuild (Debug x64)",
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            },
+            "problemMatcher": []
         }
     ]
 }

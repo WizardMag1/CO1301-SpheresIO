@@ -1,0 +1,7 @@
+Importing Arial
+Captured 95 glyphs
+Cropping glyph borders
+Packing glyphs into sprite sheet
+Packing efficiency 89.72793%
+Premultiplying alpha
+Writing Arial36.spritefont (CompressedMono format)
