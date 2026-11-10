@@ -7,26 +7,30 @@ using namespace tle;
 using namespace std;
 
 // Speed constants in units/second for variable timing (Brief 1c & 3b)
-const float kSphereSpeed = 40.0f;
+const float kSphereSpeed = 35.0f;
 const float kRotationSpeed = 60.0f;
 const float kCameraSpeed = 50.0f;
+const int kTotalItems = 24;
 
 // 4 Game states (Brief 3d: Playing, Paused, GameWon, GameOver)
 enum EGameState { Playing, Paused, GameWon, GameOver };
 
-// 2 Camera states (Brief 2a & Guide 3)
-enum ECameraState { TopDown, Isometric };
+// 3 Camera states: 1 = TopDown, 2 = Isometric, 3 = Close-up Follow view to inspect models
+enum ECameraState { TopDown, Isometric, CloseView };
 
-// Give a cube a random colour skin from an array of skins (Lab 3B Section 5)
-void SetRandomCubeColour(Model* cube)
+// Give an item a random colour skin from an array of skins (Lab 3B Section 5)
+void SetRandomCubeColour(Model* item)
 {
-	string cubeSkins[5] = { "minicube.jpg", "tiles1.jpg", "RedBall.jpg", "YellowBall.jpg", "Baize.jpg" };
-	int randomIndex = rand() % 5;
-	cube->SetSkin(cubeSkins[randomIndex]);
+	string skins[8] = {
+		"minicube.jpg", "tiles1.jpg", "RedBall.jpg", "YellowBall.jpg",
+		"Baize.jpg", "Earth.jpg", "Jupiter.jpg", "Mars.jpg"
+	};
+	int randomIndex = rand() % 8;
+	item->SetSkin(skins[randomIndex]);
 }
 
-// Spawn 1 cube at a safe random floor position not within 10 units of other cubes or sphere (Brief 4a & 4b)
-void SpawnCube(Model* cubes[], int currentCube, int totalSpawned, Model* player, float sphereRadius)
+// Spawn 1 item at a safe random floor position not within 10 units of other items or sphere (Brief 4a & 4b)
+void SpawnCube(Model* items[], int currentItem, int totalSpawned, Model* player, float sphereRadius)
 {
 	bool safePosition = false;
 
@@ -46,16 +50,16 @@ void SpawnCube(Model* cubes[], int currentCube, int totalSpawned, Model* player,
 			safePosition = false;
 		}
 
-		// Check 10-unit distance to other spawned cubes (Brief 4a)
-		for (int otherCube = 0; otherCube < totalSpawned; otherCube++)
+		// Check 10-unit distance to other spawned items (Brief 4a)
+		for (int otherItem = 0; otherItem < totalSpawned; otherItem++)
 		{
-			if (otherCube != currentCube)
+			if (otherItem != currentItem)
 			{
-				float cubeVecX = randomX - cubes[otherCube]->GetX();
-				float cubeVecZ = randomZ - cubes[otherCube]->GetZ();
-				float cubeDist = sqrt(cubeVecX * cubeVecX + cubeVecZ * cubeVecZ);
+				float itemVecX = randomX - items[otherItem]->GetX();
+				float itemVecZ = randomZ - items[otherItem]->GetZ();
+				float itemDist = sqrt(itemVecX * itemVecX + itemVecZ * itemVecZ);
 
-				if (cubeDist < 10.0f)
+				if (itemDist < 10.0f)
 				{
 					safePosition = false;
 				}
@@ -64,7 +68,7 @@ void SpawnCube(Model* cubes[], int currentCube, int totalSpawned, Model* player,
 
 		if (safePosition == true)
 		{
-			cubes[currentCube]->SetPosition(randomX, 2.5f, randomZ);
+			items[currentItem]->SetPosition(randomX, 2.5f, randomZ);
 		}
 	}
 }
@@ -98,7 +102,7 @@ void MovePlayer(TLEngine* myEngine, Model* player, float frameTime)
 	}
 }
 
-// Switch between TopDown (Key 1) and Isometric (Key 2) camera (Brief 2a)
+// Switch between TopDown (Key 1), Isometric (Key 2), and Close-up View (Key 3) (Brief 2a)
 void SwitchCamera(TLEngine* myEngine, Camera* camera, ECameraState& cameraState)
 {
 	if (myEngine->KeyHit(Key_2))
@@ -116,10 +120,14 @@ void SwitchCamera(TLEngine* myEngine, Camera* camera, ECameraState& cameraState)
 		camera->RotateLocalX(90);
 		cameraState = TopDown;
 	}
+	if (myEngine->KeyHit(Key_3))
+	{
+		cameraState = CloseView;
+	}
 }
 
-// Move camera with Arrow keys only in TopDown view (Brief 1d & Guide 3)
-void MoveCamera(TLEngine* myEngine, Camera* camera, ECameraState cameraState, float frameTime)
+// Move camera with Arrow keys in TopDown, or follow player closely in CloseView (Brief 1d)
+void MoveCamera(TLEngine* myEngine, Camera* camera, Model* player, ECameraState cameraState, float frameTime)
 {
 	if (cameraState == TopDown)
 	{
@@ -139,6 +147,12 @@ void MoveCamera(TLEngine* myEngine, Camera* camera, ECameraState cameraState, fl
 		{
 			camera->MoveX(-kCameraSpeed * frameTime);
 		}
+	}
+	if (cameraState == CloseView)
+	{
+		camera->SetPosition(player->GetX(), 45, player->GetZ() - 55);
+		camera->ResetOrientation();
+		camera->RotateLocalX(35);
 	}
 }
 
@@ -167,18 +181,18 @@ void CheckWater(Model* player, EGameState& gameState)
 }
 
 // Sphere-to-box collision detection function (Brief 3b & Lab 4B Section 10)
-bool SphereToBox(Model* player, Model* cube, float sphereRadius)
+bool SphereToBox(Model* player, Model* item, float sphereRadius)
 {
-	if (cube->GetY() < 0)
+	if (item->GetY() < 0)
 	{
 		return false;
 	}
 
 	float border = 2.5f + sphereRadius;
-	float boxMinX = cube->GetX() - border;
-	float boxMaxX = cube->GetX() + border;
-	float boxMinZ = cube->GetZ() - border;
-	float boxMaxZ = cube->GetZ() + border;
+	float boxMinX = item->GetX() - border;
+	float boxMaxX = item->GetX() + border;
+	float boxMinZ = item->GetZ() - border;
+	float boxMaxZ = item->GetZ() + border;
 
 	float playerX = player->GetX();
 	float playerZ = player->GetZ();
@@ -199,16 +213,16 @@ bool SphereToBox(Model* player, Model* cube, float sphereRadius)
 	return false;
 }
 
-// Magnetically pull cube toward player within 50 units (Brief 4c & Lab 4A Direction Vector)
-void PullCubeToPlayer(Model* player, Model* cube, float frameTime)
+// Magnetically pull item toward player within 50 units (Brief 4c & Lab 4A Direction Vector)
+void PullCubeToPlayer(Model* player, Model* item, float frameTime)
 {
-	if (cube->GetY() < 0)
+	if (item->GetY() < 0)
 	{
 		return;
 	}
 
-	float vectorX = player->GetX() - cube->GetX();
-	float vectorZ = player->GetZ() - cube->GetZ();
+	float vectorX = player->GetX() - item->GetX();
+	float vectorZ = player->GetZ() - item->GetZ();
 	float distance = sqrt(vectorX * vectorX + vectorZ * vectorZ);
 
 	if (distance <= 50.0f)
@@ -217,53 +231,66 @@ void PullCubeToPlayer(Model* player, Model* cube, float frameTime)
 		{
 			float directionX = vectorX / distance;
 			float directionZ = vectorZ / distance;
-			cube->MoveX(directionX * kSphereSpeed * 1.5f * frameTime);
-			cube->MoveZ(directionZ * kSphereSpeed * 1.5f * frameTime);
+			item->MoveX(directionX * kSphereSpeed * 1.5f * frameTime);
+			item->MoveZ(directionZ * kSphereSpeed * 1.5f * frameTime);
 		}
 	}
 }
 
-// Check pickup for 1 cube, respawn it, grow every 4 cubes, activate Hyper Mode after 3 steps (Brief 3b, 3c, 4b, 4c)
-void CheckCubePickup(Model* player, Model* cubes[], int currentCube, int& playerPoints, float& sphereRadius, bool& hyperMode, float& hyperTimer, EGameState& gameState)
+// Longer steps (every 60 points / 6 items) so you have plenty of time to look at the models
+void CheckCubePickup(Model* player, Model* items[], int currentItem, int& playerPoints, float& sphereRadius, bool& hyperMode, float& hyperTimer, EGameState& gameState)
 {
-	if (SphereToBox(player, cubes[currentCube], sphereRadius) == true)
+	if (SphereToBox(player, items[currentItem], sphereRadius) == true)
 	{
-		// Respawn cube at a new separated random position with a new random colour (Brief 4b)
-		SpawnCube(cubes, currentCube, 12, player, sphereRadius);
-		SetRandomCubeColour(cubes[currentCube]);
+		// Respawn item at a new separated random position with a new random colour (Brief 4b)
+		SpawnCube(items, currentItem, kTotalItems, player, sphereRadius);
+		SetRandomCubeColour(items[currentItem]);
 
 		playerPoints = playerPoints + 10;
 
-		// At 3 steps (30 points), activate magnetic Hyper Mode and change sphere colour (Brief 4c)
-		if (playerPoints == 30)
-		{
-			hyperMode = true;
-			hyperTimer = 5.0f;
-			player->SetSkin("hypersphere.jpg");
-		}
-
-		// Every 4 cubes (40, 80, 120 points), grow sphere by 1.2x and change sphere colour (Brief 2c & 3b)
-		if (playerPoints == 40)
+		// Step 1 (60 points): Grow 1.2x and change sphere colour to Earth
+		if (playerPoints == 60)
 		{
 			player->Scale(1.2f);
 			sphereRadius = sphereRadius * 1.2f;
 			player->SetY(sphereRadius);
 			player->SetSkin("Earth.jpg");
 		}
-		if (playerPoints == 80)
-		{
-			player->Scale(1.2f);
-			sphereRadius = sphereRadius * 1.2f;
-			player->SetY(sphereRadius);
-			player->SetSkin("Jupiter.jpg");
-			hyperMode = true;
-			hyperTimer = 5.0f;
-		}
+
+		// Step 2 (120 points): Grow 1.2x and change sphere colour to Jupiter
 		if (playerPoints == 120)
 		{
 			player->Scale(1.2f);
 			sphereRadius = sphereRadius * 1.2f;
 			player->SetY(sphereRadius);
+			player->SetSkin("Jupiter.jpg");
+		}
+
+		// Step 3 (180 points): Grow 1.2x, change to hyper skin, and turn ON Magnetic Pull for 8 seconds!
+		if (playerPoints == 180)
+		{
+			player->Scale(1.2f);
+			sphereRadius = sphereRadius * 1.2f;
+			player->SetY(sphereRadius);
+			player->SetSkin("hypersphere.jpg");
+			hyperMode = true;
+			hyperTimer = 8.0f;
+		}
+
+		// Step 4 (240 points): Grow 1.2x, change to Sun skin, and turn ON Magnetic Pull again!
+		if (playerPoints == 240)
+		{
+			player->Scale(1.2f);
+			sphereRadius = sphereRadius * 1.2f;
+			player->SetY(sphereRadius);
+			player->SetSkin("Sun.jpg");
+			hyperMode = true;
+			hyperTimer = 8.0f;
+		}
+
+		// Final Step (300 points): Win the game
+		if (playerPoints == 300)
+		{
 			gameState = GameWon;
 		}
 	}
@@ -276,21 +303,21 @@ void CheckHyperCube(Model* player, Model* hyperCube, float sphereRadius, bool& h
 	{
 		hyperCube->SetY(-100);
 		hyperMode = true;
-		hyperTimer = 5.0f;
+		hyperTimer = 8.0f;
 		player->SetSkin("hypersphere.jpg");
 	}
 }
 
-// Update 5-second timer for Hyper Mode and pull cubes magnetically (Brief 4c.ii & 4c.iii)
-void UpdateHyperMode(Model* player, Model* cubes[], bool& hyperMode, float& hyperTimer, float frameTime)
+// Update timer for Hyper Mode and pull items magnetically (Brief 4c.ii & 4c.iii)
+void UpdateHyperMode(Model* player, Model* items[], bool& hyperMode, float& hyperTimer, float frameTime)
 {
 	if (hyperMode == true)
 	{
 		hyperTimer = hyperTimer - frameTime;
 
-		for (int cubeNumber = 0; cubeNumber < 12; cubeNumber++)
+		for (int itemNumber = 0; itemNumber < kTotalItems; itemNumber++)
 		{
-			PullCubeToPlayer(player, cubes[cubeNumber], frameTime);
+			PullCubeToPlayer(player, items[itemNumber], frameTime);
 		}
 
 		if (hyperTimer <= 0.0f)
@@ -301,12 +328,14 @@ void UpdateHyperMode(Model* player, Model* cubes[], bool& hyperMode, float& hype
 	}
 }
 
-// Draw Points at top-right and GameWon / GameOver messages at center (Brief 2b, 3c, 3d)
+// Draw Points, Current Step, and Camera Hint on screen (Brief 2b, 3c, 3d)
 void DrawMessages(TLEngine* myEngine, Font* myFont, int playerPoints, EGameState gameState)
 {
 	stringstream outText;
-	outText << "Points: " << playerPoints;
+	outText << "Points: " << playerPoints << " / 300";
 	myFont->Draw(outText.str(), myEngine->GetWidth(), 0, Black, RightAlign);
+
+	myFont->Draw("Keys: 1=Top  2=Iso  3=Close-Up View", 10, 0, Black, LeftAlign);
 
 	int centerX = myEngine->GetWidth() / 2;
 	int centerY = myEngine->GetHeight() / 2;
@@ -334,43 +363,69 @@ int main()
 	// Load font
 	Font* myFont = myEngine->LoadFont("Arial", 36);
 
-	// Load meshes (Basic Layout)
+	// Load stage meshes
 	Mesh* waterMesh  = myEngine->LoadMesh("water.x");
 	Mesh* islandMesh = myEngine->LoadMesh("island.x");
 	Mesh* skyMesh    = myEngine->LoadMesh("sky.x");
 	Mesh* sphereMesh = myEngine->LoadMesh("spheremesh.x");
-	Mesh* cubeMesh   = myEngine->LoadMesh("minicube.x");
 
-	// Create models (Basic Layout)
+	// Load 4 different collectible 3D meshes (Cubes, Teapots, Torus Rings, Coins)
+	Mesh* cubeMesh   = myEngine->LoadMesh("minicube.x");
+	Mesh* teapotMesh = myEngine->LoadMesh("Teapot.x");
+	Mesh* torusMesh  = myEngine->LoadMesh("Torus.x");
+	Mesh* coinMesh   = myEngine->LoadMesh("TwoPence.x");
+
+	// Create stage models
 	Model* water  = waterMesh->CreateModel(0, -5, 0);
 	Model* island = islandMesh->CreateModel(0, -5, 0);
 	Model* sky    = skyMesh->CreateModel(0, -960, 0);
 	Model* player = sphereMesh->CreateModel(0, 10, 0);
 
-	// Set initial player sphere colour skin (Lab 3A Section 3)
+	// Set chessboard / grid style skin on island and dark border on water
+	island->SetSkin("metalgrid2_albedo.png");
+	water->SetSkin("Stars.jpg");
 	player->SetSkin("regularsphere.jpg");
 
 	float sphereRadius = 10.0f;
 
-	// Create array of 12 cubes at separated random floor positions with random colours (Brief 3a & 4a)
-	Model* cubes[12];
-	for (int cubeNumber = 0; cubeNumber < 12; cubeNumber++)
+	// Create 24 collectible models on the island (12 Cubes, 4 Teapots, 4 Torus Rings, 4 Coins)
+	Model* items[kTotalItems];
+	for (int itemNumber = 0; itemNumber < kTotalItems; itemNumber++)
 	{
-		cubes[cubeNumber] = cubeMesh->CreateModel(0, 2.5f, 0);
-		SpawnCube(cubes, cubeNumber, cubeNumber, player, sphereRadius);
-		SetRandomCubeColour(cubes[cubeNumber]);
+		if (itemNumber < 12)
+		{
+			items[itemNumber] = cubeMesh->CreateModel(0, 2.5f, 0);
+		}
+		else if (itemNumber < 16)
+		{
+			items[itemNumber] = teapotMesh->CreateModel(0, 2.5f, 0);
+			items[itemNumber]->Scale(0.4f);
+		}
+		else if (itemNumber < 20)
+		{
+			items[itemNumber] = torusMesh->CreateModel(0, 2.5f, 0);
+			items[itemNumber]->Scale(0.2f);
+		}
+		else
+		{
+			items[itemNumber] = coinMesh->CreateModel(0, 2.5f, 0);
+			items[itemNumber]->Scale(0.25f);
+		}
+
+		SpawnCube(items, itemNumber, itemNumber, player, sphereRadius);
+		SetRandomCubeColour(items[itemNumber]);
 	}
 
 	// Create special HyperCube with hypercube.jpg skin (Brief 4c.i)
 	Model* hyperCube = cubeMesh->CreateModel(50, 2.5f, 50);
 	hyperCube->SetSkin("hypercube.jpg");
 
-	// Create top-down camera (Basic Layout g)
-	Camera* camera = myEngine->CreateCamera(ManualCamera, 0, 200, 0);
-	camera->RotateLocalX(90);
+	// Create camera (starts in CloseView so you can clearly see the 3D models right away!)
+	Camera* camera = myEngine->CreateCamera(ManualCamera, 0, 45, -55);
+	camera->RotateLocalX(35);
 
 	EGameState gameState = Playing;
-	ECameraState cameraState = TopDown;
+	ECameraState cameraState = CloseView;
 	int playerPoints = 0;
 	bool hyperMode = false;
 	float hyperTimer = 0.0f;
@@ -408,15 +463,17 @@ int main()
 		{
 			SwitchCamera(myEngine, camera, cameraState);
 			MovePlayer(myEngine, player, frameTime);
-			MoveCamera(myEngine, camera, cameraState, frameTime);
+			MoveCamera(myEngine, camera, player, cameraState, frameTime);
 			CheckWater(player, gameState);
 
 			CheckHyperCube(player, hyperCube, sphereRadius, hyperMode, hyperTimer);
-			UpdateHyperMode(player, cubes, hyperMode, hyperTimer, frameTime);
+			UpdateHyperMode(player, items, hyperMode, hyperTimer, frameTime);
 
-			for (int cubeNumber = 0; cubeNumber < 12; cubeNumber++)
+			// Slowly spin all 24 models so you can see their 3D shapes clearly
+			for (int itemNumber = 0; itemNumber < kTotalItems; itemNumber++)
 			{
-				CheckCubePickup(player, cubes, cubeNumber, playerPoints, sphereRadius, hyperMode, hyperTimer, gameState);
+				items[itemNumber]->RotateY(40.0f * frameTime);
+				CheckCubePickup(player, items, itemNumber, playerPoints, sphereRadius, hyperMode, hyperTimer, gameState);
 			}
 		}
 	}
