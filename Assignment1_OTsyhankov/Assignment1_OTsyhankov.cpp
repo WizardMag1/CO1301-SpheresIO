@@ -219,10 +219,20 @@ int main()
 	int enemyPoints[kTotalEnemies];
 	bool enemyActive[kTotalEnemies];
 
+	string enemyNames[kTotalEnemies] = {
+		"Red Bot", "Yellow Bot", "Green Bot", "Cyan Bot", "Grey Bot"
+	};
+	string enemySkins[kTotalEnemies] = {
+		"enemysphere.jpg", "YellowBall.jpg", "Baize.jpg", "Neptune.jpg", "WhiteBall.jpg"
+	};
+	unsigned int enemyColours[kTotalEnemies] = {
+		Red, Yellow, Green, Cyan, LightGrey
+	};
+
 	for (int enemyNum = 0; enemyNum < kTotalEnemies; enemyNum++)
 	{
 		enemies[enemyNum] = sphereMesh->CreateModel(0, 10, 0);
-		enemies[enemyNum]->SetSkin("enemysphere.jpg");
+		enemies[enemyNum]->SetSkin(enemySkins[enemyNum]);
 		enemyRadius[enemyNum] = 10;
 		enemyPoints[enemyNum] = 0;
 		enemyActive[enemyNum] = true;
@@ -281,38 +291,60 @@ int main()
 			}
 		}
 
-		// Find highest enemy score
-		int bestEnemyPoints = 0;
+		// Build full leaderboard
+		int totalRacers = kTotalEnemies + 1;
+		string rankNames[kTotalEnemies + 1];
+		int rankScores[kTotalEnemies + 1];
+		unsigned int rankColours[kTotalEnemies + 1];
+
+		rankNames[0] = "Player";
+		rankScores[0] = playerPoints;
+		rankColours[0] = White;
+
 		for (int enemyNum = 0; enemyNum < kTotalEnemies; enemyNum++)
 		{
-			if (enemyPoints[enemyNum] > bestEnemyPoints)
+			rankNames[enemyNum + 1] = enemyNames[enemyNum];
+			rankScores[enemyNum + 1] = enemyPoints[enemyNum];
+			rankColours[enemyNum + 1] = enemyColours[enemyNum];
+		}
+
+		// Sort leaderboard highest to lowest
+		for (int passNum = 0; passNum < totalRacers; passNum++)
+		{
+			for (int slotNum = 0; slotNum < totalRacers - 1; slotNum++)
 			{
-				bestEnemyPoints = enemyPoints[enemyNum];
+				if (rankScores[slotNum + 1] > rankScores[slotNum])
+				{
+					int tempScore = rankScores[slotNum];
+					rankScores[slotNum] = rankScores[slotNum + 1];
+					rankScores[slotNum + 1] = tempScore;
+
+					string tempName = rankNames[slotNum];
+					rankNames[slotNum] = rankNames[slotNum + 1];
+					rankNames[slotNum + 1] = tempName;
+
+					unsigned int tempColour = rankColours[slotNum];
+					rankColours[slotNum] = rankColours[slotNum + 1];
+					rankColours[slotNum + 1] = tempColour;
+				}
 			}
 		}
 
 		// Draw leaderboard and UI text
 		int rightX = myEngine->GetWidth() - 10;
-		stringstream firstLine;
-		stringstream secondLine;
+		int centerX = myEngine->GetWidth() / 2;
+		int centerY = myEngine->GetHeight() / 2;
 
-		if (playerPoints >= bestEnemyPoints)
+		for (int rankNum = 0; rankNum < totalRacers; rankNum++)
 		{
-			firstLine << "1st Player Points: " << playerPoints << " / " << kWinPoints;
-			secondLine << "2nd Enemy Points: " << bestEnemyPoints;
+			stringstream lineText;
+			lineText << (rankNum + 1) << ". " << rankNames[rankNum] << ": " << rankScores[rankNum];
+			myFont->Draw(lineText.str(), rightX, rankNum * 35, rankColours[rankNum], RightAlign);
 		}
-		else
-		{
-			firstLine << "1st Enemy Points: " << bestEnemyPoints;
-			secondLine << "2nd Player Points: " << playerPoints << " / " << kWinPoints;
-		}
-
-		myFont->Draw(firstLine.str(), rightX, 0, White, RightAlign);
-		myFont->Draw(secondLine.str(), rightX, 40, White, RightAlign);
 
 		stringstream swallowText;
-		swallowText << "Opponents Swallowed: " << enemiesSwallowed << " / " << kTotalEnemies;
-		myFont->Draw(swallowText.str(), rightX, 80, Blue, RightAlign);
+		swallowText << "Swallowed: " << enemiesSwallowed << " / " << kTotalEnemies;
+		myFont->Draw(swallowText.str(), rightX, totalRacers * 35, Blue, RightAlign);
 
 		myFont->Draw("Keys: 1=Top  2=Iso  3=Third-View", 10, 0, White, LeftAlign);
 
@@ -323,9 +355,10 @@ int main()
 			myFont->Draw(hyperText.str(), 10, 40, Magenta, LeftAlign);
 		}
 
-		int centerX = myEngine->GetWidth() / 2;
-		int centerY = myEngine->GetHeight() / 2;
-
+		if (gameState == Paused)
+		{
+			myFont->Draw("PAUSED - Press P to Resume", centerX, 20, Yellow, CentreAlign);
+		}
 		if (gameState == GameWon)
 		{
 			myFont->Draw("Congrats, You WON! Nothing!!", centerX, centerY, Green, CentreAlign, MiddleAlign);
