@@ -1,4 +1,6 @@
 // TL11-Template.cpp: A program using the TL-Engine
+// Oleksandr Tsyhankov 21342332
+// Version 2.1
 
 #include "TL-Engine11.h"
 #include <iostream>
@@ -6,13 +8,13 @@
 using namespace tle;
 using namespace std;
 
-// Speed constants (Milestone 1c)
+// I am Speed
 const float kSphereSpeed = 55;
 const float kRotationSpeed = 70;
 const float kCameraSpeed = 80;
 const float kEnemySpeed = 35;
 
-// World and spawn constants (No magic numbers - Brief Page 3)
+// World and spawn 
 const float kIslandBorder = 300;
 const int kSpawnRange = 500;
 const int kSpawnMin = -250;
@@ -20,7 +22,7 @@ const float kMinItemSpacing = 10;
 const float kMinEnemyStartDist = 120;
 const float kCubeHalfWidth = 2.5f;
 
-// Gameplay constants (Points, Growth, Hyper Mode)
+// Gameplay
 const int kTotalItems = 36;
 const int kTotalEnemies = 5;
 const int kTotalSkins = 8;
@@ -32,16 +34,16 @@ const float kGrowScale = 1.2f;
 const float kHyperRadius = 80;
 const float kHyperSeconds = 8;
 
-// Game states (Milestone 3d)
+// Game states 
 enum EGameState { Playing, Paused, GameWon, GameOver };
 
-// Camera states (Milestone 2a)
+// Camera states 
 enum ECameraState { TopDown, Isometric, ThirdView };
 
-// Sphere states (Milestone 4c)
+// Sphere states 
 enum ESphereState { Regular, Hyper };
 
-// Distance between two points using Pythagoras (Lab 4A Section 3)
+// Distance between two points
 float GetDistance(float x1, float z1, float x2, float z2)
 {
 	float vectorX = x2 - x1;
@@ -50,7 +52,7 @@ float GetDistance(float x1, float z1, float x2, float z2)
 	return distance;
 }
 
-// Sphere-to-box collision check (Milestone 3b & Lab 4B Section 10)
+// Sphere-to-box collision check 
 bool SphereToBox(float sphereX, float sphereZ, float sphereRadius, float boxX, float boxZ)
 {
 	float border = kCubeHalfWidth + sphereRadius;
@@ -76,7 +78,7 @@ bool SphereToBox(float sphereX, float sphereZ, float sphereRadius, float boxX, f
 	return false;
 }
 
-// Spawn 1 item at a safe random position (Milestone 4a & 4b)
+// Spawn n items at safe random positions 
 void SpawnItem(Model* items[], float itemX[], float itemZ[], string skins[], int currentItem, int totalSpawned, float playerX, float playerZ, float playerRadius)
 {
 	bool safePosition = false;
@@ -107,7 +109,6 @@ void SpawnItem(Model* items[], float itemX[], float itemZ[], string skins[], int
 			}
 		}
 
-		// Place item if position is safe
 		if (safePosition == true)
 		{
 			itemX[currentItem] = randomX;
@@ -126,26 +127,26 @@ int main()
 	TLEngine* myEngine = New3DEngine(TL11);
 	myEngine->StartWindowed();
 
-	// Media folders
-	myEngine->AddMediaFolder("C:\\Users\\Public\\Documents\\TL-Engine11\\Media");
+	// Media
+	myEngine->AddMediaFolder("/media");
 	myEngine->AddMediaFolder("media");
 
 	// Load font
 	Font* myFont = myEngine->LoadFont("Arial", 32);
 
-	// Load stage meshes
+	// Load stages
 	Mesh* waterMesh  = myEngine->LoadMesh("water.x");
 	Mesh* islandMesh = myEngine->LoadMesh("island.x");
 	Mesh* skyMesh    = myEngine->LoadMesh("sky.x");
 	Mesh* sphereMesh = myEngine->LoadMesh("spheremesh.x");
 
-	// Load item meshes
+	// Load items
 	Mesh* cubeMesh   = myEngine->LoadMesh("minicube.x");
 	Mesh* teapotMesh = myEngine->LoadMesh("Teapot.x");
-	Mesh* torusMesh  = myEngine->LoadMesh("Torus.x");
+	Mesh* cswimMesh  = myEngine->LoadMesh("torus.x");
 	Mesh* coinMesh   = myEngine->LoadMesh("TwoPence.x");
 
-	// Create stage models
+	// Create models
 	Model* water  = waterMesh->CreateModel(0, -5, 0);
 	Model* island = islandMesh->CreateModel(0, -5, 0);
 	Model* sky    = skyMesh->CreateModel(0, -960, 0);
@@ -173,7 +174,7 @@ int main()
 		"Baize.jpg", "Earth.jpg", "Jupiter.jpg", "Mars.jpg"
 	};
 
-	// Create 36 items on the floor
+	// Create n items on the floor
 	Model* items[kTotalItems];
 	float itemX[kTotalItems];
 	float itemZ[kTotalItems];
@@ -191,7 +192,7 @@ int main()
 		}
 		else if (itemNum < 30)
 		{
-			items[itemNum] = torusMesh->CreateModel(0, kCubeHalfWidth, 0);
+			items[itemNum] = cswimMesh->CreateModel(0, kCubeHalfWidth, 0);
 			items[itemNum]->Scale(0.2f);
 		}
 		else
@@ -210,7 +211,7 @@ int main()
 	float hyperCubeZ = 60;
 	bool hyperCubeActive = true;
 
-	// Create 5 Enemy NPC Spheres
+	// Create n Enemy NPC
 	Model* enemies[kTotalEnemies];
 	float enemyX[kTotalEnemies];
 	float enemyZ[kTotalEnemies];
@@ -242,7 +243,7 @@ int main()
 		}
 	}
 
-	// Create camera
+	//Camera
 	Camera* camera = myEngine->CreateCamera(ManualCamera, 0, 65, -90);
 	camera->RotateLocalX(32);
 
@@ -251,7 +252,7 @@ int main()
 	ESphereState sphereState = Regular;
 	float hyperTimer = 0;
 
-	// Game loop
+	// Game Of Something
 	while (myEngine->IsRunning())
 	{
 		myEngine->DrawScene();
@@ -261,13 +262,13 @@ int main()
 			frameTime = 0.016f;
 		}
 
-		// Quit with Escape
+		// Quit of this BS
 		if (myEngine->KeyHit(Key_Escape))
 		{
 			myEngine->Stop();
 		}
 
-		// Pause with P
+		// Pause this 
 		if (myEngine->KeyHit(Key_P))
 		{
 			if (gameState == Playing)
@@ -306,14 +307,14 @@ int main()
 			secondLine << "2nd Player Points: " << playerPoints << " / " << kWinPoints;
 		}
 
-		myFont->Draw(firstLine.str(), rightX, 0, Black, RightAlign);
-		myFont->Draw(secondLine.str(), rightX, 40, Black, RightAlign);
+		myFont->Draw(firstLine.str(), rightX, 0, White, RightAlign);
+		myFont->Draw(secondLine.str(), rightX, 40, White, RightAlign);
 
 		stringstream swallowText;
 		swallowText << "Opponents Swallowed: " << enemiesSwallowed << " / " << kTotalEnemies;
 		myFont->Draw(swallowText.str(), rightX, 80, Blue, RightAlign);
 
-		myFont->Draw("Keys: 1=Top  2=Iso  3=Close-Up", 10, 0, Black, LeftAlign);
+		myFont->Draw("Keys: 1=Top  2=Iso  3=Third-View", 10, 0, White, LeftAlign);
 
 		if (sphereState == Hyper)
 		{
@@ -327,14 +328,14 @@ int main()
 
 		if (gameState == GameWon)
 		{
-			myFont->Draw("Congrats, You WON!", centerX, centerY, Blue, CentreAlign, MiddleAlign);
+			myFont->Draw("Congrats, You WON! Nothing!!", centerX, centerY, Green, CentreAlign, MiddleAlign);
 		}
 		if (gameState == GameOver)
 		{
-			myFont->Draw("Game Over", centerX, centerY, Red, CentreAlign, MiddleAlign);
+			myFont->Draw("Game Over, How did you lose?", centerX, centerY, Red, CentreAlign, MiddleAlign);
 		}
 
-		// Check if enemies should move (Playing or GameOver)
+		// Check if enemies should move
 		bool moveEnemies = false;
 		if (gameState == Playing)
 		{
@@ -562,7 +563,7 @@ int main()
 					SpawnItem(items, itemX, itemZ, skins, itemNum, kTotalItems, playerX, playerZ, playerRadius);
 					playerPoints = playerPoints + kPointsPerItem;
 
-					// Grow sphere every 80 points
+					// Grow sphere
 					if (playerPoints % kPointsPerGrow == 0)
 					{
 						player->Scale(kGrowScale);
@@ -570,7 +571,7 @@ int main()
 						player->SetY(playerRadius);
 					}
 
-					// Activate Hyper Mode at 240 points
+					// Activate Hyper Mode
 					if (playerPoints == (kPointsPerGrow * 3))
 					{
 						sphereState = Hyper;
@@ -578,7 +579,7 @@ int main()
 						player->SetSkin("hypersphere.jpg");
 					}
 
-					// Check 500-point win goal
+					// Check the win
 					if (playerPoints >= kWinPoints)
 					{
 						gameState = GameWon;
@@ -597,7 +598,7 @@ int main()
 					{
 						int pointDiff = playerPoints - enemyPoints[enemyNum];
 
-						// Player swallows enemy (> 40 points ahead)
+						// Player swallows enemy (> 40 points)
 						if (pointDiff > kSwallowPointLead)
 						{
 							enemyActive[enemyNum] = false;
@@ -618,7 +619,7 @@ int main()
 								gameState = GameWon;
 							}
 						}
-						// Enemy swallows player (> 40 points ahead)
+						// Enemy swallows player (> 40 points)
 						else if (pointDiff < -kSwallowPointLead)
 						{
 							player->SetY(-200);
@@ -651,6 +652,6 @@ int main()
 		}
 	}
 
-	// Stop engine
+	// Stop this 
 	myEngine->Delete();
 }
